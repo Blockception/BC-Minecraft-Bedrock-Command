@@ -1,7 +1,7 @@
 {
   "name": "bc-minecraft-bedrock-command",
   "version": "1.0.0",
-  "description": "A typescript package library that provides commands for minecraft bedrock",
+  "description": "A typescript package library that handles commands for minecraft bedrock",
   "main": "./lib/src/main.js",
   "types": "./lib/src/main.d.ts",
   "directories": {

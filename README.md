@@ -1,18 +1,7 @@
-# BC-Minecraft-Bedrock-Diagnoser
+# BC-Minecraft-Bedrock-Commands
 
-A typescript package library that provides diagnostics for minecraft bedrock projects
+A typescript package library that handles commands for minecraft bedrock
 
 ```ts
-const context: DiagnoserContext = {
-  getDiagnoser: (doc: TextDocument, project: MCProject) => { ... },
-  getDocument: (uri: string) => { ... },
-  getFiles: (folder: string, ignores: MCIgnore) => { ... },
-  cache: ProjectData
-};
 
-const diagnoser = new Diagnoser(context);
-
-diagnoser.Process(doc): boolean;
-diagnoser.ProcessFolder(folder, ignores): void;
-diagnoser.ProcessPack(pack): void;
 ```
