@@ -3,6 +3,7 @@ import { ParameterType } from "../Types/ParameterType";
 /** */
 export interface CommandInfo {
   /** */
+
   name: string;
   /** */
   documentation: string;
@@ -18,6 +19,7 @@ export interface ParameterInfo {
   type: ParameterType;
   /** */
   required: boolean;
+
   /**The optional options for this parameter */
   options?: ParameterOptions;
 }
