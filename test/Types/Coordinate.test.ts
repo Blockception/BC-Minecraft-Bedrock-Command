@@ -1,4 +1,5 @@
 import { expect } from "chai";
+import { IsCoordinate } from "../../src/Lib/Types/Coordinate";
 
 describe("Coordinates", () => {
   it("IsCoordinate", () => {
@@ -34,6 +35,3 @@ describe("Coordinates", () => {
     expect(IsCoordinate("~0")).to.true;
   });
 });
-function IsCoordinate(arg0: string): any {
-  throw new Error("Function not implemented.");
-}

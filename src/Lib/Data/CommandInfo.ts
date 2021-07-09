@@ -24,6 +24,7 @@ export interface ParameterInfo {
 
 /**The optional options for a given parameter */
 export interface ParameterOptions {
+  /** */
   acceptedValues?: string[];
 
   /**Minimum value or amount */
