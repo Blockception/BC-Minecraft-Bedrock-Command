@@ -1,0 +1,42 @@
+{
+  "name": "bc-minecraft-bedrock-command",
+  "version": "1.0.0",
+  "description": "A typescript package library that provides commands for minecraft bedrock",
+  "main": "./lib/src/main.js",
+  "types": "./lib/src/main.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "tsc -b",
+    "build": "npm run clean && npm run compile",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "test": "mocha --debug-brk",
+    "clean": "rimraf lib",
+    "pretest": "npm run compile",
+    "prepublishOnly": "npm test && npm run compile",
+    "preversion": "",
+    "postversion": "git push && git push --tags",
+    "version": "git add -A src",
+    "watch": "tsc -w -p ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blockception/BC-Minecraft-Bedrock-Command.git"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "command"
+  ],
+  "author": "BlockceptionLtd",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/Blockception/BC-Minecraft-Bedrock-Command/issues"
+  },
+  "homepage": "https://github.com/Blockception/BC-Minecraft-Bedrock-Command#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
