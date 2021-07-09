@@ -48,7 +48,7 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       ],
     },
   ],
-  /** */
+  /**The classroom mode command */
   classroommode: [
     {
       name: "classroommode",
@@ -56,6 +56,7 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       parameters: [{ text: "classroommode", type: ParameterType.keyword, required: true }],
     },
   ],
+  /**The code command */
   code: [
     {
       name: "code",
@@ -63,7 +64,7 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       parameters: [{ text: "code", type: ParameterType.keyword, required: true }],
     },
   ],
-
+  /**The gamerule command */
   gamerule: [
     {
       name: "gamerule",
@@ -95,7 +96,7 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       ],
     },
   ],
-
+  /**The immutableworld command */
   immutableworld: [
     {
       name: "immutableworld",
@@ -106,7 +107,7 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       ],
     },
   ],
-
+  /**The dialogue command */
   dialogue: [
     {
       name: "dialogue",
