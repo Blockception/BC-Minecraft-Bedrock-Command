@@ -8,6 +8,11 @@
     "lib": "lib",
     "test": "test"
   },
+  "files": [
+    "lib/src/**/*.js",
+    "lib/src/**/*.js.map",
+    "lib/src/**/*.d.ts"
+  ],
   "scripts": {
     "compile": "tsc -b",
     "build": "npm run clean && npm run compile",

@@ -4,3 +4,6 @@ tslint.json
 .prettierrc
 test/
 *.test.*
+.vscode
+.gitattributes
+.mocharc.json
