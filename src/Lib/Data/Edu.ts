@@ -1,7 +1,7 @@
 import { ParameterType } from "../Types/ParameterType";
-import { CommandInfo } from "./CommandInfo";
+import { CommandContainer } from "./CommandContainer";
 
-export const Edu: { [key: string]: CommandInfo[] } = {
+export const Edu: CommandContainer = {
   /**The abillity command */
   ability: [
     {
@@ -104,20 +104,6 @@ export const Edu: { [key: string]: CommandInfo[] } = {
       parameters: [
         { text: "immutableworld", type: ParameterType.keyword, required: true },
         { text: "immutableworld", type: ParameterType.boolean, required: false },
-      ],
-    },
-  ],
-  /**The dialogue command */
-  dialogue: [
-    {
-      name: "dialogue",
-      documentation: "Sets the immutable state of the world",
-      parameters: [
-        { text: "dialogue", type: ParameterType.keyword, required: true },
-        { text: "open", type: ParameterType.keyword, required: true },
-        { text: "talking entity", type: ParameterType.selector, required: true },
-        { text: "player receiver", type: ParameterType.selector, required: true, options: { playerOnly: true, allowFakePlayers: false } },
-        { text: "dialogue id", type: ParameterType.string, required: true },
       ],
     },
   ],

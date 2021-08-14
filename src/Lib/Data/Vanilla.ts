@@ -1,7 +1,7 @@
 import { ParameterType } from "../Types/ParameterType";
-import { CommandInfo } from "./CommandInfo";
+import { CommandContainer } from "./CommandContainer";
 
-export const Vanilla: { [key: string]: CommandInfo[] } = {
+export const Vanilla: CommandContainer = {
   /**The alwaysday command */
   alwaysday: [
     {
@@ -128,6 +128,31 @@ export const Vanilla: { [key: string]: CommandInfo[] } = {
       parameters: [
         { text: "daylock", type: ParameterType.keyword, required: true },
         { text: "lock", type: ParameterType.boolean, required: false },
+      ],
+    },
+  ],
+  /**The dialogue command */
+  dialogue: [
+    {
+      name: "dialogue",
+      documentation: "Forces to open an NPC dialogue box to the targeted player(s)",
+      parameters: [
+        { text: "dialogue", type: ParameterType.keyword, required: true },
+        { text: "open", type: ParameterType.keyword, required: true },
+        { text: "npc", type: ParameterType.selector, required: true, options: { allowFakePlayers: false, playerOnly: false } },
+        { text: "player receiver", type: ParameterType.selector, required: true, options: { playerOnly: true, allowFakePlayers: false } },
+        { text: "scene name", type: ParameterType.string, required: false },
+      ],
+    },
+    {
+      name: "dialogue",
+      documentation: "Direct an NPC to use the dialogue provided in a specifically designated scene file",
+      parameters: [
+        { text: "dialogue", type: ParameterType.keyword, required: true },
+        { text: "change", type: ParameterType.keyword, required: true },
+        { text: "npc", type: ParameterType.selector, required: true, options: { allowFakePlayers: false, playerOnly: false } },
+        { text: "scene name", type: ParameterType.string, required: true },
+        { text: "player receiver", type: ParameterType.selector, required: false, options: { playerOnly: true, allowFakePlayers: false } },
       ],
     },
   ],
@@ -1199,6 +1224,17 @@ export const Vanilla: { [key: string]: CommandInfo[] } = {
         { text: "spawn x", type: ParameterType.coordinate, required: false },
         { text: "spawn y", type: ParameterType.coordinate, required: false },
         { text: "spawn z", type: ParameterType.coordinate, required: false },
+      ],
+    },
+  ],
+  /**The setmaxplayers command */
+  setmaxplayers: [
+    {
+      name: "setmaxplayers",
+      documentation: "Sets the maximum number of players for this game session",
+      parameters: [
+        { text: "setmaxplayers", type: ParameterType.keyword, required: true },
+        { text: "maximum players", type: ParameterType.integer, required: true, options: { minimum: 1 } },
       ],
     },
   ],
