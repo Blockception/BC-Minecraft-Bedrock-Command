@@ -1,16 +1,16 @@
 import { Modes } from "bc-minecraft-bedrock-types";
 import { Selector } from "bc-minecraft-bedrock-types/lib/src/Types/include";
-import { CommandInfo } from "../../Data/commandInfo";
 import { IsBoolean } from "../Boolean";
 import { IsFloat } from "../Float";
 import { IsInteger } from "../Integer";
 import { IsArray, IsObject } from "../Json";
 import { ParameterType } from "../ParameterType";
-import { Command } from "./command";
 import { IsCoordinate } from "../Coordinate";
 import { IsXpLevel } from "../Xp";
 import { Edu } from "../../Data/Edu";
 import { Vanilla } from "../../Data/Vanilla";
+import { CommandInfo } from "../../Data/include";
+import { Command } from "../include";
 
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);

@@ -84,8 +84,8 @@ describe("Data/Commands", () => {
   });
 
   it("Dialogue Check", () => {
-    expect(Data.Edu["dailogue"]).to.be.undefined;
-    expect(Data.Vanilla["dailogue"]).to.be.not.undefined;
+    expect(Data.Edu["dialogue"]).to.be.undefined;
+    expect(Data.Vanilla["dialogue"]).to.be.not.undefined;
   });
 
   it("Inventory Check", () => {
