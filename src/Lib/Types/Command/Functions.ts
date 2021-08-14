@@ -1,16 +1,15 @@
 import { Modes } from "bc-minecraft-bedrock-types";
-import { Selector } from "bc-minecraft-bedrock-types/lib/src/Types/include";
-import { IsBoolean } from "../Boolean";
-import { IsFloat } from "../Float";
-import { IsInteger } from "../Integer";
-import { IsArray, IsObject } from "../Json";
-import { ParameterType } from "../ParameterType";
-import { IsCoordinate } from "../Coordinate";
-import { IsXpLevel } from "../Xp";
 import { Edu } from "../../Data/Edu";
 import { Vanilla } from "../../Data/Vanilla";
 import { CommandInfo } from "../../Data/include";
-import { Command } from "../include";
+import { Command, ParameterType } from "../include";
+import { Boolean } from "bc-minecraft-bedrock-types/lib/src/General/Boolean";
+import { Json } from "bc-minecraft-bedrock-types/lib/src/General/Json";
+import { Coordinate } from "bc-minecraft-bedrock-types/lib/src/General/Coordinate";
+import { Float } from "bc-minecraft-bedrock-types/lib/src/General/Float";
+import { Integer } from "bc-minecraft-bedrock-types/lib/src/General/Integer";
+import { Selector } from "bc-minecraft-bedrock-types/lib/src/Minecraft/Selector";
+import { XP } from "bc-minecraft-bedrock-types/lib/src/General/Xp";
 
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);
@@ -55,11 +54,11 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         continue;
 
       case ParameterType.boolean:
-        if (!IsBoolean(commandText)) return false;
+        if (!Boolean.is(commandText)) return false;
         break;
 
       case ParameterType.blockStates:
-        if (!IsArray(commandText)) return false;
+        if (!Json.isArray(commandText)) return false;
         break;
 
       case ParameterType.cameraShakeType:
@@ -71,7 +70,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.coordinate:
-        if (!IsCoordinate(commandText)) return false;
+        if (!Coordinate.is(commandText)) return false;
         break;
 
       case ParameterType.cloneMode:
@@ -91,7 +90,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.float:
-        if (!IsFloat(commandText)) return false;
+        if (!Float.is(commandText)) return false;
         break;
 
       case ParameterType.gamemode:
@@ -103,12 +102,13 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.integer:
-        if (!IsInteger(commandText)) return false;
+      case ParameterType.slotID:
+        if (!Integer.is(commandText)) return false;
         break;
 
       case ParameterType.jsonItem:
       case ParameterType.jsonRawText:
-        if (!IsObject(commandText)) return false;
+        if (!Json.isObject(commandText)) return false;
         break;
 
       case ParameterType.keyword:
@@ -159,10 +159,6 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         if (!Modes.SlotType.isValue(commandText)) return false;
         break;
 
-      case ParameterType.slotID:
-        if (!IsInteger(commandText)) return false;
-        break;
-
       case ParameterType.structureAnimationMode:
         if (!Modes.StructureAnimation.isValue(commandText)) return false;
         break;
@@ -172,7 +168,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.xp:
-        if (!IsXpLevel(commandText)) return false;
+        if (!XP.is(commandText)) return false;
         break;
     }
   }
