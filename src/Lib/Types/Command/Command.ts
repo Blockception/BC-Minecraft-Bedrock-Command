@@ -36,11 +36,9 @@ export class Command {
     return getBestMatches(this, edu);
   }
 
-  /**
-   *
+  /**Gets the subcommand if there is any present
    * @param edu Wheter or not to include education data
-   * @returns
-   */
+   * @returns A sub command or undefined if there is no subcommand*/
   getSubCommand(edu: boolean = false): Command | undefined {
     const Matches = this.getCommandData(edu);
 
@@ -54,40 +52,34 @@ export class Command {
     }
   }
 
-  /**
-   *
-   * @param index
-   * @returns If cursor is not inside command then -1 is returned
-   */
-  findCursorIndex(index: number): number {
+  /**Finds the parameter index the cursor is at
+   * @param index The index
+   * @returns If cursor is not inside command then -1 is returned*/
+  findCursorIndex(cursor: number): number {
     let out = -1;
     for (let I = 0; I < this.parameters.length; I++) {
       const elem = this.parameters[I];
 
-      if (elem.offset >= index) {
+      if (elem.offset >= cursor) {
         out = elem.offset;
 
-        if (index <= elem.offset + elem.text.length) return out;
+        if (cursor <= elem.offset + elem.text.length) return I;
       }
     }
 
     return -1;
   }
 
-  /**
-   *
-   * @returns
-   */
+  /**Checks if this command is empty or not
+   * @returns True or false if this command is empty*/
   isEmpty(): boolean {
     return this.parameters.length == 0;
   }
 
-  /**
-   *
-   * @param start
-   * @param end
-   * @returns
-   */
+  /**Creates a slice of the command on the specified parameter indexes
+   * @param start The startindex or undefined
+   * @param end The startindex or undefined
+   * @returns A new command that is represents the slice*/
   slice(start?: number | undefined, end?: number | undefined): Command {
     const Out = new Command();
     Out.parameters = this.parameters.slice(start, end);
@@ -96,9 +88,8 @@ export class Command {
   }
 
   /**Checks if the given cursor offset is in the subcommand or in the main command (or outside)
-   * @param cursor The cursor offset*
-   * @returns
-   */
+   * @param cursor The cursor offset
+   * @returns A subcommand if the cursor is in the subcommand else returned undefined*/
   isInSubCommand(cursor: number, edu: boolean = false): Command | undefined {
     const get = this.getSubCommand(edu);
 

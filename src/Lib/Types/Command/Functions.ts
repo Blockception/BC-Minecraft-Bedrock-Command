@@ -14,13 +14,11 @@ export function getBestMatches(command: Command, edu: boolean = false): CommandI
   return m.filter((x) => isMatch(command, x, edu));
 }
 
-/**TODO
- *
- * @param command
- * @param data
- * @param edu
- * @returns
- */
+/**Checks if the command matches the commandinfo
+ * @param command The command to examine
+ * @param data The commandinfo serving as the basis
+ * @param edu If education content should be used or not
+ * @returns true or false is this commandinfo matches the command*/
 export function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boolean {
   let Limit = data.parameters.length;
 
@@ -201,10 +199,6 @@ export function hasCommandData(name: string, edu: boolean = false): boolean {
   return false;
 }
 
-function Add(receiver: CommandInfo[], items: CommandInfo[] | undefined): void {
-  if (items) receiver.push(...items);
-}
-
 /**Checks if the given commanddata is present
  * @param command The command to retrieve
  * @param edu Wheter or not to include education commands
@@ -214,4 +208,8 @@ export function IsCommand(command: string, edu: boolean = false): boolean {
   if (edu && Edu[command]) return true;
 
   return false;
+}
+
+function Add(receiver: CommandInfo[], items: CommandInfo[] | undefined): void {
+  if (items) receiver.push(...items);
 }
