@@ -1,23 +1,27 @@
-import { Modes } from "bc-minecraft-bedrock-types";
+import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
 import { Edu } from "../../Data/Edu";
 import { Vanilla } from "../../Data/Vanilla";
 import { CommandInfo } from "../../Data/include";
 import { Command, ParameterType } from "../include";
-import { Boolean } from "bc-minecraft-bedrock-types/lib/src/General/Boolean";
-import { Json } from "bc-minecraft-bedrock-types/lib/src/General/Json";
-import { Coordinate } from "bc-minecraft-bedrock-types/lib/src/General/Coordinate";
-import { Float } from "bc-minecraft-bedrock-types/lib/src/General/Float";
-import { Integer } from "bc-minecraft-bedrock-types/lib/src/General/Integer";
-import { Selector } from "bc-minecraft-bedrock-types/lib/src/Minecraft/Selector";
-import { XP } from "bc-minecraft-bedrock-types/lib/src/General/Xp";
 
+/**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
+ * @param command The command to search through
+ * @param edu Wheter or not to include education data
+ * @returns An array with commands info*/
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);
 
   return m.filter((x) => isMatch(command, x, edu));
 }
 
-function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boolean {
+/**TODO
+ *
+ * @param command
+ * @param data
+ * @param edu
+ * @returns
+ */
+export function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boolean {
   let Limit = data.parameters.length;
 
   if (Limit > command.parameters.length) {
@@ -29,12 +33,8 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
     const commandText = commandPar.text;
     const patPar = data.parameters[I];
 
-    if (patPar.options) {
-      if (patPar.options.acceptedValues) {
-        if (patPar.options.acceptedValues.includes(commandText)) {
-          continue;
-        }
-      }
+    if (patPar.options?.acceptedValues?.includes(commandText)) {
+      continue;
     }
 
     switch (patPar.type) {
@@ -54,11 +54,11 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         continue;
 
       case ParameterType.boolean:
-        if (!Boolean.is(commandText)) return false;
+        if (!General.Boolean.is(commandText)) return false;
         break;
 
       case ParameterType.blockStates:
-        if (!Json.isArray(commandText)) return false;
+        if (!General.Json.isArray(commandText)) return false;
         break;
 
       case ParameterType.cameraShakeType:
@@ -70,7 +70,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.coordinate:
-        if (!Coordinate.is(commandText)) return false;
+        if (!General.Coordinate.is(commandText)) return false;
         break;
 
       case ParameterType.cloneMode:
@@ -90,7 +90,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.float:
-        if (!Float.is(commandText)) return false;
+        if (!General.Float.is(commandText)) return false;
         break;
 
       case ParameterType.gamemode:
@@ -103,12 +103,12 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
 
       case ParameterType.integer:
       case ParameterType.slotID:
-        if (!Integer.is(commandText)) return false;
+        if (!General.Integer.is(commandText)) return false;
         break;
 
       case ParameterType.jsonItem:
       case ParameterType.jsonRawText:
-        if (!Json.isObject(commandText)) return false;
+        if (!General.Json.isObject(commandText)) return false;
         break;
 
       case ParameterType.keyword:
@@ -152,7 +152,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.selector:
-        if (!Selector.isSelector(commandText, patPar.options?.wildcard, patPar.options?.allowFakePlayers)) return false;
+        if (!Minecraft.Selector.isSelector(commandText, patPar.options?.wildcard, patPar.options?.allowFakePlayers)) return false;
         break;
 
       case ParameterType.slotType:
@@ -168,7 +168,7 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
         break;
 
       case ParameterType.xp:
-        if (!XP.is(commandText)) return false;
+        if (!General.XP.is(commandText)) return false;
         break;
     }
   }
@@ -176,6 +176,39 @@ function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boo
   return true;
 }
 
+/**Retrieves the command data related to the given keyword
+ * @param name The command to retrieve
+ * @param edu Wheter or not to include education commands
+ * @returns An array with commands info*/
+export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
+  const out: CommandInfo[] = [];
+
+  Add(out, Vanilla[name]);
+
+  if (edu) Add(out, Edu[name]);
+
+  return out;
+}
+
+/**Checks if the given commanddata is present
+ * @param name The command to retrieve
+ * @param edu Wheter or not to include education commands
+ * @returns An array with commands info*/
+export function hasCommandData(name: string, edu: boolean = false): boolean {
+  if (Vanilla[name]) return true;
+  if (edu && Edu[name]) return true;
+
+  return false;
+}
+
+function Add(receiver: CommandInfo[], items: CommandInfo[] | undefined): void {
+  if (items) receiver.push(...items);
+}
+
+/**Checks if the given commanddata is present
+ * @param command The command to retrieve
+ * @param edu Wheter or not to include education commands
+ * @returns True or false*/
 export function IsCommand(command: string, edu: boolean = false): boolean {
   if (Vanilla[command]) return true;
   if (edu && Edu[command]) return true;
