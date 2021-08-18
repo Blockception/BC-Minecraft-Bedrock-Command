@@ -68,7 +68,7 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
         break;
 
       case ParameterType.coordinate:
-        if (!General.Coordinate.is(commandText)) return false;
+        if (!Minecraft.Coordinate.is(commandText)) return false;
         break;
 
       case ParameterType.cloneMode:
@@ -166,7 +166,7 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
         break;
 
       case ParameterType.xp:
-        if (!General.XP.is(commandText)) return false;
+        if (!Minecraft.XP.is(commandText)) return false;
         break;
     }
   }
