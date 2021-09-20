@@ -40,7 +40,7 @@ export class Command {
    * @param edu Wheter or not to include education data
    * @returns A sub command or undefined if there is no subcommand*/
   getSubCommand(edu: boolean = false): Command | undefined {
-    const Matches = this.getCommandData(edu);
+    const Matches = this.getBestMatch(edu);
 
     for (var I = 0; I < Matches.length; I++) {
       const Item = Matches[I];
