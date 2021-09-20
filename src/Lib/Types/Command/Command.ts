@@ -63,7 +63,12 @@ export class Command {
       if (elem.offset <= cursor) {
         out = I;
 
-        if (cursor <= elem.offset + elem.text.length) return I;
+        const endindex = elem.offset + elem.text.length;
+        if (cursor <= endindex) {
+          return I;
+        } else if (cursor > endindex) {
+          out = I + 1;
+        }
       }
     }
 

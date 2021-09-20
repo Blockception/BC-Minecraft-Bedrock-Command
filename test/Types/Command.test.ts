@@ -73,4 +73,16 @@ describe("Command", () => {
     //In the second selector
     expect(comm.findCursorIndex(41)).to.equal(6, "@a[tag=target]");
   });
+
+  it("cursorindex2", () => {
+    const comm = Command.parse("execute @s[scores={foo=1..}]", 0);
+
+    expect(comm.findCursorIndex(29)).to.equal(2, "execute");
+  });
+
+  it("cursorindex3", () => {
+    const comm = Command.parse("execute @s[scores={foo=1..}]", 30);
+
+    expect(comm.findCursorIndex(5)).to.equal(0, "execute");
+  });
 });
