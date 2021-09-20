@@ -60,14 +60,14 @@ export class Command {
     for (let I = 0; I < this.parameters.length; I++) {
       const elem = this.parameters[I];
 
-      if (elem.offset >= cursor) {
-        out = elem.offset;
+      if (elem.offset <= cursor) {
+        out = I;
 
         if (cursor <= elem.offset + elem.text.length) return I;
       }
     }
 
-    return -1;
+    return out;
   }
 
   /**Checks if this command is empty or not

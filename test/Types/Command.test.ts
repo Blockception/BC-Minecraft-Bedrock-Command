@@ -61,4 +61,16 @@ describe("Command", () => {
       expect.fail("expected a sub command");
     }
   });
+
+  it("cursorindex", () => {
+    const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ tp @a[tag=target] @s", 0);
+
+    expect(comm.findCursorIndex(2)).to.equal(0, "execute");
+    expect(comm.findCursorIndex(29)).to.equal(2, "~");
+    expect(comm.findCursorIndex(30)).to.equal(2, "~ ");
+    //In the selector
+    expect(comm.findCursorIndex(14)).to.equal(1, "@s[scores={foo=1..}]");
+    //In the second selector
+    expect(comm.findCursorIndex(41)).to.equal(6, "@a[tag=target]");
+  });
 });
