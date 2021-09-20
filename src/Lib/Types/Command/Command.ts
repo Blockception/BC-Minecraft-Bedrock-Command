@@ -56,19 +56,24 @@ export class Command {
    * @param index The index
    * @returns If cursor is not inside command then -1 is returned*/
   findCursorIndex(cursor: number): number {
-    let out = -1;
+    let out = 0;
     for (let I = 0; I < this.parameters.length; I++) {
       const elem = this.parameters[I];
 
+      //If the cursor is bigger or equal to the offset of the parameter its but be in that parameter or further ahead, else break; and return 0
       if (elem.offset <= cursor) {
         out = I;
 
         const endindex = elem.offset + elem.text.length;
+        //If the cursor is below the end of parameter or equal to it, return this parameter index
         if (cursor <= endindex) {
           return I;
+          //if the cursofr is further then the end of the parameter, move it atleast by one, cause its not this parameter.
         } else if (cursor > endindex) {
           out = I + 1;
         }
+      } else {
+        break;
       }
     }
 
