@@ -62,6 +62,22 @@ describe("Command", () => {
     }
   });
 
+  it("subcommand 2", () => {
+    const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 tp @a[tag=target] @s", 0);
+
+    const sub = comm.getSubCommand();
+
+    if (sub) {
+      expect(sub.parameters.length).to.equal(3);
+
+      expect(sub.parameters[0].text).to.equal("tp");
+      expect(sub.parameters[1].text).to.equal("@a[tag=target]");
+      expect(sub.parameters[2].text).to.equal("@s");
+    } else {
+      expect.fail("expected a sub command");
+    }
+  });
+
   it("cursorindex", () => {
     const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ tp @a[tag=target] @s", 0);
 
