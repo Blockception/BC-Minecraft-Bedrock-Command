@@ -103,7 +103,7 @@ export class Command {
   isInSubCommand(cursor: number, edu: boolean = false): Command | undefined {
     const get = this.getSubCommand(edu);
 
-    if (get && get.parameters[0].offset >= cursor) return get;
+    if (get && get.parameters[0].offset <= cursor) return get;
 
     return undefined;
   }
