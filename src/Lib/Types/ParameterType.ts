@@ -44,6 +44,8 @@ export enum ParameterType {
   keyword,
   //Locates feature mode
   locateFeature,
+  //Message
+  message,
   //Mask mode
   maskMode,
   //Mirror mode

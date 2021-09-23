@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
 import { CommandInfo } from "../../src/Lib/Data/CommandInfo";
-import { Data } from "../../src/main";
+import { CommandData } from "../../src/main";
 
 /**List of command from the wiki */
 const commandlist = [
@@ -79,18 +79,18 @@ const commandlist = [
 
 describe("Data/Commands", () => {
   it("Check General", () => {
-    CheckCommandContainer(Data.Edu);
-    CheckCommandContainer(Data.Vanilla);
+    CheckCommandContainer(CommandData.Edu);
+    CheckCommandContainer(CommandData.Vanilla);
   });
 
   it("Dialogue Check", () => {
-    expect(Data.Edu["dialogue"]).to.be.undefined;
-    expect(Data.Vanilla["dialogue"]).to.be.not.undefined;
+    expect(CommandData.Edu["dialogue"]).to.be.undefined;
+    expect(CommandData.Vanilla["dialogue"]).to.be.not.undefined;
   });
 
   it("Inventory Check", () => {
     commandlist.forEach((item) => {
-      if (Data.Vanilla[item] == undefined && Data.Edu == undefined) {
+      if (CommandData.Vanilla[item] == undefined && CommandData.Edu == undefined) {
         expect.fail("missing command: " + item);
       }
     });

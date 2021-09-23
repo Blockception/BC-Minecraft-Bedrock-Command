@@ -704,7 +704,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "msg", type: ParameterType.keyword, required: true },
         { text: "selector", type: ParameterType.selector, required: true },
-        { text: "message", type: ParameterType.unknown, required: true },
+        { text: "message", type: ParameterType.message, required: true },
       ],
     },
   ],
@@ -945,7 +945,7 @@ export const Vanilla: CommandContainer = {
       documentation: "Displays a message to multiple players.",
       parameters: [
         { text: "say", type: ParameterType.keyword, required: true },
-        { text: "message", type: ParameterType.unknown, required: true },
+        { text: "message", type: ParameterType.message, required: true },
       ],
     },
   ],
@@ -1431,7 +1431,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tell", type: ParameterType.keyword, required: true },
         { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-        { text: "message", type: ParameterType.unknown, required: true },
+        { text: "message", type: ParameterType.message, required: true },
       ],
     },
   ],
@@ -1649,7 +1649,7 @@ export const Vanilla: CommandContainer = {
         { text: "title", type: ParameterType.keyword, required: true },
         { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "titletext", type: ParameterType.unknown, required: true },
+        { text: "titletext", type: ParameterType.message, required: true },
       ],
     },
     {
@@ -1659,7 +1659,7 @@ export const Vanilla: CommandContainer = {
         { text: "title", type: ParameterType.keyword, required: true },
         { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
         { text: "subtitle", type: ParameterType.keyword, required: true },
-        { text: "titletext", type: ParameterType.unknown, required: true },
+        { text: "titletext", type: ParameterType.message, required: true },
       ],
     },
     {
@@ -1669,7 +1669,7 @@ export const Vanilla: CommandContainer = {
         { text: "title", type: ParameterType.keyword, required: true },
         { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
         { text: "actionbar", type: ParameterType.keyword, required: true },
-        { text: "titletext", type: ParameterType.unknown, required: true },
+        { text: "titletext", type: ParameterType.message, required: true },
       ],
     },
     {

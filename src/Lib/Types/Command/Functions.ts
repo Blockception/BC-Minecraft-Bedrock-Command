@@ -43,6 +43,7 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
       case ParameterType.item:
       case ParameterType.objective:
       case ParameterType.particle:
+      case ParameterType.message:
       case ParameterType.sound:
       case ParameterType.string:
       case ParameterType.tag:
