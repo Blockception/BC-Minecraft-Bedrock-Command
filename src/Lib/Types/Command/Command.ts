@@ -6,11 +6,14 @@ import { GetParameters, ParameterBuilder } from "./Parse";
 
 /**A class that helps interpeting written commands.*/
 export class Command {
+  private __matches : CommandInfo[] | undefined;
+
   /**The parameters of the command.*/
   public parameters: Parameter[];
 
   /**Creates a new instance of a command*/
   constructor() {
+    this.__matches = undefined;
     this.parameters = [];
   }
 
@@ -33,7 +36,9 @@ export class Command {
    * @param edu Wheter or not to include education data
    * @returns An array with commands info*/
   getBestMatch(edu: boolean = false): CommandInfo[] {
-    return getBestMatches(this, edu);
+    if (this.__matches) return this.__matches;
+
+    return (this.__matches = getBestMatches(this, edu));
   }
 
   /**Gets the subcommand if there is any present
