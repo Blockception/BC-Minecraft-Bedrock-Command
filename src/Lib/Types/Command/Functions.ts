@@ -166,6 +166,10 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
         if (!Modes.TeleportRules.isValue(commandText)) return false;
         break;
 
+      case ParameterType.time:
+          if (!Modes.Time.isValue(commandText)) return false;
+          break;
+
       case ParameterType.xp:
         if (!Minecraft.XP.is(commandText)) return false;
         break;

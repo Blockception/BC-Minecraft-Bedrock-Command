@@ -88,6 +88,8 @@ export enum ParameterType {
   teleportRules,
   //Ticking area identifiers
   tickingarea,
+  //Time mode
+  time,
   //Unknown
   unknown,
   //XP

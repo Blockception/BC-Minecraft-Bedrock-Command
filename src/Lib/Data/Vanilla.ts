@@ -1639,6 +1639,15 @@ export const Vanilla: CommandContainer = {
         { text: "amount", type: ParameterType.integer, required: true },
       ],
     },
+    {
+      name: "time",
+      documentation: "Sets the world's game time.",
+      parameters: [
+        { text: "time", type: ParameterType.keyword, required: true },
+        { text: "set", type: ParameterType.keyword, required: true },
+        { text: "amount", type: ParameterType.time, required: true },
+      ],
+    }
   ],
   /**The title command */
   title: [
