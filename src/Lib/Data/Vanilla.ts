@@ -1287,7 +1287,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "structure", type: ParameterType.keyword, required: true },
         { text: "save", type: ParameterType.keyword, required: true },
-        { text: "name", type: ParameterType.string, required: true },
+        { text: "name", type: ParameterType.structure, required: true },
         { text: "from x", type: ParameterType.coordinate, required: true },
         { text: "from y", type: ParameterType.coordinate, required: true },
         { text: "from z", type: ParameterType.coordinate, required: true },
@@ -1303,7 +1303,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "structure", type: ParameterType.keyword, required: true },
         { text: "save", type: ParameterType.keyword, required: true },
-        { text: "name", type: ParameterType.string, required: true },
+        { text: "name", type: ParameterType.structure, required: true },
         { text: "from x", type: ParameterType.coordinate, required: true },
         { text: "from y", type: ParameterType.coordinate, required: true },
         { text: "from z", type: ParameterType.coordinate, required: true },
@@ -1321,7 +1321,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "structure", type: ParameterType.keyword, required: true },
         { text: "load", type: ParameterType.keyword, required: true },
-        { text: "name", type: ParameterType.string, required: true },
+        { text: "name", type: ParameterType.structure, required: true },
         { text: "to x", type: ParameterType.coordinate, required: true },
         { text: "to y", type: ParameterType.coordinate, required: true },
         { text: "to z", type: ParameterType.coordinate, required: true },
@@ -1339,7 +1339,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "structure", type: ParameterType.keyword, required: true },
         { text: "load", type: ParameterType.keyword, required: true },
-        { text: "name", type: ParameterType.string, required: true },
+        { text: "name", type: ParameterType.structure, required: true },
         { text: "to x", type: ParameterType.coordinate, required: true },
         { text: "to y", type: ParameterType.coordinate, required: true },
         { text: "to z", type: ParameterType.coordinate, required: true },
@@ -1359,7 +1359,7 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "structure", type: ParameterType.keyword, required: true },
         { text: "delete", type: ParameterType.keyword, required: true },
-        { text: "name", type: ParameterType.string, required: true },
+        { text: "name", type: ParameterType.structure, required: true },
       ],
     },
   ],
