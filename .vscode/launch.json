@@ -1,14 +1,7 @@
 {
   "version": "0.1.0",
   "configurations": [
-    {
-      "name": "Attach",
-      "type": "node",
-      "request": "attach",
-      "port": 6004,
-      "sourceMaps": true,
-      "outFiles": ["${workspaceRoot}/lib/**/*.js"]
-    },
+
     {
       "type": "node",
       "request": "launch",
