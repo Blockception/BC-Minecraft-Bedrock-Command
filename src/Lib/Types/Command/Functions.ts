@@ -11,6 +11,8 @@ import { Command, ParameterType } from "../include";
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);
 
+  if (m.length === 1) return m;
+
   return m.filter((x) => isMatch(command, x, edu));
 }
 

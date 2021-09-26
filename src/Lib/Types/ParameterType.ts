@@ -80,6 +80,8 @@ export enum ParameterType {
   sound,
   //Strings
   string,
+  //Structure
+  structure,
   //Structre animation  mode
   structureAnimationMode,
   //Tag identifiers
