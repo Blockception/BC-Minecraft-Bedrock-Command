@@ -19,13 +19,13 @@ describe("Command", () => {
     expect(comm.getCommandData(false).length).be.greaterThanOrEqual(0);
   });
 
-  it("parse 2 - condesed ~ coordiantes", () => {
+  it("parse 2 - condesed ~ coordinates", () => {
     const comm = Command.parse("execute @s ~~~ tp @a @s", 0);
 
     expect(comm.parameters.length).to.equal(8);
   });
 
-  it("parse 3 - condesed ^ coordiantes", () => {
+  it("parse 3 - condesed ^ coordinates", () => {
     const comm = Command.parse("execute @s ^^^ tp @a @s", 0);
 
     expect(comm.parameters.length).to.equal(8);
