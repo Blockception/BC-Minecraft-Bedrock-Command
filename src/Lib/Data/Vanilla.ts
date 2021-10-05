@@ -524,6 +524,15 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets or queries a game rule value.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
+        { text: "freezedamage", type: ParameterType.keyword, required: true },
+        { text: "value", type: ParameterType.boolean, required: false },
+      ],
+    },
+    {
+      name: "gamerule",
+      documentation: "Sets or queries a game rule value.",
+      parameters: [
+        { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "functioncommandlimit", type: ParameterType.keyword, required: true },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
@@ -580,6 +589,15 @@ export const Vanilla: CommandContainer = {
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "randomtickspeed", type: ParameterType.keyword, required: true },
         { text: "int", type: ParameterType.integer, required: false },
+      ],
+    },
+    {
+      name: "gamerule",
+      documentation: "Sets or queries a game rule value.",
+      parameters: [
+        { text: "gamerule", type: ParameterType.keyword, required: true },
+        { text: "showbordereffect", type: ParameterType.keyword, required: true },
+        { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
     {
