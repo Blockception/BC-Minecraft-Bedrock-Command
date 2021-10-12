@@ -593,10 +593,10 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "Sets or queries a game rule value.",
+      documentation: "??",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "showbordereffect", type: ParameterType.keyword, required: true },
+        { text: "respawnblocksexplode", type: ParameterType.keyword, required: true },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -606,6 +606,15 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "sendcommandfeedback", type: ParameterType.keyword, required: true },
+        { text: "value", type: ParameterType.boolean, required: false },
+      ],
+    },
+    {
+      name: "gamerule",
+      documentation: "Sets or queries a game rule value.",
+      parameters: [
+        { text: "gamerule", type: ParameterType.keyword, required: true },
+        { text: "showbordereffect", type: ParameterType.keyword, required: true },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
