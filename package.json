@@ -52,6 +52,6 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
-    "bc-minecraft-bedrock-types": "^1.2.11"
+    "bc-minecraft-bedrock-types": "^1.2.12"
   }
 }
