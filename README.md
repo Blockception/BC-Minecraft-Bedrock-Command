@@ -11,3 +11,15 @@ A typescript package library that handles commands for minecraft bedrock
 const text = "execute @a ~ ~ ~ scoreboard players set @e[type=minecraft:sheep,r=3] range 1";
 const command = Command.parse(text);
 ```
+
+
+## Contributing
+
+First, read the [contributing guide](./CONTRIBUTING.md). fork the project, clone it and run the following commands:
+
+**Installation**
+
+```cmd
+  npm ci
+  npm update
+```
