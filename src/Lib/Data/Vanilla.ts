@@ -56,7 +56,10 @@ export const Vanilla: CommandContainer = {
     {
       name: "clearspawnpoint",
       documentation: "Removes the spawnpoint from the player.",
-      parameters: [{ text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } }],
+      parameters: [
+        { text: "clearspawnpoint", type: ParameterType.keyword, required: true },
+        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } }
+      ],
     },
   ],
   /**The clone command */
