@@ -8,6 +8,8 @@ export enum ParameterType {
   blockStates,
   //Booleans
   boolean,
+  //causeType
+  causeType,
   //Camera Shake mode
   cameraShakeType,
   //Clone mode
