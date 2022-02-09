@@ -715,6 +715,65 @@ export const Vanilla: CommandContainer = {
       ],
     },
   ],
+  /**The loot command */
+  loot: [
+    {
+      name: "loot",
+      documentation: "Drops the given loot table into the world",
+      parameters: [
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "spawn", type: ParameterType.keyword, required: true },
+        { text: "position x", type: ParameterType.coordinate, required: true },
+        { text: "position y", type: ParameterType.coordinate, required: true },
+        { text: "position z", type: ParameterType.coordinate, required: true },
+        { text: "kill", type: ParameterType.keyword, required: true },
+        { text: "entity target", type: ParameterType.selector, required: true },
+        { text: "item", type: ParameterType.item, required: false },
+      ]
+    },
+    {
+      name: "loot",
+      documentation: "Drops the given loot table into the world",
+      parameters: [
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "spawn", type: ParameterType.keyword, required: true },
+        { text: "position x", type: ParameterType.coordinate, required: true },
+        { text: "position y", type: ParameterType.coordinate, required: true },
+        { text: "position z", type: ParameterType.coordinate, required: true },
+        { text: "kill", type: ParameterType.keyword, required: true },
+        { text: "entity target", type: ParameterType.selector, required: true },
+        { text: "item", type: ParameterType.handType, required: false },
+      ]
+    },
+    {
+      name: "loot",
+      documentation: "Drops the given loot table into the world",
+      parameters: [
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "spawn", type: ParameterType.keyword, required: true },
+        { text: "position x", type: ParameterType.coordinate, required: true },
+        { text: "position y", type: ParameterType.coordinate, required: true },
+        { text: "position z", type: ParameterType.coordinate, required: true },
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "loot table", type: ParameterType.lootTable, required: true },
+        { text: "item", type: ParameterType.item, required: false },
+      ]
+    },
+    {
+      name: "loot",
+      documentation: "Drops the given loot table into the world",
+      parameters: [
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "spawn", type: ParameterType.keyword, required: true },
+        { text: "position x", type: ParameterType.coordinate, required: true },
+        { text: "position y", type: ParameterType.coordinate, required: true },
+        { text: "position z", type: ParameterType.coordinate, required: true },
+        { text: "loot", type: ParameterType.keyword, required: true },
+        { text: "loot table", type: ParameterType.lootTable, required: true },
+        { text: "item", type: ParameterType.handType, required: false },
+      ]
+    }
+  ],
   /**The me command */
   me: [
     {

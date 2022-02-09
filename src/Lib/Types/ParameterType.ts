@@ -32,6 +32,8 @@ export enum ParameterType {
   float,
   //Game mode
   gamemode,
+  //The type of hand: mainhand or offhand
+  handType,
   //Integer numbers
   integer,
   //Item identifiers
@@ -42,6 +44,8 @@ export enum ParameterType {
   jsonRawText,
   //Keyword
   keyword,
+  //A loot table
+  lootTable,
   //Locates feature mode
   locateFeature,
   //Message
