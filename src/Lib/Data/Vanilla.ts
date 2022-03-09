@@ -806,7 +806,7 @@ export const Vanilla: CommandContainer = {
       documentation: "Displays a message about the sender.",
       parameters: [
         { text: "me", type: ParameterType.keyword, required: true },
-        { text: "message", type: ParameterType.keyword, required: true },
+        { text: "message", type: ParameterType.message, required: true },
       ],
     },
   ],
