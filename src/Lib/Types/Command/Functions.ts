@@ -54,7 +54,6 @@ export function isMatch(
       case ParameterType.objective:
       case ParameterType.particle:
       case ParameterType.sound:
-      case ParameterType.string:
       case ParameterType.tag:
       case ParameterType.tickingarea:
       case ParameterType.unknown:
@@ -130,9 +129,10 @@ export function isMatch(
       case ParameterType.keyword:
         if (commandText != patPar.text) return false;
         break;
-
+        
+      case ParameterType.string:
       case ParameterType.lootTable:
-        if (!commandText.startsWith("loot_table")) return false;
+        if (!General.String.is(commandText)) return false;
         break;
 
       case ParameterType.maskMode:
