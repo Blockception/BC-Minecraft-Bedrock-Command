@@ -17,23 +17,49 @@ export const Vanilla: CommandContainer = {
   camerashake: [
     {
       name: "camerashake",
-      documentation: "Applies shaking to the players' camera with specified intensity and duration",
+      documentation:
+        "Applies shaking to the players' camera with specified intensity and duration",
       parameters: [
         { text: "camerashake", type: ParameterType.keyword, required: true },
         { text: "add", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-        { text: "intensity", type: ParameterType.float, required: false, options: { minimum: 0, maximum: 4 } },
-        { text: "seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
-        { text: "shake type", type: ParameterType.cameraShakeType, required: false },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
+        {
+          text: "intensity",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0, maximum: 4 },
+        },
+        {
+          text: "seconds",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0 },
+        },
+        {
+          text: "shake type",
+          type: ParameterType.cameraShakeType,
+          required: false,
+        },
       ],
     },
     {
       name: "camerashake",
-      documentation: "Stops shaking to the players' camera with specified intensity and duration",
+      documentation:
+        "Stops shaking to the players' camera with specified intensity and duration",
       parameters: [
         { text: "camerashake", type: ParameterType.keyword, required: true },
         { text: "stop", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
@@ -44,7 +70,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Clears items from player inventory.",
       parameters: [
         { text: "clear", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
         { text: "item name", type: ParameterType.item, required: false },
         { text: "data", type: ParameterType.integer, required: false },
         { text: "max count", type: ParameterType.integer, required: false },
@@ -57,8 +88,17 @@ export const Vanilla: CommandContainer = {
       name: "clearspawnpoint",
       documentation: "Removes the spawnpoint from the player.",
       parameters: [
-        { text: "clearspawnpoint", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } }
+        {
+          text: "clearspawnpoint",
+          type: ParameterType.keyword,
+          required: true,
+        },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
@@ -75,9 +115,21 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "mask", type: ParameterType.maskMode, required: false },
         { text: "clone mode", type: ParameterType.cloneMode, required: true },
       ],
@@ -93,9 +145,21 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "filtered", type: ParameterType.keyword, required: true },
         { text: "clone mode", type: ParameterType.cloneMode, required: true },
         { text: "tile name", type: ParameterType.block, required: true },
@@ -113,13 +177,29 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "filtered", type: ParameterType.keyword, required: true },
         { text: "clone mode", type: ParameterType.cloneMode, required: true },
         { text: "tile name", type: ParameterType.block, required: true },
-        { text: "block states", type: ParameterType.blockStates, required: false },
+        {
+          text: "block states",
+          type: ParameterType.blockStates,
+          required: false,
+        },
       ],
     },
   ],
@@ -146,7 +226,7 @@ export const Vanilla: CommandContainer = {
         { text: "entity", type: ParameterType.keyword, required: true },
         { text: "damager", type: ParameterType.selector, required: true },
       ],
-    }
+    },
   ],
   /**The daylock command */
   daylock: [
@@ -163,24 +243,46 @@ export const Vanilla: CommandContainer = {
   dialogue: [
     {
       name: "dialogue",
-      documentation: "Forces to open an NPC dialogue box to the targeted player(s)",
+      documentation:
+        "Forces to open an NPC dialogue box to the targeted player(s)",
       parameters: [
         { text: "dialogue", type: ParameterType.keyword, required: true },
         { text: "open", type: ParameterType.keyword, required: true },
-        { text: "npc", type: ParameterType.selector, required: true, options: { allowFakePlayers: false, playerOnly: false } },
-        { text: "player receiver", type: ParameterType.selector, required: true, options: { playerOnly: true, allowFakePlayers: false } },
+        {
+          text: "npc",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: false, playerOnly: false },
+        },
+        {
+          text: "player receiver",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true, allowFakePlayers: false },
+        },
         { text: "scene name", type: ParameterType.string, required: false },
       ],
     },
     {
       name: "dialogue",
-      documentation: "Direct an NPC to use the dialogue provided in a specifically designated scene file",
+      documentation:
+        "Direct an NPC to use the dialogue provided in a specifically designated scene file",
       parameters: [
         { text: "dialogue", type: ParameterType.keyword, required: true },
         { text: "change", type: ParameterType.keyword, required: true },
-        { text: "npc", type: ParameterType.selector, required: true, options: { allowFakePlayers: false, playerOnly: false } },
+        {
+          text: "npc",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: false, playerOnly: false },
+        },
         { text: "scene name", type: ParameterType.string, required: true },
-        { text: "player receiver", type: ParameterType.selector, required: false, options: { playerOnly: true, allowFakePlayers: false } },
+        {
+          text: "player receiver",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true, allowFakePlayers: false },
+        },
       ],
     },
   ],
@@ -195,6 +297,22 @@ export const Vanilla: CommandContainer = {
       ],
     },
   ],
+  /**The deop command */
+  deop: [
+    {
+      name: "deop",
+      documentation: "Removes operator status from a player",
+      parameters: [
+        { text: "deop", type: ParameterType.keyword, required: true },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true, playerOnly: true },
+        },
+      ],
+    },
+  ],
   /**The effect command */
   effect: [
     {
@@ -206,7 +324,11 @@ export const Vanilla: CommandContainer = {
         { text: "effect", type: ParameterType.effect, required: true },
         { text: "seconds", type: ParameterType.integer, required: false },
         { text: "amplifier", type: ParameterType.integer, required: false },
-        { text: "hide particles", type: ParameterType.boolean, required: false },
+        {
+          text: "hide particles",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -226,7 +348,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Enchants a player item.",
       parameters: [
         { text: "enchant", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "id", type: ParameterType.integer, required: true },
         { text: "level", type: ParameterType.integer, required: false },
       ],
@@ -236,7 +363,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Enchants a player item.",
       parameters: [
         { text: "enchant", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "id", type: ParameterType.string, required: true },
         { text: "level", type: ParameterType.keyword, required: false },
       ],
@@ -304,8 +436,16 @@ export const Vanilla: CommandContainer = {
         { text: "tile name", type: ParameterType.block, required: true },
         { text: "tile data", type: ParameterType.integer, required: true },
         { text: "replace", type: ParameterType.keyword, required: true },
-        { text: "replace tile name", type: ParameterType.block, required: false },
-        { text: "replace data value", type: ParameterType.integer, required: false },
+        {
+          text: "replace tile name",
+          type: ParameterType.block,
+          required: false,
+        },
+        {
+          text: "replace data value",
+          type: ParameterType.integer,
+          required: false,
+        },
       ],
     },
     {
@@ -322,8 +462,16 @@ export const Vanilla: CommandContainer = {
         { text: "tile name", type: ParameterType.block, required: true },
         { text: "tile data", type: ParameterType.integer, required: true },
         { text: "replace", type: ParameterType.keyword, required: true },
-        { text: "replace tile name", type: ParameterType.block, required: false },
-        { text: "replace block states", type: ParameterType.blockStates, required: false },
+        {
+          text: "replace tile name",
+          type: ParameterType.block,
+          required: false,
+        },
+        {
+          text: "replace block states",
+          type: ParameterType.blockStates,
+          required: false,
+        },
       ],
     },
     {
@@ -338,10 +486,22 @@ export const Vanilla: CommandContainer = {
         { text: "to y", type: ParameterType.coordinate, required: true },
         { text: "to z", type: ParameterType.coordinate, required: true },
         { text: "tile name", type: ParameterType.block, required: true },
-        { text: "block states", type: ParameterType.blockStates, required: true },
+        {
+          text: "block states",
+          type: ParameterType.blockStates,
+          required: true,
+        },
         { text: "replace", type: ParameterType.keyword, required: true },
-        { text: "replace tile name", type: ParameterType.block, required: false },
-        { text: "replace block states", type: ParameterType.blockStates, required: false },
+        {
+          text: "replace tile name",
+          type: ParameterType.block,
+          required: false,
+        },
+        {
+          text: "replace block states",
+          type: ParameterType.blockStates,
+          required: false,
+        },
       ],
     },
     {
@@ -365,23 +525,33 @@ export const Vanilla: CommandContainer = {
   fog: [
     {
       name: "fog",
-      documentation: "Pushes a new fog setting, to specified player(s), along with a user provided ID, onto the top of the Fog Command layers of the players' active fog stacks.",
+      documentation:
+        "Pushes a new fog setting, to specified player(s), along with a user provided ID, onto the top of the Fog Command layers of the players' active fog stacks.",
       parameters: [
         { text: "fog", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
         { text: "push", type: ParameterType.keyword, required: true },
         { text: "fog id", type: ParameterType.string, required: true },
-        { text: "user provided id", type: ParameterType.string, required: true },
+        {
+          text: "user provided id",
+          type: ParameterType.string,
+          required: true,
+        },
       ],
     },
     {
       name: "fog",
-      documentation: 'Removes the top-most fog setting, from selected player(s), that matches the user provided ID (i.e. as provided previously via a "/fog push" command).',
+      documentation:
+        'Removes the top-most fog setting, from selected player(s), that matches the user provided ID (i.e. as provided previously via a "/fog push" command).',
       parameters: [
         { text: "fog", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
         { text: "pop", type: ParameterType.keyword, required: true },
-        { text: "user provided id", type: ParameterType.string, required: true },
+        {
+          text: "user provided id",
+          type: ParameterType.string,
+          required: true,
+        },
       ],
     },
     {
@@ -392,7 +562,11 @@ export const Vanilla: CommandContainer = {
         { text: "fog", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
         { text: "remove", type: ParameterType.keyword, required: true },
-        { text: "user provided id", type: ParameterType.string, required: true },
+        {
+          text: "user provided id",
+          type: ParameterType.string,
+          required: true,
+        },
       ],
     },
   ],
@@ -415,7 +589,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "gamemode", type: ParameterType.keyword, required: true },
         { text: "gamemode", type: ParameterType.gamemode, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
@@ -423,10 +602,15 @@ export const Vanilla: CommandContainer = {
   gamerule: [
     {
       name: "gamerule",
-      documentation: "Whether command blocks should notify admins when they perform commands.",
+      documentation:
+        "Whether command blocks should notify admins when they perform commands.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "commandblockoutput", type: ParameterType.keyword, required: true },
+        {
+          text: "commandblockoutput",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -435,7 +619,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Whether command blocks should be enabled in-game.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "commandblocksenabled", type: ParameterType.keyword, required: true },
+        {
+          text: "commandblocksenabled",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -444,7 +632,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Whether the daylight cycle and moon phases progress.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "dodaylightcycle", type: ParameterType.keyword, required: true },
+        {
+          text: "dodaylightcycle",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -459,7 +651,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "Whether or not to do fire ticks, meaning that fire could do damage to block or not.",
+      documentation:
+        "Whether or not to do fire ticks, meaning that fire could do damage to block or not.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "dofiretick", type: ParameterType.keyword, required: true },
@@ -468,16 +661,22 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "Whether to show the player a respawn screen or immediate respawn.",
+      documentation:
+        "Whether to show the player a respawn screen or immediate respawn.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "doimmediaterespawn", type: ParameterType.keyword, required: true },
+        {
+          text: "doimmediaterespawn",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
     {
       name: "gamerule",
-      documentation: "Whether or not to activate or deactivate the insomnia mechanic.",
+      documentation:
+        "Whether or not to activate or deactivate the insomnia mechanic.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "doinsomnia", type: ParameterType.keyword, required: true },
@@ -504,7 +703,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "Whether or not blocks that are destroyed also drop items.",
+      documentation:
+        "Whether or not blocks that are destroyed also drop items.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "dotiledrops", type: ParameterType.keyword, required: true },
@@ -513,7 +713,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "Whether or not to change between clear, rain and thunder weather.",
+      documentation:
+        "Whether or not to change between clear, rain and thunder weather.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "doweathercycle", type: ParameterType.keyword, required: true },
@@ -558,16 +759,22 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "The maximum amount of commands that can be run in a single call (sub calls included)",
+      documentation:
+        "The maximum amount of commands that can be run in a single call (sub calls included)",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "functioncommandlimit", type: ParameterType.keyword, required: true },
+        {
+          text: "functioncommandlimit",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "amount", type: ParameterType.integer, required: false },
       ],
     },
     {
       name: "gamerule",
-      documentation: "Whether or not the players maintain their inventory when dying",
+      documentation:
+        "Whether or not the players maintain their inventory when dying",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "keepinventory", type: ParameterType.keyword, required: true },
@@ -576,10 +783,15 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "The maximum amount of commands that can be run in a single call (sub calls included).",
+      documentation:
+        "The maximum amount of commands that can be run in a single call (sub calls included).",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "maxcommandchainlength", type: ParameterType.keyword, required: true },
+        {
+          text: "maxcommandchainlength",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "int", type: ParameterType.integer, required: false },
       ],
     },
@@ -597,7 +809,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Whether or not players regain health by regen.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "naturalregeneration", type: ParameterType.keyword, required: true },
+        {
+          text: "naturalregeneration",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -612,10 +828,15 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation: "How many ticks the server can randomly progress elements of the world, such a crop growing.",
+      documentation:
+        "How many ticks the server can randomly progress elements of the world, such a crop growing.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "randomtickspeed", type: ParameterType.keyword, required: true },
+        {
+          text: "randomtickspeed",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "int", type: ParameterType.integer, required: false },
       ],
     },
@@ -624,16 +845,25 @@ export const Vanilla: CommandContainer = {
       documentation: "??",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "respawnblocksexplode", type: ParameterType.keyword, required: true },
+        {
+          text: "respawnblocksexplode",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
     {
       name: "gamerule",
-      documentation: "Whether or not commands send back feedback to players, such as /tag @s list",
+      documentation:
+        "Whether or not commands send back feedback to players, such as /tag @s list",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "sendcommandfeedback", type: ParameterType.keyword, required: true },
+        {
+          text: "sendcommandfeedback",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -642,7 +872,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets or queries a game rule value.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "showbordereffect", type: ParameterType.keyword, required: true },
+        {
+          text: "showbordereffect",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -651,7 +885,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Whether or not global coordinates display is showed.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "showcoordinates", type: ParameterType.keyword, required: true },
+        {
+          text: "showcoordinates",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -660,7 +898,11 @@ export const Vanilla: CommandContainer = {
       documentation: "Whether or not the death message are outputted",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
-        { text: "showdeathmessages", type: ParameterType.keyword, required: true },
+        {
+          text: "showdeathmessages",
+          type: ParameterType.keyword,
+          required: true,
+        },
         { text: "value", type: ParameterType.boolean, required: false },
       ],
     },
@@ -699,7 +941,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Gives an item to a player.",
       parameters: [
         { text: "give", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "item name", type: ParameterType.item, required: true },
         { text: "amount", type: ParameterType.integer, required: false },
         { text: "data", type: ParameterType.integer, required: false },
@@ -714,7 +961,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Kicks the specified players.",
       parameters: [
         { text: "kick", type: ParameterType.keyword, required: true },
-        { text: "selector", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "selector",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
@@ -733,7 +985,8 @@ export const Vanilla: CommandContainer = {
   locate: [
     {
       name: "locate",
-      documentation: "Displays the coordinates for the closest structure of a given type.",
+      documentation:
+        "Displays the coordinates for the closest structure of a given type.",
       parameters: [
         { text: "locate", type: ParameterType.keyword, required: true },
         { text: "feature", type: ParameterType.locateFeature, required: true },
@@ -754,7 +1007,7 @@ export const Vanilla: CommandContainer = {
         { text: "kill", type: ParameterType.keyword, required: true },
         { text: "entity target", type: ParameterType.selector, required: true },
         { text: "item", type: ParameterType.item, required: false },
-      ]
+      ],
     },
     {
       name: "loot",
@@ -768,7 +1021,7 @@ export const Vanilla: CommandContainer = {
         { text: "kill", type: ParameterType.keyword, required: true },
         { text: "entity target", type: ParameterType.selector, required: true },
         { text: "item", type: ParameterType.handType, required: false },
-      ]
+      ],
     },
     {
       name: "loot",
@@ -782,7 +1035,7 @@ export const Vanilla: CommandContainer = {
         { text: "loot", type: ParameterType.keyword, required: true },
         { text: "loot table", type: ParameterType.lootTable, required: true },
         { text: "item", type: ParameterType.item, required: false },
-      ]
+      ],
     },
     {
       name: "loot",
@@ -796,8 +1049,8 @@ export const Vanilla: CommandContainer = {
         { text: "loot", type: ParameterType.keyword, required: true },
         { text: "loot table", type: ParameterType.lootTable, required: true },
         { text: "item", type: ParameterType.handType, required: false },
-      ]
-    }
+      ],
+    },
   ],
   /**The me command */
   me: [
@@ -814,7 +1067,8 @@ export const Vanilla: CommandContainer = {
   msg: [
     {
       name: "msg",
-      documentation: "An alias of `/tell` and `/w`. Displays a private message to other players.",
+      documentation:
+        "An alias of `/tell` and `/w`. Displays a private message to other players.",
       parameters: [
         { text: "msg", type: ParameterType.keyword, required: true },
         { text: "selector", type: ParameterType.selector, required: true },
@@ -831,9 +1085,23 @@ export const Vanilla: CommandContainer = {
         { text: "music", type: ParameterType.keyword, required: true },
         { text: "queue", type: ParameterType.keyword, required: true },
         { text: "track name", type: ParameterType.string, required: true },
-        { text: "volume", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
-        { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
-        { text: "repeat", type: ParameterType.musicRepeatMode, required: false },
+        {
+          text: "volume",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0.01, maximum: 1 },
+        },
+        {
+          text: "fade seconds",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0 },
+        },
+        {
+          text: "repeat",
+          type: ParameterType.musicRepeatMode,
+          required: false,
+        },
       ],
     },
     {
@@ -843,9 +1111,23 @@ export const Vanilla: CommandContainer = {
         { text: "music", type: ParameterType.keyword, required: true },
         { text: "play", type: ParameterType.keyword, required: true },
         { text: "track name", type: ParameterType.string, required: true },
-        { text: "volume", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
-        { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
-        { text: "repeat", type: ParameterType.musicRepeatMode, required: false },
+        {
+          text: "volume",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0.01, maximum: 1 },
+        },
+        {
+          text: "fade seconds",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0 },
+        },
+        {
+          text: "repeat",
+          type: ParameterType.musicRepeatMode,
+          required: false,
+        },
       ],
     },
     {
@@ -854,7 +1136,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "music", type: ParameterType.keyword, required: true },
         { text: "stop", type: ParameterType.keyword, required: true },
-        { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
+        {
+          text: "fade seconds",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0 },
+        },
       ],
     },
     {
@@ -863,7 +1150,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "music", type: ParameterType.keyword, required: true },
         { text: "volume", type: ParameterType.keyword, required: true },
-        { text: "volume", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
+        {
+          text: "volume",
+          type: ParameterType.float,
+          required: false,
+          options: { minimum: 0.01, maximum: 1 },
+        },
       ],
     },
   ],
@@ -874,7 +1166,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Grants operator status to a player.",
       parameters: [
         { text: "op", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
@@ -898,7 +1195,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "playsound", type: ParameterType.keyword, required: true },
         { text: "sound", type: ParameterType.sound, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
         { text: "position x", type: ParameterType.coordinate, required: false },
         { text: "position y", type: ParameterType.coordinate, required: false },
         { text: "position z", type: ParameterType.coordinate, required: false },
@@ -914,14 +1216,23 @@ export const Vanilla: CommandContainer = {
   playanimation: [
     {
       name: "playanimation",
-      documentation: "Makes one or more entities play a one-off animation. Assumes all variables are set up correctly",
+      documentation:
+        "Makes one or more entities play a one-off animation. Assumes all variables are set up correctly",
       parameters: [
         { text: "playanimation", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.selector, required: true },
         { text: "animation", type: ParameterType.animation, required: true },
         { text: "next state", type: ParameterType.string, required: false },
-        { text: "stop expression", type: ParameterType.string, required: false },
-        { text: "controller name", type: ParameterType.string, required: false },
+        {
+          text: "stop expression",
+          type: ParameterType.string,
+          required: false,
+        },
+        {
+          text: "controller name",
+          type: ParameterType.string,
+          required: false,
+        },
       ],
     },
   ],
@@ -955,7 +1266,11 @@ export const Vanilla: CommandContainer = {
         { text: "position z", type: ParameterType.coordinate, required: true },
         { text: "slot.container", type: ParameterType.keyword, required: true },
         { text: "slotId", type: ParameterType.slotID, required: true },
-        { text: "replacemode", type: ParameterType.replaceMode, required: true },
+        {
+          text: "replacemode",
+          type: ParameterType.replaceMode,
+          required: true,
+        },
         { text: "item name", type: ParameterType.item, required: true },
         { text: "amount", type: ParameterType.keyword, required: false },
         { text: "data", type: ParameterType.keyword, required: false },
@@ -969,7 +1284,11 @@ export const Vanilla: CommandContainer = {
         { text: "replaceitem", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.keyword, required: true },
         { text: "selector", type: ParameterType.selector, required: true },
-        { text: "slot.container", type: ParameterType.slotType, required: true },
+        {
+          text: "slot.container",
+          type: ParameterType.slotType,
+          required: true,
+        },
         { text: "slotId", type: ParameterType.slotID, required: true },
         { text: "item name", type: ParameterType.item, required: true },
         { text: "amount", type: ParameterType.integer, required: false },
@@ -986,7 +1305,11 @@ export const Vanilla: CommandContainer = {
         { text: "selector", type: ParameterType.selector, required: true },
         { text: "slot type", type: ParameterType.slotType, required: true },
         { text: "slot id", type: ParameterType.slotID, required: true },
-        { text: "replace mode", type: ParameterType.replaceMode, required: true },
+        {
+          text: "replace mode",
+          type: ParameterType.replaceMode,
+          required: true,
+        },
         { text: "item name", type: ParameterType.item, required: true },
         { text: "amount", type: ParameterType.integer, required: false },
         { text: "data", type: ParameterType.integer, required: false },
@@ -998,19 +1321,29 @@ export const Vanilla: CommandContainer = {
   ride: [
     {
       name: "ride",
-      documentation: "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
+      documentation:
+        "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
       parameters: [
         { text: "ride", type: ParameterType.keyword, required: true },
         { text: "riders", type: ParameterType.selector, required: true },
         { text: "start_riding", type: ParameterType.keyword, required: true },
         { text: "ride", type: ParameterType.selector, required: true },
-        { text: "teleport", type: ParameterType.teleportRules, required: false },
-        { text: "fill mode", type: ParameterType.ridefillMode, required: false },
+        {
+          text: "teleport",
+          type: ParameterType.teleportRules,
+          required: false,
+        },
+        {
+          text: "fill mode",
+          type: ParameterType.ridefillMode,
+          required: false,
+        },
       ],
     },
     {
       name: "ride",
-      documentation: "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
+      documentation:
+        "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
       parameters: [
         { text: "ride", type: ParameterType.keyword, required: true },
         { text: "riders", type: ParameterType.selector, required: true },
@@ -1019,7 +1352,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "ride",
-      documentation: "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
+      documentation:
+        "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
       parameters: [
         { text: "ride", type: ParameterType.keyword, required: true },
         { text: "rides", type: ParameterType.selector, required: true },
@@ -1028,7 +1362,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "ride",
-      documentation: "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
+      documentation:
+        "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
       parameters: [
         { text: "ride", type: ParameterType.keyword, required: true },
         { text: "riders", type: ParameterType.selector, required: true },
@@ -1041,7 +1376,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "ride",
-      documentation: "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
+      documentation:
+        "Makes entities ride other entities, stops entities from riding, makes rides evict their riders, or summons rides or riders",
       parameters: [
         { text: "ride", type: ParameterType.keyword, required: true },
         { text: "rides", type: ParameterType.selector, required: true },
@@ -1067,7 +1403,8 @@ export const Vanilla: CommandContainer = {
   schedule: [
     {
       name: "schedule",
-      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation:
+        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
@@ -1083,7 +1420,8 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "schedule",
-      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation:
+        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
@@ -1098,13 +1436,18 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "schedule",
-      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation:
+        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
         { text: "add", type: ParameterType.keyword, required: true },
         { text: "tickingarea", type: ParameterType.keyword, required: true },
-        { text: "tickingarea name", type: ParameterType.tickingarea, required: true },
+        {
+          text: "tickingarea name",
+          type: ParameterType.tickingarea,
+          required: true,
+        },
         { text: "function", type: ParameterType.function, required: true },
       ],
     },
@@ -1208,7 +1551,12 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "add", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "count", type: ParameterType.integer, required: true },
       ],
@@ -1220,7 +1568,12 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "list", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: false, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: false,
+          options: { allowFakePlayers: true },
+        },
       ],
     },
     {
@@ -1230,10 +1583,20 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "operation", type: ParameterType.keyword, required: true },
-        { text: "destination", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "destination",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "operation", type: ParameterType.operation, required: true },
-        { text: "selector", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "selector",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
       ],
     },
@@ -1244,7 +1607,12 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "random", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "min", type: ParameterType.integer, required: true },
         { text: "max", type: ParameterType.integer, required: true },
@@ -1257,7 +1625,12 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "remove", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "count", type: ParameterType.integer, required: true },
       ],
@@ -1269,7 +1642,12 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "reset", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { wildcard: true, allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { wildcard: true, allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: false },
       ],
     },
@@ -1280,22 +1658,43 @@ export const Vanilla: CommandContainer = {
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "set", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "score", type: ParameterType.integer, required: true },
       ],
     },
     {
       name: "scoreboard",
-      documentation: "A test statement on wheter or not the entity has the specified value/range.",
+      documentation:
+        "A test statement on wheter or not the entity has the specified value/range.",
       parameters: [
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
         { text: "test", type: ParameterType.keyword, required: true },
-        { text: "entity", type: ParameterType.selector, required: true, options: { allowFakePlayers: true } },
+        {
+          text: "entity",
+          type: ParameterType.selector,
+          required: true,
+          options: { allowFakePlayers: true },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
-        { text: "min", type: ParameterType.integer, required: true, options: { wildcard: true } },
-        { text: "max", type: ParameterType.integer, required: true, options: { wildcard: true } },
+        {
+          text: "min",
+          type: ParameterType.integer,
+          required: true,
+          options: { wildcard: true },
+        },
+        {
+          text: "max",
+          type: ParameterType.integer,
+          required: true,
+          options: { wildcard: true },
+        },
       ],
     },
   ],
@@ -1311,7 +1710,11 @@ export const Vanilla: CommandContainer = {
         { text: "position z", type: ParameterType.coordinate, required: true },
         { text: "tile name", type: ParameterType.block, required: true },
         { text: "tile data", type: ParameterType.integer, required: false },
-        { text: "old block mode", type: ParameterType.oldBlockMode, required: false },
+        {
+          text: "old block mode",
+          type: ParameterType.oldBlockMode,
+          required: false,
+        },
       ],
     },
     {
@@ -1323,8 +1726,16 @@ export const Vanilla: CommandContainer = {
         { text: "position y", type: ParameterType.coordinate, required: true },
         { text: "position z", type: ParameterType.coordinate, required: true },
         { text: "tile name", type: ParameterType.block, required: true },
-        { text: "block states", type: ParameterType.blockStates, required: false },
-        { text: "old block mode", type: ParameterType.oldBlockMode, required: false },
+        {
+          text: "block states",
+          type: ParameterType.blockStates,
+          required: false,
+        },
+        {
+          text: "old block mode",
+          type: ParameterType.oldBlockMode,
+          required: false,
+        },
       ],
     },
   ],
@@ -1348,7 +1759,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the maximum number of players for this game session",
       parameters: [
         { text: "setmaxplayers", type: ParameterType.keyword, required: true },
-        { text: "maximum players", type: ParameterType.integer, required: true, options: { minimum: 1 } },
+        {
+          text: "maximum players",
+          type: ParameterType.integer,
+          required: true,
+          options: { minimum: 1 },
+        },
       ],
     },
   ],
@@ -1359,7 +1775,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the spawnpoint of the given entities.",
       parameters: [
         { text: "spawnpoint", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
         { text: "spawn x", type: ParameterType.coordinate, required: false },
         { text: "spawn y", type: ParameterType.coordinate, required: false },
         { text: "spawn z", type: ParameterType.coordinate, required: false },
@@ -1388,7 +1809,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Stops all playing sounds on the given players.",
       parameters: [
         { text: "stopsound", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "sound", type: ParameterType.sound, required: false },
       ],
     },
@@ -1424,9 +1850,17 @@ export const Vanilla: CommandContainer = {
         { text: "to x", type: ParameterType.coordinate, required: true },
         { text: "to y", type: ParameterType.coordinate, required: true },
         { text: "to z", type: ParameterType.coordinate, required: true },
-        { text: "include entities", type: ParameterType.boolean, required: false },
+        {
+          text: "include entities",
+          type: ParameterType.boolean,
+          required: false,
+        },
         { text: "save mode", type: ParameterType.saveMode, required: false },
-        { text: "include blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "include blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1441,8 +1875,16 @@ export const Vanilla: CommandContainer = {
         { text: "to z", type: ParameterType.coordinate, required: true },
         { text: "rotation", type: ParameterType.rotation, required: false },
         { text: "mirror", type: ParameterType.mirror, required: false },
-        { text: "include entities", type: ParameterType.boolean, required: false },
-        { text: "include blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "include entities",
+          type: ParameterType.boolean,
+          required: false,
+        },
+        {
+          text: "include blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
         { text: "integrity", type: ParameterType.float, required: false },
         { text: "seed", type: ParameterType.string, required: false },
       ],
@@ -1459,10 +1901,26 @@ export const Vanilla: CommandContainer = {
         { text: "to z", type: ParameterType.coordinate, required: true },
         { text: "rotation", type: ParameterType.rotation, required: false },
         { text: "mirror", type: ParameterType.mirror, required: false },
-        { text: "animation mode", type: ParameterType.structureAnimationMode, required: false },
-        { text: "animation seconds", type: ParameterType.float, required: false },
-        { text: "include entities", type: ParameterType.boolean, required: false },
-        { text: "include blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "animation mode",
+          type: ParameterType.structureAnimationMode,
+          required: false,
+        },
+        {
+          text: "animation seconds",
+          type: ParameterType.float,
+          required: false,
+        },
+        {
+          text: "include entities",
+          type: ParameterType.boolean,
+          required: false,
+        },
+        {
+          text: "include blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
         { text: "integrity", type: ParameterType.float, required: false },
         { text: "seed", type: ParameterType.string, required: false },
       ],
@@ -1531,7 +1989,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Manages tags stored in entities.",
       parameters: [
         { text: "tag", type: ParameterType.keyword, required: true },
-        { text: "selector", type: ParameterType.selector, required: true, options: { wildcard: true } },
+        {
+          text: "selector",
+          type: ParameterType.selector,
+          required: true,
+          options: { wildcard: true },
+        },
         { text: "remove", type: ParameterType.keyword, required: true },
         { text: "name", type: ParameterType.tag, required: true },
       ],
@@ -1544,7 +2007,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sends a private message to one or more players.",
       parameters: [
         { text: "tell", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "message", type: ParameterType.message, required: true },
       ],
     },
@@ -1556,8 +2024,17 @@ export const Vanilla: CommandContainer = {
       documentation: "Sends a json messsage to players.",
       parameters: [
         { text: "tellraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-        { text: "json raw text", type: ParameterType.jsonRawText, required: true },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
+        {
+          text: "json raw text",
+          type: ParameterType.jsonRawText,
+          required: true,
+        },
       ],
     },
   ],
@@ -1565,7 +2042,8 @@ export const Vanilla: CommandContainer = {
   testfor: [
     {
       name: "testfor",
-      documentation: "Counts entities (players, mobs, items, etc.) matching specified conditions.",
+      documentation:
+        "Counts entities (players, mobs, items, etc.) matching specified conditions.",
       parameters: [
         { text: "testfor", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
@@ -1597,9 +2075,21 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
       ],
     },
     {
@@ -1613,9 +2103,21 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "all", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1630,9 +2132,21 @@ export const Vanilla: CommandContainer = {
         { text: "end x", type: ParameterType.coordinate, required: true },
         { text: "end y", type: ParameterType.coordinate, required: true },
         { text: "end z", type: ParameterType.coordinate, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "masked", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1674,7 +2188,11 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tickingarea", type: ParameterType.keyword, required: true },
         { text: "list", type: ParameterType.keyword, required: true },
-        { text: "all-dimensions", type: ParameterType.keyword, required: false },
+        {
+          text: "all-dimensions",
+          type: ParameterType.keyword,
+          required: false,
+        },
       ],
     },
     {
@@ -1761,7 +2279,7 @@ export const Vanilla: CommandContainer = {
         { text: "set", type: ParameterType.keyword, required: true },
         { text: "amount", type: ParameterType.time, required: true },
       ],
-    }
+    },
   ],
   /**The title command */
   title: [
@@ -1770,7 +2288,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the title.",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "title", type: ParameterType.keyword, required: true },
         { text: "titletext", type: ParameterType.message, required: true },
       ],
@@ -1780,7 +2303,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the sub titles.",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "subtitle", type: ParameterType.keyword, required: true },
         { text: "titletext", type: ParameterType.message, required: true },
       ],
@@ -1790,7 +2318,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the action bar.",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "actionbar", type: ParameterType.keyword, required: true },
         { text: "titletext", type: ParameterType.message, required: true },
       ],
@@ -1800,7 +2333,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Clears the title & subtitle from the given players",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "clear", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1809,7 +2347,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Clears the title & subtitle from the given players",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "reset", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1818,7 +2361,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Set the title timings.",
       parameters: [
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "times", type: ParameterType.keyword, required: true },
         { text: "fade in", type: ParameterType.integer, required: true },
         { text: "stay", type: ParameterType.integer, required: true },
@@ -1833,9 +2381,18 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the title.",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "title", type: ParameterType.keyword, required: true },
-        { text: "json raw text", type: ParameterType.jsonRawText, required: true },
+        {
+          text: "json raw text",
+          type: ParameterType.jsonRawText,
+          required: true,
+        },
       ],
     },
     {
@@ -1843,9 +2400,18 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the sub titles.",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "subtitle", type: ParameterType.keyword, required: true },
-        { text: "json raw text", type: ParameterType.jsonRawText, required: true },
+        {
+          text: "json raw text",
+          type: ParameterType.jsonRawText,
+          required: true,
+        },
       ],
     },
     {
@@ -1853,9 +2419,18 @@ export const Vanilla: CommandContainer = {
       documentation: "Sets the action bar.",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "actionbar", type: ParameterType.keyword, required: true },
-        { text: "json raw text", type: ParameterType.jsonRawText, required: true },
+        {
+          text: "json raw text",
+          type: ParameterType.jsonRawText,
+          required: true,
+        },
       ],
     },
     {
@@ -1863,7 +2438,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Clears the title & subtitle from the given players",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "clear", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1872,7 +2452,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Clears the title & subtitle from the given players",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "reset", type: ParameterType.keyword, required: true },
       ],
     },
@@ -1881,7 +2466,12 @@ export const Vanilla: CommandContainer = {
       documentation: "Set the timings.",
       parameters: [
         { text: "titleraw", type: ParameterType.keyword, required: true },
-        { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: true,
+          options: { playerOnly: true },
+        },
         { text: "times", type: ParameterType.keyword, required: true },
         { text: "fade in", type: ParameterType.integer, required: true },
         { text: "stay", type: ParameterType.integer, required: true },
@@ -1892,7 +2482,9 @@ export const Vanilla: CommandContainer = {
   /**The toggledownfall command */
   toggledownfall: [
     {
-      parameters: [{ text: "toggledownfall", type: ParameterType.keyword, required: true }],
+      parameters: [
+        { text: "toggledownfall", type: ParameterType.keyword, required: true },
+      ],
       name: "toggledownfall",
       documentation: "Toggles the weather.",
     },
@@ -1905,7 +2497,11 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1913,10 +2509,26 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport the executing entity to the location.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1926,7 +2538,11 @@ export const Vanilla: CommandContainer = {
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1935,34 +2551,72 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
       name: "tp",
-      documentation: "Teleport the executing entity to the destination with rotation.",
+      documentation:
+        "Teleport the executing entity to the destination with rotation.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
       name: "tp",
-      documentation: "Teleport the executing entity to the destination with rotation.",
+      documentation:
+        "Teleport the executing entity to the destination with rotation.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1975,7 +2629,11 @@ export const Vanilla: CommandContainer = {
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -1984,28 +2642,50 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
       name: "tp",
-      documentation: "Teleport the executing entity to the destination with facing.",
+      documentation:
+        "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
       name: "tp",
-      documentation: "Teleport the executing entity to the destination with facing.",
+      documentation:
+        "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
@@ -2013,7 +2693,11 @@ export const Vanilla: CommandContainer = {
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2025,7 +2709,11 @@ export const Vanilla: CommandContainer = {
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2039,20 +2727,41 @@ export const Vanilla: CommandContainer = {
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
       name: "tp",
-      documentation: "Teleport the executing entity to the destination with facing.",
+      documentation:
+        "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2060,14 +2769,30 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport the entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2076,12 +2801,28 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2090,14 +2831,30 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
   ],
@@ -2109,7 +2866,11 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2117,10 +2878,26 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport Entities.",
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2130,7 +2907,11 @@ export const Vanilla: CommandContainer = {
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2139,10 +2920,26 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2153,7 +2950,11 @@ export const Vanilla: CommandContainer = {
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2161,12 +2962,28 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport Entities.",
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2179,7 +2996,11 @@ export const Vanilla: CommandContainer = {
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2188,12 +3009,28 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "yRot", type: ParameterType.coordinate, required: false },
         { text: "xRot", type: ParameterType.coordinate, required: false },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2204,7 +3041,11 @@ export const Vanilla: CommandContainer = {
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2217,7 +3058,11 @@ export const Vanilla: CommandContainer = {
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2229,7 +3074,11 @@ export const Vanilla: CommandContainer = {
         { text: "destination", type: ParameterType.selector, required: true },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2243,7 +3092,11 @@ export const Vanilla: CommandContainer = {
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2251,12 +3104,28 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport Entities.",
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2264,14 +3133,30 @@ export const Vanilla: CommandContainer = {
       documentation: "Teleport Entities.",
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2280,12 +3165,28 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at", type: ParameterType.selector, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
     {
@@ -2294,14 +3195,30 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "teleport", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
-        { text: "destination x", type: ParameterType.coordinate, required: true },
-        { text: "destination y", type: ParameterType.coordinate, required: true },
-        { text: "destination z", type: ParameterType.coordinate, required: true },
+        {
+          text: "destination x",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination y",
+          type: ParameterType.coordinate,
+          required: true,
+        },
+        {
+          text: "destination z",
+          type: ParameterType.coordinate,
+          required: true,
+        },
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "look at x", type: ParameterType.coordinate, required: true },
         { text: "look at y", type: ParameterType.coordinate, required: true },
         { text: "look at z", type: ParameterType.coordinate, required: true },
-        { text: "check for blocks", type: ParameterType.boolean, required: false },
+        {
+          text: "check for blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
       ],
     },
   ],
@@ -2355,7 +3272,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "xp", type: ParameterType.keyword, required: true },
         { text: "amount", type: ParameterType.xp, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
     {
@@ -2364,7 +3286,12 @@ export const Vanilla: CommandContainer = {
       parameters: [
         { text: "xp", type: ParameterType.keyword, required: true },
         { text: "amount", type: ParameterType.integer, required: true },
-        { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+        {
+          text: "player",
+          type: ParameterType.selector,
+          required: false,
+          options: { playerOnly: true },
+        },
       ],
     },
   ],
