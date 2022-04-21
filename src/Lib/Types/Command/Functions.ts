@@ -172,13 +172,7 @@ export function isMatch(
         break;
 
       case ParameterType.selector:
-        if (
-          !Minecraft.Selector.Selector.isSelector(
-            commandText,
-            patPar.options?.wildcard,
-            patPar.options?.allowFakePlayers
-          )
-        )
+        if (!Minecraft.Selector.Selector.isSelector(commandText,patPar.options?.wildcard,patPar.options?.allowFakePlayers))
           return false;
         break;
 
