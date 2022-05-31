@@ -1,5 +1,16 @@
 import { ParameterType } from "../Types/ParameterType";
 
+/**An interface that carries additional obsolete info*/
+export interface ObsoleteInfo {
+  /**The message to be displayed */
+  message : string,
+  /**The error code to use*/
+  code : string | number,
+  /**The version in which the command was removed*/
+  format_version? : string
+}
+
+
 /**A single command syntax*/
 export interface CommandInfo {
   /**The name of the command*/
@@ -8,6 +19,8 @@ export interface CommandInfo {
   documentation: string;
   /**The parameter that make this particular syntax*/
   parameters: ParameterInfo[];
+  /**Marks */
+  obsolete?: boolean | ObsoleteInfo;
 }
 
 /**The information of a single parameter.*/
