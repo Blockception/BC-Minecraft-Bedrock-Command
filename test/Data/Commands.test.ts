@@ -78,7 +78,7 @@ const commandlist = [
 ];
 
 describe("Data/Commands", () => {
-  it("Check General", () => {
+  describe("Check General", () => {
     CheckCommandContainer(CommandData.Edu);
     CheckCommandContainer(CommandData.Vanilla);
   });
@@ -90,7 +90,10 @@ describe("Data/Commands", () => {
 
   it("Inventory Check", () => {
     commandlist.forEach((item) => {
-      if (CommandData.Vanilla[item] == undefined && CommandData.Edu == undefined) {
+      if (
+        CommandData.Vanilla[item] == undefined &&
+        CommandData.Edu == undefined
+      ) {
         expect.fail("missing command: " + item);
       }
     });
@@ -100,23 +103,45 @@ describe("Data/Commands", () => {
 function CheckCommandContainer(value: CommandContainer) {
   const keys = Object.getOwnPropertyNames(value);
 
-  expect(keys.length).to.be.greaterThan(0);
+  it("More then one key", () => {
+    expect(keys.length).to.be.greaterThan(0);
+  });
 
   for (var I = 0; I < keys.length; I++) {
-    const k = keys[I];
-    const items = value[k];
+    const name = keys[I];
+    const items = value[name];
 
-    expect(items.length).to.be.greaterThan(0);
+    describe("command " + name, () => {
+      it("Has atleast one item", () => {
+        expect(items.length).to.be.greaterThan(0);
+      });
 
-    for (var J = 0; J < items.length; J++) {
-      CheckCommandContent(k, items[J]);
-    }
+      for (var J = 0; J < items.length; J++) {
+        describe(`${name} ${J}`, () => {
+          const value = items[J];
+
+          it("Has documentation?", () => {
+            expect(value.documentation.length).to.be.greaterThan(
+              0,
+              `command: ${name}, expected documentation to be filled`
+            );
+          });
+
+          it("has name", () => {
+            expect(value.name.length).to.be.greaterThan(
+              0,
+              `command: ${name}, expected name to be filled`
+            );
+          });
+
+          it("has parameters", () => {
+            expect(value.parameters.length).to.be.greaterThan(
+              0,
+              `command: ${name}, expected a parameter`
+            );
+          });
+        });
+      }
+    });
   }
-}
-
-function CheckCommandContent(name: string, value: CommandInfo) {
-  expect(value.documentation.length).to.be.greaterThan(0, `command: ${name}, expected documentation to be filled`);
-  expect(value.name.length).to.be.greaterThan(0, `command: ${name}, expected name to be filled`);
-
-  expect(value.parameters.length).to.be.greaterThan(0, `command: ${name}, expected a parameter`);
 }
