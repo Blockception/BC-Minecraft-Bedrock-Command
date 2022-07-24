@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
-import { CommandInfo } from "../../src/Lib/Data/CommandInfo";
 import { CommandData } from "../../src/main";
 
 /**List of command from the wiki */
