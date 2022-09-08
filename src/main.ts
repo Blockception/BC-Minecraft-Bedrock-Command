@@ -1,3 +1,3 @@
-export * as CommandData from "./Lib/Data/include";
-export * from "./Lib/Types/include";
-export * from './Lib/Data/CommandInfo';
+export * as CommandData from "./Lib/Data";
+export * from "./Lib/Types";
+export * from "./Lib/Data/CommandInfo";

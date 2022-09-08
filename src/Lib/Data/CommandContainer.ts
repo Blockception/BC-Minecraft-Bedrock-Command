@@ -1,4 +1,4 @@
-import { CommandInfo } from "./include";
+import { CommandInfo } from ".";
 
 /**The type definition of a command container */
 export type CommandContainer = {

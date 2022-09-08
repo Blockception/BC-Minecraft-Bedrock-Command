@@ -1,17 +1,15 @@
-import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
+import { Command } from "./Command";
+import { CommandInfo } from "../../Data";
 import { Edu } from "../../Data/Edu";
+import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
+import { ParameterType } from "../ParameterType";
 import { Vanilla } from "../../Data/Vanilla";
-import { CommandInfo } from "../../Data/include";
-import { Command, ParameterType } from "../include";
 
 /**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
  * @param command The command to search through
  * @param edu Wheter or not to include education data
  * @returns An array with commands info*/
-export function getBestMatches(
-  command: Command,
-  edu: boolean = false
-): CommandInfo[] {
+export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);
 
   if (m.length === 1) return m;
@@ -24,11 +22,7 @@ export function getBestMatches(
  * @param data The commandinfo serving as the basis
  * @param edu If education content should be used or not
  * @returns true or false is this commandinfo matches the command*/
-export function isMatch(
-  command: Command,
-  data: CommandInfo,
-  edu: boolean = false
-): boolean {
+export function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boolean {
   let Limit = data.parameters.length;
 
   if (Limit > command.parameters.length) {
@@ -129,7 +123,7 @@ export function isMatch(
       case ParameterType.keyword:
         if (commandText != patPar.text) return false;
         break;
-        
+
       case ParameterType.string:
       case ParameterType.lootTable:
         if (!General.String.is(commandText)) return false;
@@ -172,7 +166,13 @@ export function isMatch(
         break;
 
       case ParameterType.selector:
-        if (!Minecraft.Selector.Selector.isSelector(commandText,patPar.options?.wildcard,patPar.options?.allowFakePlayers))
+        if (
+          !Minecraft.Selector.Selector.isSelector(
+            commandText,
+            patPar.options?.wildcard,
+            patPar.options?.allowFakePlayers
+          )
+        )
           return false;
         break;
 
@@ -207,10 +207,7 @@ export function isMatch(
  * @param name The command to retrieve
  * @param edu Wheter or not to include education commands
  * @returns An array with commands info*/
-export function getCommandData(
-  name: string,
-  edu: boolean = false
-): CommandInfo[] {
+export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
   const out: CommandInfo[] = [];
 
   Add(out, Vanilla[name]);

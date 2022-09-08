@@ -1,4 +1,4 @@
-import { CommandInfo } from "../../Data/include";
+import { CommandInfo } from "../../Data";
 import { ParameterType } from "../ParameterType";
 import { getBestMatches, getCommandData } from "./Functions";
 import { Parameter } from "./Parameter";
