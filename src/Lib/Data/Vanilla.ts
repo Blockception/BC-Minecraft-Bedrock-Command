@@ -1,5 +1,5 @@
 import { ParameterType } from "../Types/ParameterType";
-import { CommandContainer } from "./CommandContainer";
+import { CommandContainer } from './CommandContainer';
 
 export const Vanilla: CommandContainer = {
   /**The alwaysday command */
@@ -17,8 +17,7 @@ export const Vanilla: CommandContainer = {
   camerashake: [
     {
       name: "camerashake",
-      documentation:
-        "Applies shaking to the players' camera with specified intensity and duration",
+      documentation: "Applies shaking to the players' camera with specified intensity and duration",
       parameters: [
         { text: "camerashake", type: ParameterType.keyword, required: true },
         { text: "add", type: ParameterType.keyword, required: true },
@@ -49,8 +48,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "camerashake",
-      documentation:
-        "Stops shaking to the players' camera with specified intensity and duration",
+      documentation: "Stops shaking to the players' camera with specified intensity and duration",
       parameters: [
         { text: "camerashake", type: ParameterType.keyword, required: true },
         { text: "stop", type: ParameterType.keyword, required: true },
@@ -243,8 +241,7 @@ export const Vanilla: CommandContainer = {
   dialogue: [
     {
       name: "dialogue",
-      documentation:
-        "Forces to open an NPC dialogue box to the targeted player(s)",
+      documentation: "Forces to open an NPC dialogue box to the targeted player(s)",
       parameters: [
         { text: "dialogue", type: ParameterType.keyword, required: true },
         { text: "open", type: ParameterType.keyword, required: true },
@@ -265,8 +262,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "dialogue",
-      documentation:
-        "Direct an NPC to use the dialogue provided in a specifically designated scene file",
+      documentation: "Direct an NPC to use the dialogue provided in a specifically designated scene file",
       parameters: [
         { text: "dialogue", type: ParameterType.keyword, required: true },
         { text: "change", type: ParameterType.keyword, required: true },
@@ -602,8 +598,7 @@ export const Vanilla: CommandContainer = {
   gamerule: [
     {
       name: "gamerule",
-      documentation:
-        "Whether command blocks should notify admins when they perform commands.",
+      documentation: "Whether command blocks should notify admins when they perform commands.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -651,8 +646,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not to do fire ticks, meaning that fire could do damage to block or not.",
+      documentation: "Whether or not to do fire ticks, meaning that fire could do damage to block or not.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "dofiretick", type: ParameterType.keyword, required: true },
@@ -661,8 +655,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether to show the player a respawn screen or immediate respawn.",
+      documentation: "Whether to show the player a respawn screen or immediate respawn.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -675,8 +668,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not to activate or deactivate the insomnia mechanic.",
+      documentation: "Whether or not to activate or deactivate the insomnia mechanic.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "doinsomnia", type: ParameterType.keyword, required: true },
@@ -703,8 +695,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not blocks that are destroyed also drop items.",
+      documentation: "Whether or not blocks that are destroyed also drop items.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "dotiledrops", type: ParameterType.keyword, required: true },
@@ -713,8 +704,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not to change between clear, rain and thunder weather.",
+      documentation: "Whether or not to change between clear, rain and thunder weather.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "doweathercycle", type: ParameterType.keyword, required: true },
@@ -759,8 +749,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "The maximum amount of commands that can be run in a single call (sub calls included)",
+      documentation: "The maximum amount of commands that can be run in a single call (sub calls included)",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -773,8 +762,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not the players maintain their inventory when dying",
+      documentation: "Whether or not the players maintain their inventory when dying",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         { text: "keepinventory", type: ParameterType.keyword, required: true },
@@ -783,8 +771,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "The maximum amount of commands that can be run in a single call (sub calls included).",
+      documentation: "The maximum amount of commands that can be run in a single call (sub calls included).",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -828,8 +815,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "How many ticks the server can randomly progress elements of the world, such a crop growing.",
+      documentation: "How many ticks the server can randomly progress elements of the world, such a crop growing.",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -855,8 +841,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "gamerule",
-      documentation:
-        "Whether or not commands send back feedback to players, such as /tag @s list",
+      documentation: "Whether or not commands send back feedback to players, such as /tag @s list",
       parameters: [
         { text: "gamerule", type: ParameterType.keyword, required: true },
         {
@@ -985,8 +970,7 @@ export const Vanilla: CommandContainer = {
   locate: [
     {
       name: "locate",
-      documentation:
-        "Displays the coordinates for the closest structure of a given type.",
+      documentation: "Displays the coordinates for the closest structure of a given type.",
       parameters: [
         { text: "locate", type: ParameterType.keyword, required: true },
         { text: "feature", type: ParameterType.locateFeature, required: true },
@@ -1067,8 +1051,7 @@ export const Vanilla: CommandContainer = {
   msg: [
     {
       name: "msg",
-      documentation:
-        "An alias of `/tell` and `/w`. Displays a private message to other players.",
+      documentation: "An alias of `/tell` and `/w`. Displays a private message to other players.",
       parameters: [
         { text: "msg", type: ParameterType.keyword, required: true },
         { text: "selector", type: ParameterType.selector, required: true },
@@ -1216,8 +1199,7 @@ export const Vanilla: CommandContainer = {
   playanimation: [
     {
       name: "playanimation",
-      documentation:
-        "Makes one or more entities play a one-off animation. Assumes all variables are set up correctly",
+      documentation: "Makes one or more entities play a one-off animation. Assumes all variables are set up correctly",
       parameters: [
         { text: "playanimation", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.selector, required: true },
@@ -1403,8 +1385,7 @@ export const Vanilla: CommandContainer = {
   schedule: [
     {
       name: "schedule",
-      documentation:
-        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
@@ -1420,8 +1401,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "schedule",
-      documentation:
-        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
@@ -1436,8 +1416,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "schedule",
-      documentation:
-        "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+      documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
       parameters: [
         { text: "schedule", type: ParameterType.keyword, required: true },
         { text: "on_area_loaded", type: ParameterType.keyword, required: true },
@@ -1670,8 +1649,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "scoreboard",
-      documentation:
-        "A test statement on wheter or not the entity has the specified value/range.",
+      documentation: "A test statement on wheter or not the entity has the specified value/range.",
       parameters: [
         { text: "scoreboard", type: ParameterType.keyword, required: true },
         { text: "players", type: ParameterType.keyword, required: true },
@@ -2042,8 +2020,7 @@ export const Vanilla: CommandContainer = {
   testfor: [
     {
       name: "testfor",
-      documentation:
-        "Counts entities (players, mobs, items, etc.) matching specified conditions.",
+      documentation: "Counts entities (players, mobs, items, etc.) matching specified conditions.",
       parameters: [
         { text: "testfor", type: ParameterType.keyword, required: true },
         { text: "victim", type: ParameterType.selector, required: true },
@@ -2482,9 +2459,7 @@ export const Vanilla: CommandContainer = {
   /**The toggledownfall command */
   toggledownfall: [
     {
-      parameters: [
-        { text: "toggledownfall", type: ParameterType.keyword, required: true },
-      ],
+      parameters: [{ text: "toggledownfall", type: ParameterType.keyword, required: true }],
       name: "toggledownfall",
       documentation: "Toggles the weather.",
     },
@@ -2575,8 +2550,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "tp",
-      documentation:
-        "Teleport the executing entity to the destination with rotation.",
+      documentation: "Teleport the executing entity to the destination with rotation.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
@@ -2591,8 +2565,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "tp",
-      documentation:
-        "Teleport the executing entity to the destination with rotation.",
+      documentation: "Teleport the executing entity to the destination with rotation.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         {
@@ -2668,8 +2641,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "tp",
-      documentation:
-        "Teleport the executing entity to the destination with facing.",
+      documentation: "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
@@ -2684,8 +2656,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "tp",
-      documentation:
-        "Teleport the executing entity to the destination with facing.",
+      documentation: "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         { text: "destination", type: ParameterType.selector, required: true },
@@ -2736,8 +2707,7 @@ export const Vanilla: CommandContainer = {
     },
     {
       name: "tp",
-      documentation:
-        "Teleport the executing entity to the destination with facing.",
+      documentation: "Teleport the executing entity to the destination with facing.",
       parameters: [
         { text: "tp", type: ParameterType.keyword, required: true },
         {

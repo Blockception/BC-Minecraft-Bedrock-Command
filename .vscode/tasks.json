@@ -6,7 +6,7 @@
       "script": "build",
       "isBackground": false,
       "group": "build",
-      "label": "npm build 'bc-minecraft-bedrock-command'",
+      "label": "npm compile 'bc-minecraft-bedrock-command'",
       "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": ["$tsc"]
     },

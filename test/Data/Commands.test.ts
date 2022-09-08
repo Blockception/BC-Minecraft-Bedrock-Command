@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
-import { CommandData } from "../../src/main";
+import { CommandData } from "../../src/Lib/Data/CommandData";
 
 /**List of command from the wiki */
 const commandlist = [
@@ -89,10 +89,7 @@ describe("Data/Commands", () => {
 
   it("Inventory Check", () => {
     commandlist.forEach((item) => {
-      if (
-        CommandData.Vanilla[item] == undefined &&
-        CommandData.Edu == undefined
-      ) {
+      if (CommandData.Vanilla[item] == undefined && CommandData.Edu == undefined) {
         expect.fail("missing command: " + item);
       }
     });
@@ -127,17 +124,11 @@ function CheckCommandContainer(value: CommandContainer) {
           });
 
           it("has name", () => {
-            expect(value.name.length).to.be.greaterThan(
-              0,
-              `command: ${name}, expected name to be filled`
-            );
+            expect(value.name.length).to.be.greaterThan(0, `command: ${name}, expected name to be filled`);
           });
 
           it("has parameters", () => {
-            expect(value.parameters.length).to.be.greaterThan(
-              0,
-              `command: ${name}, expected a parameter`
-            );
+            expect(value.parameters.length).to.be.greaterThan(0, `command: ${name}, expected a parameter`);
           });
         });
       }
