@@ -1862,6 +1862,11 @@ export const Vanilla: CommandContainer = {
           text: "include blocks",
           type: ParameterType.boolean,
           required: false,
+        },        
+        {
+          text: "water logged blocks",
+          type: ParameterType.boolean,
+          required: false,
         },
         { text: "integrity", type: ParameterType.float, required: false },
         { text: "seed", type: ParameterType.string, required: false },
@@ -1896,6 +1901,11 @@ export const Vanilla: CommandContainer = {
         },
         {
           text: "include blocks",
+          type: ParameterType.boolean,
+          required: false,
+        },
+        {
+          text: "water logged blocks",
           type: ParameterType.boolean,
           required: false,
         },
