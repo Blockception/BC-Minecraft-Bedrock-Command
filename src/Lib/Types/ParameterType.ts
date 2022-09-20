@@ -1,105 +1,105 @@
-//The type of command parameter
+/** The type of command parameter */
 export enum ParameterType {
-  //An animation key
+  /** An animation key */
   animation,
-  //Block identifiers
+  /** Block identifiers */
   block,
-  //Block states
+  /** Block states */
   blockStates,
-  //Booleans
+  /** Booleans */
   boolean,
-  //causeType
+  /** causeType */
   causeType,
-  //Camera Shake mode
+  /** Camera Shake mode */
   cameraShakeType,
-  //Clone mode
+  /** Clone mode */
   cloneMode,
-  //Command start
+  /** Command start */
   command,
-  //Coordinate
+  /** Coordinate */
   coordinate,
-  //Difficulty mode
+  /** Difficulty mode */
   difficulty,
-  //Effect identifiers
+  /** Effect identifiers */
   effect,
-  //Entity identifiers
+  /** Entity identifiers */
   entity,
-  //Event in behaviors
+  /** Event in behaviors */
   event,
-  //The fill mode
+  /** The fill mode */
   fillMode,
-  //Functions paths
+  /** Functions paths */
   function,
-  //Float numbers
+  /** Float numbers */
   float,
-  //Game mode
+  /** Game mode */
   gamemode,
-  //The type of hand: mainhand or offhand
+  /** The type of hand: mainhand or offhand */
   handType,
-  //Integer numbers
+  /** Integer numbers */
   integer,
-  //Item identifiers
+  /** Item identifiers */
   item,
-  //Json item format
+  /** Json item format */
   jsonItem,
-  //Json raw text
+  /** Json raw text */
   jsonRawText,
-  //Keyword
+  /** Keyword */
   keyword,
-  //A loot table
+  /** A loot table */
   lootTable,
-  //Locates feature mode
+  /** Locates feature mode */
   locateFeature,
-  //Message
+  /** Message */
   message,
-  //Mask mode
+  /** Mask mode */
   maskMode,
-  //Mirror mode
+  /** Mirror mode */
   mirror,
-  //Music repeat mode
+  /** Music repeat mode */
   musicRepeatMode,
-  //Objective identifiers
+  /** Objective identifiers */
   objective,
-  //Old Block mode
+  /** Old Block mode */
   oldBlockMode,
-  //Operation mode
+  /** Operation mode */
   operation,
-  //Particle iodentifier
+  /** Particle iodentifier */
   particle,
-  //Replace mode
+  /** Replace mode */
   replaceMode,
-  //Ride Rules
+  /** Ride Rules */
   rideRules,
-  //Ride Fill Mode
+  /** Ride Fill Mode */
   ridefillMode,
-  //Rotation Mode
+  /** Rotation Mode */
   rotation,
-  //Save Mode
+  /** Save Mode */
   saveMode,
-  //Selectors
+  /** Selectors */
   selector,
-  //Slot type
+  /** Slot type */
   slotType,
-  //Slot ID
+  /** Slot ID */
   slotID,
-  //Sound identifier
+  /** Sound identifier */
   sound,
-  //Strings
+  /** Strings */
   string,
-  //Structure
+  /** Structure */
   structure,
-  //Structre animation  mode
+  /** Structre animation  mode */
   structureAnimationMode,
-  //Tag identifiers
+  /** Tag identifiers */
   tag,
-  //Teleport rules
+  /** Teleport rules */
   teleportRules,
-  //Ticking area identifiers
+  /** Ticking area identifiers */
   tickingarea,
-  //Time mode
+  /** Time mode */
   time,
-  //Unknown
+  /** Unknown */
   unknown,
-  //XP
+  /** XP */
   xp,
 }
