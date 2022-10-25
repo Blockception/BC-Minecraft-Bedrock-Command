@@ -14,7 +14,7 @@ import { event } from './Vanilla/event';
 import { enchant } from './Vanilla/enchant';
 import { execute } from './Vanilla/execute';
 import { fill } from './Vanilla/fill';
-import { Function } from './Vanilla/Function';
+import { Function } from './Vanilla/function';
 import { fog } from './Vanilla/fog';
 import { gamemode } from './Vanilla/gamemode';
 import { gamerule } from './Vanilla/gamerule';
