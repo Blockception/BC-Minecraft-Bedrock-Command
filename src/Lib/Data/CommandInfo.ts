@@ -38,7 +38,7 @@ export interface ParameterInfo {
 
 /**The optional options for a given parameter.*/
 export interface ParameterOptions {
-  /**if defined, these values are always accepted, no evualation anymore required.*/
+  /**if defined, these values are always accepted, no evaluation anymore required.*/
   acceptedValues?: string[];
 
   /**Minimum value or amount of numbers.*/
@@ -46,9 +46,9 @@ export interface ParameterOptions {
   /**Maximum value or amount of numbers.*/
   maximum?: number;
 
-  /**Wheter or not this parameter is aimed at players only, excluding entities .*/
+  /**Whether or not this parameter is aimed at players only, excluding entities .*/
   playerOnly?: boolean;
-  /**Wheter or not fake / dummy players are allowed.*/
+  /**Whether or not fake / dummy players are allowed.*/
   allowFakePlayers?: boolean;
 
   /**If the wild card: '*' is allowed.*/
