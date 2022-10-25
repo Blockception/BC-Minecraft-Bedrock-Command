@@ -9,8 +9,12 @@ updates:
     directory: "/" # Location of package manifests
     open-pull-requests-limit: 50
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     assignees:
     - "DaanV2"
     reviewers:
     - "DaanV2"
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: "monthly"
