@@ -26,15 +26,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - uses: DaanV2/Typescript-Action-Create-Indexes@latest
-        id: general_create
-        name: Indexes for General
+        name: Indexes for Lib/Data
         with:
           folder: ${{github.workspace}}/src/Lib/Data
 
       # Runs a single command using the runners shell
       - uses: DaanV2/Typescript-Action-Create-Indexes@latest
-        id: general_create
-        name: Indexes for General
+        name: Indexes for Lib/Types
         with:
           folder: ${{github.workspace}}/src/Lib/Types
 
