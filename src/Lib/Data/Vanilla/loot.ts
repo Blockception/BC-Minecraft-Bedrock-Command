@@ -1,4 +1,4 @@
-import { ParameterType } from "../../Types";
+import { ParameterType } from "../../Types/ParameterType";
 import { CommandInfo } from "../CommandInfo";
 
 /**The loot command */
