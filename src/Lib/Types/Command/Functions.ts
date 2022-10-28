@@ -1,13 +1,12 @@
 import { Command } from "./Command";
 import { CommandInfo } from "../../Data";
-import { Edu } from "../../Data/Edu";
 import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
 import { ParameterType } from "../ParameterType";
-import { Vanilla } from "../../Data/Vanilla";
+import { Vanilla, Edu } from "../../Data/Commands";
 
 /**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
  * @param command The command to search through
- * @param edu Wheter or not to include education data
+ * @param edu Whether or not to include education data
  * @returns An array with commands info*/
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
   const m = command.getCommandData(edu);
@@ -205,7 +204,7 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
 
 /**Retrieves the command data related to the given keyword
  * @param name The command to retrieve
- * @param edu Wheter or not to include education commands
+ * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
 export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
   const out: CommandInfo[] = [];
@@ -219,7 +218,7 @@ export function getCommandData(name: string, edu: boolean = false): CommandInfo[
 
 /**Checks if the given commanddata is present
  * @param name The command to retrieve
- * @param edu Wheter or not to include education commands
+ * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
 export function hasCommandData(name: string, edu: boolean = false): boolean {
   if (Vanilla[name]) return true;
@@ -230,7 +229,7 @@ export function hasCommandData(name: string, edu: boolean = false): boolean {
 
 /**Checks if the given commanddata is present
  * @param command The command to retrieve
- * @param edu Wheter or not to include education commands
+ * @param edu Whether or not to include education commands
  * @returns True or false*/
 export function IsCommand(command: string, edu: boolean = false): boolean {
   if (Vanilla[command]) return true;

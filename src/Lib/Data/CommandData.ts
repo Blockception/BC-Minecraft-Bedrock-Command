@@ -1,9 +1,6 @@
-import { Edu as EduData } from "./Edu";
-import { Vanilla as VanillaData } from "./Vanilla";
+import { Edu as EduData, Vanilla as VanillaData } from "./Commands";
 
-/**
- * The minecraft command data set
- */
+/** The minecraft command data set */
 export namespace CommandData {
   /** The edu command data set */
   export const Edu = EduData;

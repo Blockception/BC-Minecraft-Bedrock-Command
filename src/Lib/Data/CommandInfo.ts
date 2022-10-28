@@ -3,13 +3,12 @@ import { ParameterType } from "../Types/ParameterType";
 /**An interface that carries additional obsolete info*/
 export interface ObsoleteInfo {
   /**The message to be displayed */
-  message : string,
+  message: string;
   /**The error code to use*/
-  code : string | number,
+  code: string | number;
   /**The version in which the command was removed*/
-  format_version? : string
+  format_version?: string;
 }
-
 
 /**A single command syntax*/
 export interface CommandInfo {

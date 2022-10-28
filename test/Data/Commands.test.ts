@@ -1,80 +1,7 @@
 import { expect } from "chai";
 import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
 import { CommandData } from "../../src/Lib/Data/CommandData";
-
-/**List of command from the wiki */
-const commandlist = [
-  "ability",
-  "alwaysday",
-  "camerashake",
-  "clear",
-  "clearspawnpoint",
-  "clone",
-  "connect",
-  "daylock",
-  "dialogue",
-  "difficulty",
-  "effect",
-  "enchant",
-  "event",
-  "execute",
-  "fill",
-  "fog",
-  "function",
-  "gamemode",
-  "gamerule",
-  "give",
-  "help",
-  "immutableworld",
-  "kick",
-  "kill",
-  "list",
-  "locate",
-  "me",
-  "mobevent",
-  "msg",
-  "music",
-  "particle",
-  "permission",
-  "playanimation",
-  "playsound",
-  "reload",
-  "replaceitem",
-  "ride",
-  "save",
-  "say",
-  "schedule",
-  "scoreboard",
-  "setblock",
-  "setmaxplayers",
-  "setworldspawn",
-  "spawnpoint",
-  "spreadplayers",
-  "stop",
-  "stopsound",
-  "structure",
-  "summon",
-  "tag",
-  "teleport",
-  "tell",
-  "tellraw",
-  "testfor",
-  "testforblock",
-  "testforblocks",
-  "tickingarea",
-  "time",
-  "title",
-  "titleraw",
-  "toggledownfall",
-  "tp",
-  "w",
-  "wb",
-  "weather",
-  "whitelist",
-  "worldbuilder",
-  "wsserver",
-  "xp",
-];
+import { EduCommands, VanillaCommands } from "../../src/Lib/Data/Commands";
 
 describe("Data/Commands", () => {
   describe("Check General", () => {
@@ -88,8 +15,14 @@ describe("Data/Commands", () => {
   });
 
   it("Inventory Check", () => {
-    commandlist.forEach((item) => {
+    VanillaCommands.forEach((item) => {
       if (CommandData.Vanilla[item] == undefined && CommandData.Edu == undefined) {
+        expect.fail("missing command: " + item);
+      }
+    });
+
+    EduCommands.forEach((item) => {
+      if (CommandData.Edu[item] == undefined && CommandData.Edu == undefined) {
         expect.fail("missing command: " + item);
       }
     });
@@ -107,7 +40,7 @@ function CheckCommandContainer(value: CommandContainer) {
     const name = keys[I];
     const items = value[name];
 
-    describe("command " + name, () => {
+    describe(`Command ${name}`, () => {
       it("Has atleast one item", () => {
         expect(items.length).to.be.greaterThan(0);
       });
@@ -116,19 +49,29 @@ function CheckCommandContainer(value: CommandContainer) {
         describe(`${name} ${J}`, () => {
           const value = items[J];
 
-          it("Has documentation?", () => {
+          it("Has documentation", () => {
             expect(value.documentation.length).to.be.greaterThan(
               0,
               `command: ${name}, expected documentation to be filled`
             );
           });
 
-          it("has name", () => {
+          it("Has a valid name", () => {
             expect(value.name.length).to.be.greaterThan(0, `command: ${name}, expected name to be filled`);
           });
 
-          it("has parameters", () => {
+          it("Has parameters", () => {
             expect(value.parameters.length).to.be.greaterThan(0, `command: ${name}, expected a parameter`);
+
+            value.parameters.forEach(p => {
+              expect(p.required).to.be.a('boolean');
+              expect(p.type).to.be.a('number');
+              expect(p.text).to.be.a('string');
+
+              if (p.options) {
+                expect(p.options).to.be.a('object');
+              }
+            })
           });
         });
       }

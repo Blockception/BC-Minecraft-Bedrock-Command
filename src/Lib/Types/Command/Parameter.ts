@@ -17,7 +17,7 @@ export class Parameter {
 /**The namespace surrounding the parameter object*/
 export namespace Parameter {
   /**Checks if the given instance implements the Parameter object
-   * @param value The value to evualate
+   * @param value The value to evaluate
    * @returns true or false if the object implements the Parameter object or not*/
   export function is(value: any): value is Parameter {
     if (value && typeof value.offset === "number" && typeof value.text === "string") return true;

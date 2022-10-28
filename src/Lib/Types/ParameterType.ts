@@ -64,7 +64,7 @@ export enum ParameterType {
   oldBlockMode,
   /** Operation mode */
   operation,
-  /** Particle iodentifier */
+  /** Particle identifier */
   particle,
   /** Replace mode */
   replaceMode,
@@ -88,7 +88,7 @@ export enum ParameterType {
   string,
   /** Structure */
   structure,
-  /** Structre animation  mode */
+  /** Structure animation  mode */
   structureAnimationMode,
   /** Tag identifiers */
   tag,

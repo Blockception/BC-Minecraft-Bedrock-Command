@@ -4,16 +4,16 @@ import { getBestMatches, getCommandData } from "./Functions";
 import { Parameter } from "./Parameter";
 import { GetParameters, ParameterBuilder } from "./Parse";
 
-/**A class that helps interpeting written commands.*/
+/**A class that helps interpreting written commands.*/
 export class Command {
-  private __matches : CommandInfo[] | undefined;
+  private _matches: CommandInfo[] | undefined;
 
   /**The parameters of the command.*/
   public parameters: Parameter[];
 
   /**Creates a new instance of a command*/
   constructor() {
-    this.__matches = undefined;
+    this._matches = undefined;
     this.parameters = [];
   }
 
@@ -26,23 +26,23 @@ export class Command {
   }
 
   /**Gets all the command data that is the possible best match data
-   * @param edu Wheter or not to include education data
+   * @param edu Whether or not to include education data
    * @returns An array with commands info*/
   getCommandData(edu: boolean = false): CommandInfo[] {
     return getCommandData(this.getKeyword(), edu);
   }
 
-  /**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
-   * @param edu Wheter or not to include education data
+  /**Gets the best matching commandInfo data, if multiple are returned, it unclear or somewhere not fully specified
+   * @param edu Whether or not to include education data
    * @returns An array with commands info*/
   getBestMatch(edu: boolean = false): CommandInfo[] {
-    if (this.__matches) return this.__matches;
+    if (this._matches) return this._matches;
 
-    return (this.__matches = getBestMatches(this, edu));
+    return (this._matches = getBestMatches(this, edu));
   }
 
   /**Gets the subcommand if there is any present
-   * @param edu Wheter or not to include education data
+   * @param edu Whether or not to include education data
    * @returns A sub command or undefined if there is no subcommand*/
   getSubCommand(edu: boolean = false): Command | undefined {
     const Matches = this.getBestMatch(edu);

@@ -27,22 +27,22 @@ export class ParameterBuilder {
  * @param Builder The builder to report to*/
 export function GetParameters(text: string, Builder: ParameterBuilder): void {
   let level = 0;
-  let startindex = 0;
-  let Instring = false;
+  let startIndex = 0;
+  let inString = false;
 
   for (let index = 0; index < text.length; index++) {
     let c = text.charAt(index);
 
-    //If instring or not
-    if (Instring) {
+    //If inString or not
+    if (inString) {
       //Is end of string and not escaped?
-      if (c == '"' && text.charAt(index - 1) !== "\\") Instring = false;
+      if (c == '"' && text.charAt(index - 1) !== "\\") inString = false;
     } else {
       //Switch on character
       switch (c) {
         //Its a string start
         case '"':
-          Instring = true;
+          inString = true;
           break;
 
         //Bracket start
@@ -63,12 +63,12 @@ export function GetParameters(text: string, Builder: ParameterBuilder): void {
         case " ":
         case "\t":
           if (level == 0) {
-            if (startindex < index) {
-              const word = text.substring(startindex, index).trim();
-              Builder.Add(word, startindex);
+            if (startIndex < index) {
+              const word = text.substring(startIndex, index).trim();
+              Builder.Add(word, startIndex);
             }
 
-            startindex = index + 1;
+            startIndex = index + 1;
           }
           break;
 
@@ -76,12 +76,12 @@ export function GetParameters(text: string, Builder: ParameterBuilder): void {
         case "~":
         case "^":
           if (level == 0) {
-            if (startindex < index) {
-              const word = text.substring(startindex, index).trim();
-              Builder.Add(word, startindex);
+            if (startIndex < index) {
+              const word = text.substring(startIndex, index).trim();
+              Builder.Add(word, startIndex);
             }
 
-            startindex = index;
+            startIndex = index;
           }
 
           break;
@@ -93,8 +93,8 @@ export function GetParameters(text: string, Builder: ParameterBuilder): void {
     if (level < 0) break;
   }
 
-  if (startindex < text.length) {
-    const word = text.substring(startindex, text.length).trim();
-    Builder.Add(word, startindex);
+  if (startIndex < text.length) {
+    const word = text.substring(startIndex, text.length).trim();
+    Builder.Add(word, startIndex);
   }
 }
