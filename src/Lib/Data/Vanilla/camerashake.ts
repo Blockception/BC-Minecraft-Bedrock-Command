@@ -1,7 +1,7 @@
 import { ParameterType } from "../../Types";
 import { CommandInfo } from "../CommandInfo";
 
-  /**The camerashake command */
+/**The camerashake command */
 export const camerashake: CommandInfo[] = [
   {
     name: "camerashake",

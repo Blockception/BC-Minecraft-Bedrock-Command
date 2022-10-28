@@ -1,7 +1,7 @@
 import { ParameterType } from "../../Types";
 import { CommandInfo } from "../CommandInfo";
 
-  /**The clear command */
+/**The clear command */
 export const clear: CommandInfo[] = [
   {
     name: "clear",
