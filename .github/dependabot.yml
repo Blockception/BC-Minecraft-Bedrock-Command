@@ -11,9 +11,9 @@ updates:
     schedule:
       interval: "monthly"
     assignees:
-    - "DaanV2"
+      - "DaanV2"
     reviewers:
-    - "DaanV2"
+      - "DaanV2"
   - package-ecosystem: github-actions
     directory: /
     schedule:
