@@ -1,9 +1,11 @@
 import { expect } from "chai";
 import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
 import { CommandData } from "../../src/Lib/Data/CommandData";
-import { EduCommands, VanillaCommands } from "../../src/Lib/Data/Commands";
 
 describe("Data/Commands", () => {
+  const VanillaCommands = CommandData.VanillaCommands;
+  const EduCommands = CommandData.EduCommands;
+
   describe("Check General", () => {
     CheckCommandContainer(CommandData.Edu);
     CheckCommandContainer(CommandData.Vanilla);

@@ -1,8 +1,7 @@
 import { Command } from "./Command";
-import { CommandInfo } from "../../Data";
+import { CommandData, CommandInfo } from "../../Data";
 import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
 import { ParameterType } from "../ParameterType";
-import { Vanilla, Edu } from "../../Data/Commands";
 
 /**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
  * @param command The command to search through
@@ -209,9 +208,9 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
 export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
   const out: CommandInfo[] = [];
 
-  Add(out, Vanilla[name]);
+  Add(out, CommandData.Vanilla[name]);
 
-  if (edu) Add(out, Edu[name]);
+  if (edu) Add(out, CommandData.Edu[name]);
 
   return out;
 }
@@ -221,8 +220,8 @@ export function getCommandData(name: string, edu: boolean = false): CommandInfo[
  * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
 export function hasCommandData(name: string, edu: boolean = false): boolean {
-  if (Vanilla[name]) return true;
-  if (edu && Edu[name]) return true;
+  if (CommandData.Vanilla[name]) return true;
+  if (edu && CommandData.Edu[name]) return true;
 
   return false;
 }
@@ -232,8 +231,8 @@ export function hasCommandData(name: string, edu: boolean = false): boolean {
  * @param edu Whether or not to include education commands
  * @returns True or false*/
 export function IsCommand(command: string, edu: boolean = false): boolean {
-  if (Vanilla[command]) return true;
-  if (edu && Edu[command]) return true;
+  if (CommandData.Vanilla[command]) return true;
+  if (edu && CommandData.Edu[command]) return true;
 
   return false;
 }
