@@ -14,6 +14,11 @@ export const execute: CommandInfo[] = [
   {
     name: "execute",
     documentation: "Executes another command.",
+    obsolete: {
+      code: "minecraft.commands.execute.deprecated",
+      message: "This version of the execute command has been deprecated, use the new version instead.",
+      format_version: "1.19.50",
+    },
     parameters: [
       { text: "execute", type: ParameterType.keyword, required: true },
       { text: "origin", type: ParameterType.selector, required: true },
@@ -26,6 +31,11 @@ export const execute: CommandInfo[] = [
   {
     name: "execute",
     documentation: "Executes another command.",
+    obsolete: {
+      code: "minecraft.commands.execute.deprecated",
+      message: "This version of the execute command has been deprecated, use the new version instead.",
+      format_version: "1.19.50",
+    },
     parameters: [
       { text: "execute", type: ParameterType.keyword, required: true },
       { text: "origin", type: ParameterType.selector, required: true },
