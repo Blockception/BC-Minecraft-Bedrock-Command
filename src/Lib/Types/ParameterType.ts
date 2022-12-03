@@ -20,10 +20,14 @@ export enum ParameterType {
   coordinate,
   /** Difficulty mode */
   difficulty,
+  /** Dimension */
+  dimension,
   /** Effect identifiers */
   effect,
   /** Entity identifiers */
   entity,
+  /**  */
+  executeSubcommand,
   /** Event in behaviors */
   event,
   /** The fill mode */
@@ -38,6 +42,8 @@ export enum ParameterType {
   handType,
   /** Integer numbers */
   integer,
+  /** Integer range numbers */
+  integer_range,
   /** Item identifiers */
   item,
   /** Json item format */
@@ -76,6 +82,8 @@ export enum ParameterType {
   rotation,
   /** Save Mode */
   saveMode,
+  /** scan Mode */
+  scanMode,
   /** Selectors */
   selector,
   /** Slot type */
