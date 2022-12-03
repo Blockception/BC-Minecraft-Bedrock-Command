@@ -49,7 +49,9 @@ export class Command {
 
     for (var I = 0; I < Matches.length; I++) {
       const Item = Matches[I];
-      const index = Item.parameters.findIndex((x) => x.type === ParameterType.command);
+      const index = Item.parameters.findIndex((x) => {
+        return x.type === ParameterType.command || x.type === ParameterType.executeSubcommand;
+      });
 
       if (index > -1 && index < this.parameters.length) {
         return this.slice(index);
@@ -69,12 +71,12 @@ export class Command {
       if (elem.offset <= cursor) {
         out = I;
 
-        const endindex = elem.offset + elem.text.length;
+        const endIndex = elem.offset + elem.text.length;
         //If the cursor is below the end of parameter or equal to it, return this parameter index
-        if (cursor <= endindex) {
+        if (cursor <= endIndex) {
           return I;
-          //if the cursofr is further then the end of the parameter, move it atleast by one, cause its not this parameter.
-        } else if (cursor > endindex) {
+          //if the cursor is further then the end of the parameter, move it at least by one, cause its not this parameter.
+        } else if (cursor > endIndex) {
           out = I + 1;
         }
       } else {
@@ -92,12 +94,12 @@ export class Command {
   }
 
   /**Creates a slice of the command on the specified parameter indexes
-   * @param start The startindex or undefined
-   * @param end The startindex or undefined
+   * @param start The startIndex or undefined
+   * @param end The startIndex or undefined
    * @returns A new command that is represents the slice*/
-  slice(start?: number | undefined, end?: number | undefined): Command {
+  slice(startIndex?: number | undefined, end?: number | undefined): Command {
     const Out = new Command();
-    Out.parameters = this.parameters.slice(start, end);
+    Out.parameters = this.parameters.slice(startIndex, end);
 
     return Out;
   }
@@ -121,9 +123,9 @@ export class Command {
     const Out = new Command();
 
     //Record start offset from trimming
-    const oldlength = text.length;
+    const oldLength = text.length;
     text = text.trimStart();
-    offset += oldlength - text.length;
+    offset += oldLength - text.length;
     //Trim end
     text = text.trimEnd();
 
