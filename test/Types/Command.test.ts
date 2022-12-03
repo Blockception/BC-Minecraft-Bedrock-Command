@@ -3,32 +3,30 @@ import { Command } from "../../src/main";
 
 describe("Command", () => {
   it("parse 1 - simple test", () => {
-    const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ tp @a[tag=target] @s", 0);
+    const comm = Command.parse("scoreboard players set @a[scores={foo=1..}] foo 1", 0);
 
-    expect(comm.parameters.length).to.equal(8);
+    expect(comm.parameters.length).to.equal(6);
 
-    expect(comm.parameters[0].text).to.equal("execute");
-    expect(comm.parameters[1].text).to.equal("@s[scores={foo=1..}]");
-    expect(comm.parameters[2].text).to.equal("~");
-    expect(comm.parameters[3].text).to.equal("~");
-    expect(comm.parameters[4].text).to.equal("~");
-    expect(comm.parameters[5].text).to.equal("tp");
-    expect(comm.parameters[6].text).to.equal("@a[tag=target]");
-    expect(comm.parameters[7].text).to.equal("@s");
+    expect(comm.parameters[0].text).to.equal("scoreboard");
+    expect(comm.parameters[1].text).to.equal("players");
+    expect(comm.parameters[2].text).to.equal("set");
+    expect(comm.parameters[3].text).to.equal("@a[scores={foo=1..}]");
+    expect(comm.parameters[4].text).to.equal("foo");
+    expect(comm.parameters[5].text).to.equal("1");
 
     expect(comm.getCommandData(false).length).be.greaterThanOrEqual(0);
   });
 
-  it("parse 2 - condesed ~ coordinates", () => {
-    const comm = Command.parse("execute @s ~~~ tp @a @s", 0);
+  it("parse 2 - condensed ~ coordinates", () => {
+    const comm = Command.parse("tp @s ~~~", 0);
 
-    expect(comm.parameters.length).to.equal(8);
+    expect(comm.parameters.length).to.equal(5);
   });
 
-  it("parse 3 - condesed ^ coordinates", () => {
-    const comm = Command.parse("execute @s ^^^ tp @a @s", 0);
+  it("parse 3 - condensed ^ coordinates", () => {
+    const comm = Command.parse("tp @s ^^^", 0);
 
-    expect(comm.parameters.length).to.equal(8);
+    expect(comm.parameters.length).to.equal(5);
   });
 
   it("parse 4 - unknown command", () => {
@@ -63,7 +61,10 @@ describe("Command", () => {
   });
 
   it("subcommand 2", () => {
-    const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 tp @a[tag=target] @s", 0);
+    const comm = Command.parse(
+      "execute @s[scores={foo=1..}] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 tp @a[tag=target] @s",
+      0
+    );
 
     const sub = comm.getSubCommand();
 
@@ -94,13 +95,16 @@ describe("Command", () => {
   });
 
   it("is in subcommand 2", () => {
-    const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 tp @a[tag=target] @s", 0);
+    const comm = Command.parse(
+      "execute @s[scores={foo=1..}] ~ ~ ~ detect ~ ~ ~ minecraft:air -1 tp @a[tag=target] @s",
+      0
+    );
     const sub = comm.isInSubCommand(38, false);
 
     expect(sub).to.be.undefined;
   });
 
-  it("cursorindex", () => {
+  it("cursorIndex must match specific parameter", () => {
     const comm = Command.parse("execute @s[scores={foo=1..}] ~ ~ ~ tp @a[tag=target] @s", 0);
 
     expect(comm.findCursorIndex(2)).to.equal(0, "execute");
@@ -112,13 +116,13 @@ describe("Command", () => {
     expect(comm.findCursorIndex(41)).to.equal(6, "@a[tag=target]");
   });
 
-  it("cursorindex2", () => {
+  it("cursorIndex must be in the first word", () => {
     const comm = Command.parse("execute @s[scores={foo=1..}]", 0);
 
     expect(comm.findCursorIndex(29)).to.equal(2, "execute");
   });
 
-  it("cursorindex3", () => {
+  it("cursorIndex must be in the first word if before", () => {
     const comm = Command.parse("execute @s[scores={foo=1..}]", 30);
 
     expect(comm.findCursorIndex(5)).to.equal(0, "execute");
