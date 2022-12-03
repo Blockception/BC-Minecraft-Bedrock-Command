@@ -8,6 +8,14 @@ export const execute: CommandInfo[] = [
     documentation: "Executes another command.",
     parameters: [
       { text: "execute", type: ParameterType.keyword, required: true },
+      { text: "next", type: ParameterType.executeSubcommand, required: true },
+    ],
+  },
+  {
+    name: "execute",
+    documentation: "Executes another command.",
+    parameters: [
+      { text: "execute", type: ParameterType.keyword, required: true },
       { text: "origin", type: ParameterType.selector, required: true },
       { text: "position x", type: ParameterType.coordinate, required: true },
       { text: "position y", type: ParameterType.coordinate, required: true },
