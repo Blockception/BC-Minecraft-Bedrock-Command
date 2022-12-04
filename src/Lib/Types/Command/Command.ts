@@ -9,12 +9,14 @@ export class Command {
   private _matches: CommandInfo[] | undefined;
 
   /**The parameters of the command.*/
-  public parameters: Parameter[];
+  public parameters: Parameter[];  
+  public subType: ParameterType;
 
   /**Creates a new instance of a command*/
   constructor() {
     this._matches = undefined;
     this.parameters = [];
+    this.subType = ParameterType.command;
   }
 
   /**Gets the keyword of this command (first parameter)
@@ -29,7 +31,7 @@ export class Command {
    * @param edu Whether or not to include education data
    * @returns An array with commands info*/
   getCommandData(edu: boolean = false): CommandInfo[] {
-    return getCommandData(this.getKeyword(), edu);
+    return getCommandData(this.getKeyword(), edu, this.subType);
   }
 
   /**Gets the best matching commandInfo data, if multiple are returned, it unclear or somewhere not fully specified
@@ -54,7 +56,10 @@ export class Command {
       });
 
       if (index > -1 && index < this.parameters.length) {
-        return this.slice(index);
+        const out = this.slice(index);
+        out.subType = Item.parameters[index].type;
+
+        return out;
       }
     }
   }

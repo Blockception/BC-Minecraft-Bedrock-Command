@@ -1,4 +1,4 @@
-import { ParameterType } from "../../../Types";
+import { ParameterType } from "../../../Types/ParameterType";
 import { CommandContainer } from "../../CommandContainer";
 
 export const executeSubCommands: CommandContainer = {

@@ -3,12 +3,12 @@ import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
 import { CommandData } from "../../src/Lib/Data/CommandData";
 
 describe("Data/Commands", () => {
-  const VanillaCommands = CommandData.VanillaCommands;
-  const EduCommands = CommandData.EduCommands;
+  const { VanillaCommands, EduCommands } = CommandData;
 
   describe("Check General", () => {
     CheckCommandContainer(CommandData.Edu);
     CheckCommandContainer(CommandData.Vanilla);
+    CheckCommandContainer(CommandData.ExecuteSubcommands);
   });
 
   it("Dialogue Check", () => {
@@ -18,13 +18,20 @@ describe("Data/Commands", () => {
 
   it("Inventory Check", () => {
     VanillaCommands.forEach((item) => {
-      if (CommandData.Vanilla[item] == undefined && CommandData.Edu == undefined) {
+      if (CommandData.Vanilla == undefined && CommandData.Vanilla[item] == undefined) {
         expect.fail("missing command: " + item);
       }
     });
 
     EduCommands.forEach((item) => {
-      if (CommandData.Edu[item] == undefined && CommandData.Edu == undefined) {
+      if (CommandData.Edu == undefined && CommandData.Edu[item] == undefined) {
+        expect.fail("missing command: " + item);
+      }
+    });
+
+    const ExecuteSubcommand = Object.keys(CommandData.ExecuteSubcommands);
+    ExecuteSubcommand.forEach((item) => {
+      if (CommandData.ExecuteSubcommands == undefined && CommandData.ExecuteSubcommands[item] == undefined) {
         expect.fail("missing command: " + item);
       }
     });
@@ -65,15 +72,15 @@ function CheckCommandContainer(value: CommandContainer) {
           it("Has parameters", () => {
             expect(value.parameters.length).to.be.greaterThan(0, `command: ${name}, expected a parameter`);
 
-            value.parameters.forEach(p => {
-              expect(p.required).to.be.a('boolean');
-              expect(p.type).to.be.a('number');
-              expect(p.text).to.be.a('string');
+            value.parameters.forEach((p) => {
+              expect(p.required).to.be.a("boolean");
+              expect(p.type).to.be.a("number");
+              expect(p.text).to.be.a("string");
 
               if (p.options) {
-                expect(p.options).to.be.a('object');
+                expect(p.options).to.be.a("object");
               }
-            })
+            });
           });
         });
       }

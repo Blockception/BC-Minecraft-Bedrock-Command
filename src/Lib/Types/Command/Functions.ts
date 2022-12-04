@@ -8,11 +8,20 @@ import { ParameterType } from "../ParameterType";
  * @param edu Whether or not to include education data
  * @returns An array with commands info*/
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
-  const m = command.getCommandData(edu);
+  let m = command.getCommandData(edu);
 
   if (m.length === 1) return m;
 
-  return m.filter((x) => isMatch(command, x, edu));
+  m = m.filter((x) => isMatch(command, x, edu));
+
+  if (m.length > 1) {
+    const n = m.filter((x) => checkRequiredParameterLength(command, x));
+    if (n.length === 0) return m;
+
+    return n;
+  }
+
+  return m;
 }
 
 /**Checks if the command matches the commandInfo
@@ -67,7 +76,7 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
         break;
 
       case ParameterType.executeSubcommand:
-        if (IsExecuteSubcommand(commandText)) return false;
+        if (!IsExecuteSubcommand(commandText)) return false;
         break;
 
       case ParameterType.keyword:
@@ -119,16 +128,51 @@ const Matches: Partial<Record<ParameterType, (item: string) => boolean>> = {
   [ParameterType.xp]: (item) => Minecraft.XP.is(item),
 };
 
+export function checkRequiredParameterLength(command: Command, data: CommandInfo): boolean {
+  let required = 0;
+
+  for (let I = 0; I < data.parameters.length; I++) {
+    const par = data.parameters[I];
+    if (par.required) {
+      required++;
+    } else {
+      break;
+    }
+  }
+
+  if (command.parameters.length < required) {
+    return false;
+  }
+
+  return true;
+}
+
 /**Retrieves the command data related to the given keyword
  * @param name The command to retrieve
  * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
-export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
+export function getCommandData(
+  name: string,
+  edu: boolean = false,
+  type: ParameterType = ParameterType.command
+): CommandInfo[] {
   const out: CommandInfo[] = [];
 
-  Add(out, CommandData.Vanilla[name]);
+  if (type == ParameterType.executeSubcommand) {
+    Add(out, CommandData.ExecuteSubcommands[name]);
+  }
 
-  if (edu) Add(out, CommandData.Edu[name]);
+  if (type == ParameterType.command) {
+    Add(out, CommandData.Vanilla[name]);
+
+    if (edu) Add(out, CommandData.Edu[name]);
+  }
+
+  return out;
+}
+
+export function getCommandSubdata(name: string, type: ParameterType): CommandInfo[] {
+  const out: CommandInfo[] = [];
 
   return out;
 }
