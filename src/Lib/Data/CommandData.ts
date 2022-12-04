@@ -16,6 +16,7 @@ import { effect } from "./Vanilla/effect";
 import { enchant } from "./Vanilla/enchant";
 import { event } from "./Vanilla/event";
 import { execute } from "./Vanilla/execute";
+import { executeSubCommands } from './Vanilla/execute/subcommands';
 import { fill } from "./Vanilla/fill";
 import { fog } from "./Vanilla/fog";
 import { Function } from "./Vanilla/function";
@@ -136,6 +137,8 @@ export namespace CommandData {
     weather,
     xp,
   };
+
+  export const ExecuteSubcommands = executeSubCommands;
 
   export const VanillaCommands = Object.keys(Vanilla);
   export const EduCommands = Object.keys(Edu);

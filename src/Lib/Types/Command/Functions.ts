@@ -3,23 +3,32 @@ import { CommandData, CommandInfo } from "../../Data";
 import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
 import { ParameterType } from "../ParameterType";
 
-/**Gets the best matching commandinfo data, if multiple are returned, it unclear or somewhere not fully specified
+/**Gets the best matching commandInfo data, if multiple are returned, it unclear or somewhere not fully specified
  * @param command The command to search through
  * @param edu Whether or not to include education data
  * @returns An array with commands info*/
 export function getBestMatches(command: Command, edu: boolean = false): CommandInfo[] {
-  const m = command.getCommandData(edu);
+  let m = command.getCommandData(edu);
 
   if (m.length === 1) return m;
 
-  return m.filter((x) => isMatch(command, x, edu));
+  m = m.filter((x) => isMatch(command, x, edu));
+
+  if (m.length > 1) {
+    const n = m.filter((x) => checkRequiredParameterLength(command, x));
+    if (n.length === 0) return m;
+
+    return n;
+  }
+
+  return m;
 }
 
-/**Checks if the command matches the commandinfo
+/**Checks if the command matches the commandInfo
  * @param command The command to examine
- * @param data The commandinfo serving as the basis
+ * @param data The commandInfo serving as the basis
  * @param edu If education content should be used or not
- * @returns true or false is this commandinfo matches the command*/
+ * @returns true or false is this commandInfo matches the command*/
 export function isMatch(command: Command, data: CommandInfo, edu: boolean = false): boolean {
   let Limit = data.parameters.length;
 
@@ -33,6 +42,12 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
     const patPar = data.parameters[I];
 
     if (patPar.options?.acceptedValues?.includes(commandText)) {
+      continue;
+    }
+
+    const match = Matches[patPar.type];
+    if (match) {
+      if (!match(commandText)) return false;
       continue;
     }
 
@@ -52,150 +67,81 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
         //TODO program matches types for these
         continue;
 
-      case ParameterType.boolean:
-        if (!General.Boolean.is(commandText)) return false;
-        break;
-
-      case ParameterType.blockStates:
-        if (!General.Json.isArray(commandText)) return false;
-        break;
-
-      case ParameterType.cameraShakeType:
-        if (!Modes.CameraShake.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.causeType:
-        if (!Modes.CauseType.isValue(commandText)) return false;
-        break;
-
       case ParameterType.command:
         if (!IsCommand(commandText, edu)) return false;
-        break;
-
-      case ParameterType.coordinate:
-        if (!Minecraft.Coordinate.is(commandText)) return false;
-        break;
-
-      case ParameterType.cloneMode:
-        if (!Modes.Clone.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.difficulty:
-        if (!Modes.Difficulty.isValue(commandText)) return false;
         break;
 
       case ParameterType.effect:
         if (commandText === "clear") return false;
         break;
 
-      case ParameterType.fillMode:
-        if (!Modes.Fill.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.float:
-        if (!General.Float.is(commandText)) return false;
-        break;
-
-      case ParameterType.gamemode:
-        if (!Modes.Gamemode.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.handType:
-        if (!Modes.HandType.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.locateFeature:
-        if (!Modes.LocateFeature.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.integer:
-      case ParameterType.slotID:
-        if (!General.Integer.is(commandText)) return false;
-        break;
-
-      case ParameterType.jsonItem:
-      case ParameterType.jsonRawText:
-        if (!General.Json.isObject(commandText)) return false;
+      case ParameterType.executeSubcommand:
+        if (!IsExecuteSubcommand(commandText)) return false;
         break;
 
       case ParameterType.keyword:
         if (commandText != patPar.text) return false;
         break;
 
-      case ParameterType.string:
-      case ParameterType.lootTable:
-        if (!General.String.is(commandText)) return false;
-        break;
-
-      case ParameterType.maskMode:
-        if (!Modes.Mask.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.mirror:
-        if (!Modes.Mirror.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.musicRepeatMode:
-        if (!Modes.MusicRepeat.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.oldBlockMode:
-        if (!Modes.OldBlock.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.operation:
-        if (!Modes.Operation.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.replaceMode:
-        if (!Modes.Replace.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.rideRules:
-        if (!Modes.RideRules.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.rotation:
-        if (!Modes.Rotation.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.saveMode:
-        if (!Modes.Save.isValue(commandText)) return false;
-        break;
-
       case ParameterType.selector:
-        if (
-          !Minecraft.Selector.Selector.isSelector(
-            commandText,
-            patPar.options?.wildcard,
-            patPar.options?.allowFakePlayers
-          )
-        )
-          return false;
-        break;
-
-      case ParameterType.slotType:
-        if (!Modes.SlotType.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.structureAnimationMode:
-        if (!Modes.StructureAnimation.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.teleportRules:
-        if (!Modes.TeleportRules.isValue(commandText)) return false;
-        break;
-
-      case ParameterType.time:
-        if (!Modes.Time.isValue(commandText)) {
-          return false;
-        }
-        break;
-
-      case ParameterType.xp:
-        if (!Minecraft.XP.is(commandText)) return false;
+        const { wildcard, allowFakePlayers } = patPar.options ?? {};
+        if (!Minecraft.Selector.Selector.isSelector(commandText, wildcard, allowFakePlayers)) return false;
         break;
     }
+  }
+
+  return true;
+}
+
+const Matches: Partial<Record<ParameterType, (item: string) => boolean>> = {
+  [ParameterType.blockStates]: (item) => General.Json.isArray(item),
+  [ParameterType.boolean]: (item) => General.Boolean.is(item),
+  [ParameterType.cameraShakeType]: (item) => Modes.CameraShake.isValue(item),
+  [ParameterType.causeType]: (item) => Modes.CauseType.isValue(item),
+  [ParameterType.cloneMode]: (item) => Modes.Clone.isValue(item),
+  [ParameterType.coordinate]: (item) => Minecraft.Coordinate.is(item),
+  [ParameterType.difficulty]: (item) => Modes.Difficulty.isValue(item),
+  [ParameterType.fillMode]: (item) => Modes.Fill.isValue(item),
+  [ParameterType.float]: (item) => General.Float.is(item),
+  [ParameterType.gamemode]: (item) => Modes.Gamemode.isValue(item),
+  [ParameterType.handType]: (item) => Modes.HandType.isValue(item),
+  [ParameterType.integer]: (item) => General.Integer.is(item),
+  [ParameterType.jsonItem]: (item) => General.Json.isObject(item),
+  [ParameterType.jsonRawText]: (item) => General.Json.isObject(item),
+  [ParameterType.locateFeature]: (item) => Modes.LocateFeature.isValue(item),
+  [ParameterType.lootTable]: (item) => General.String.is(item),
+  [ParameterType.maskMode]: (item) => Modes.Mask.isValue(item),
+  [ParameterType.mirror]: (item) => Modes.Mirror.isValue(item),
+  [ParameterType.musicRepeatMode]: (item) => Modes.MusicRepeat.isValue(item),
+  [ParameterType.oldBlockMode]: (item) => Modes.OldBlock.isValue(item),
+  [ParameterType.operation]: (item) => Modes.Operation.isValue(item),
+  [ParameterType.replaceMode]: (item) => Modes.Replace.isValue(item),
+  [ParameterType.rideRules]: (item) => Modes.RideRules.isValue(item),
+  [ParameterType.rotation]: (item) => Modes.Rotation.isValue(item),
+  [ParameterType.saveMode]: (item) => Modes.Save.isValue(item),
+  [ParameterType.slotID]: (item) => General.Integer.is(item),
+  [ParameterType.slotType]: (item) => Modes.SlotType.isValue(item),
+  [ParameterType.string]: (item) => General.String.is(item),
+  [ParameterType.structureAnimationMode]: (item) => Modes.StructureAnimation.isValue(item),
+  [ParameterType.teleportRules]: (item) => Modes.TeleportRules.isValue(item),
+  [ParameterType.time]: (item) => Modes.Time.isValue(item),
+  [ParameterType.xp]: (item) => Minecraft.XP.is(item),
+};
+
+export function checkRequiredParameterLength(command: Command, data: CommandInfo): boolean {
+  let required = 0;
+
+  for (let I = 0; I < data.parameters.length; I++) {
+    const par = data.parameters[I];
+    if (par.required) {
+      required++;
+    } else {
+      break;
+    }
+  }
+
+  if (command.parameters.length < required) {
+    return false;
   }
 
   return true;
@@ -205,17 +151,33 @@ export function isMatch(command: Command, data: CommandInfo, edu: boolean = fals
  * @param name The command to retrieve
  * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
-export function getCommandData(name: string, edu: boolean = false): CommandInfo[] {
+export function getCommandData(
+  name: string,
+  edu: boolean = false,
+  type: ParameterType = ParameterType.command
+): CommandInfo[] {
   const out: CommandInfo[] = [];
 
-  Add(out, CommandData.Vanilla[name]);
+  if (type == ParameterType.executeSubcommand) {
+    Add(out, CommandData.ExecuteSubcommands[name]);
+  }
 
-  if (edu) Add(out, CommandData.Edu[name]);
+  if (type == ParameterType.command) {
+    Add(out, CommandData.Vanilla[name]);
+
+    if (edu) Add(out, CommandData.Edu[name]);
+  }
 
   return out;
 }
 
-/**Checks if the given commanddata is present
+export function getCommandSubdata(name: string, type: ParameterType): CommandInfo[] {
+  const out: CommandInfo[] = [];
+
+  return out;
+}
+
+/**Checks if the given commandData is present
  * @param name The command to retrieve
  * @param edu Whether or not to include education commands
  * @returns An array with commands info*/
@@ -226,7 +188,7 @@ export function hasCommandData(name: string, edu: boolean = false): boolean {
   return false;
 }
 
-/**Checks if the given commanddata is present
+/**Checks if the given commandData is present
  * @param command The command to retrieve
  * @param edu Whether or not to include education commands
  * @returns True or false*/
@@ -235,6 +197,13 @@ export function IsCommand(command: string, edu: boolean = false): boolean {
   if (edu && CommandData.Edu[command]) return true;
 
   return false;
+}
+
+/** Checks if the given command is a execute sub command
+ * @param command The command to check
+ * @returns True or false*/
+export function IsExecuteSubcommand(command: string) {
+  return CommandData.ExecuteSubcommands[command] != undefined;
 }
 
 function Add(receiver: CommandInfo[], items: CommandInfo[] | undefined): void {
