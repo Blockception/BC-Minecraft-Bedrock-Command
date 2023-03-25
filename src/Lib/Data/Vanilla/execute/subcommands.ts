@@ -183,21 +183,6 @@ export const executeSubCommands: CommandContainer = {
         { text: "next", type: ParameterType.executeSubcommand, required: true },
       ],
     },
-    // If block x y z block data next
-    {
-      name: "if",
-      documentation: "Executes the command if the specified condition is true.",
-      parameters: [
-        { text: "if", type: ParameterType.keyword, required: true },
-        { text: "block", type: ParameterType.keyword, required: true },
-        { text: "x", type: ParameterType.coordinate, required: true },
-        { text: "y", type: ParameterType.coordinate, required: true },
-        { text: "z", type: ParameterType.coordinate, required: true },
-        { text: "block", type: ParameterType.block, required: true },
-        { text: "data", type: ParameterType.integer, required: true },
-        { text: "next", type: ParameterType.executeSubcommand, required: true },
-      ],
-    },
     // If block x y z block next
     {
       name: "if",
@@ -287,21 +272,6 @@ export const executeSubCommands: CommandContainer = {
         { text: "z", type: ParameterType.coordinate, required: true },
         { text: "block", type: ParameterType.block, required: true },
         { text: "states", type: ParameterType.blockStates, required: true },
-        { text: "next", type: ParameterType.executeSubcommand, required: true },
-      ],
-    },
-    // Unless block x y z block data next
-    {
-      name: "unless",
-      documentation: "Executes the command unless the specified condition is false.",
-      parameters: [
-        { text: "unless", type: ParameterType.keyword, required: true },
-        { text: "block", type: ParameterType.keyword, required: true },
-        { text: "x", type: ParameterType.coordinate, required: true },
-        { text: "y", type: ParameterType.coordinate, required: true },
-        { text: "z", type: ParameterType.coordinate, required: true },
-        { text: "block", type: ParameterType.block, required: true },
-        { text: "data", type: ParameterType.integer, required: true },
         { text: "next", type: ParameterType.executeSubcommand, required: true },
       ],
     },

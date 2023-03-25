@@ -63,6 +63,7 @@ import { tp } from "./Vanilla/tp";
 import { w } from "./Vanilla/w";
 import { weather } from "./Vanilla/weather";
 import { xp } from "./Vanilla/xp";
+import { testforblocks } from './Vanilla/testforblocks';
 
 /** The minecraft command data set */
 export namespace CommandData {
@@ -126,6 +127,7 @@ export namespace CommandData {
     tellraw,
     testfor,
     testforblock,
+    testforblocks,
     tickingarea,
     time,
     title,

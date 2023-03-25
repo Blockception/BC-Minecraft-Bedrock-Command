@@ -12,6 +12,8 @@ export const summon: CommandInfo[] = [
       { text: "spawnPos x", type: ParameterType.coordinate, required: false },
       { text: "spawnPos y", type: ParameterType.coordinate, required: false },
       { text: "spawnPos z", type: ParameterType.coordinate, required: false },
+      { text: "rotation y", type: ParameterType.coordinate, required: false },
+      { text: "rotation x", type: ParameterType.coordinate, required: false },
       { text: "spawnevent", type: ParameterType.event, required: false },
       { text: "name", type: ParameterType.string, required: false },
     ],
