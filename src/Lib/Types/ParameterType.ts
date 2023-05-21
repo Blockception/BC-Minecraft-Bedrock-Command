@@ -72,6 +72,10 @@ export enum ParameterType {
   operation,
   /** Particle identifier */
   particle,
+  /** Permission */
+  permission,
+  /** Permission state */
+  permissionState,
   /** Replace mode */
   replaceMode,
   /** Ride Rules */

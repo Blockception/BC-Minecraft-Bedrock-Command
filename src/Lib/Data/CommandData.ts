@@ -24,6 +24,7 @@ import { gamemode } from "./Vanilla/gamemode";
 import { gamerule } from "./Vanilla/gamerule";
 import { give } from "./Vanilla/give";
 import { immutableworld } from "./Edu/immutableworld";
+import { inputpermission } from './Vanilla/inputpermission';
 import { kick } from "./Vanilla/kick";
 import { kill } from "./Vanilla/kill";
 import { locate } from "./Vanilla/locate";
@@ -54,6 +55,7 @@ import { tell } from "./Vanilla/tell";
 import { tellraw } from "./Vanilla/tellraw";
 import { testfor } from "./Vanilla/testfor";
 import { testforblock } from "./Vanilla/testforblock";
+import { testforblocks } from './Vanilla/testforblocks';
 import { tickingarea } from "./Vanilla/tickingarea";
 import { time } from "./Vanilla/time";
 import { title } from "./Vanilla/title";
@@ -63,7 +65,6 @@ import { tp } from "./Vanilla/tp";
 import { w } from "./Vanilla/w";
 import { weather } from "./Vanilla/weather";
 import { xp } from "./Vanilla/xp";
-import { testforblocks } from './Vanilla/testforblocks';
 
 /** The minecraft command data set */
 export namespace CommandData {
@@ -85,9 +86,9 @@ export namespace CommandData {
     clone,
     damage,
     daylock,
+    deop,
     dialogue,
     difficulty,
-    deop,
     effect,
     enchant,
     event,
@@ -98,6 +99,7 @@ export namespace CommandData {
     gamemode,
     gamerule,
     give,
+    inputpermission,
     kick,
     kill,
     locate,
@@ -107,22 +109,23 @@ export namespace CommandData {
     music,
     op,
     particle,
-    playsound,
     playanimation,
+    playsound,
     replaceitem,
     ride,
     say,
     schedule,
     scoreboard,
     setblock,
-    setworldspawn,
     setmaxplayers,
+    setworldspawn,
     spawnpoint,
     spreadplayers,
     stopsound,
     structure,
     summon,
     tag,
+    teleport,
     tell,
     tellraw,
     testfor,
@@ -134,14 +137,16 @@ export namespace CommandData {
     titleraw,
     toggledownfall,
     tp,
-    teleport,
     w,
     weather,
     xp,
   };
 
+  /** The execute sub command data set */
   export const ExecuteSubcommands = executeSubCommands;
 
+  /** All the vanilla commands */
   export const VanillaCommands = Object.keys(Vanilla);
+  /** All the edu commands */
   export const EduCommands = Object.keys(Edu);
 }
