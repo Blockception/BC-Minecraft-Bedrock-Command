@@ -235,7 +235,14 @@ export const executeSubCommands: CommandContainer = {
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "score", type: ParameterType.keyword, required: true },
-        { text: "target", type: ParameterType.selector, required: true },
+        {
+          text: "target",
+          type: ParameterType.selector,
+          required: true,
+          options: {
+            allowFakePlayers: true,
+          },
+        },
         { text: "objective", type: ParameterType.objective, required: true },
         { text: "operation", type: ParameterType.operation, required: true },
         { text: "source", type: ParameterType.selector, required: true },
