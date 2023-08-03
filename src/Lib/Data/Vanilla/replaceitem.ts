@@ -17,7 +17,7 @@ export const replaceitem: CommandInfo[] = [
       { text: "item name", type: ParameterType.item, required: true },
       { text: "amount", type: ParameterType.integer, required: false },
       { text: "data", type: ParameterType.integer, required: false },
-      { text: "components", type: ParameterType.keyword, required: false },
+      { text: "components", type: ParameterType.jsonItem, required: false },
     ],
   },
   {
@@ -39,7 +39,7 @@ export const replaceitem: CommandInfo[] = [
       { text: "item name", type: ParameterType.item, required: true },
       { text: "amount", type: ParameterType.integer, required: false },
       { text: "data", type: ParameterType.integer, required: false },
-      { text: "components", type: ParameterType.keyword, required: false },
+      { text: "components", type: ParameterType.jsonItem, required: false },
     ],
   },
   {
