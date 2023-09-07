@@ -89,7 +89,7 @@ export const scoreboard: CommandInfo[] = [
       { text: "scoreboard", type: ParameterType.keyword, required: true },
       { text: "objectives", type: ParameterType.keyword, required: true },
       { text: "setdisplay", type: ParameterType.keyword, required: true },
-      { text: "below_name", type: ParameterType.keyword, required: true },
+      { text: "belowname", type: ParameterType.keyword, required: true },
       { text: "objective", type: ParameterType.objective, required: false },
     ],
   },
