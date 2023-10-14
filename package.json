@@ -42,16 +42,16 @@
   },
   "homepage": "https://github.com/Blockception/BC-Minecraft-Bedrock-Command#readme",
   "devDependencies": {
-    "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "^18.15.11",
-    "chai": "^4.3.7",
+    "@types/chai": "^4.3.8",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "^20.8.6",
+    "chai": "^4.3.10",
     "mocha": "^10.2.0",
-    "rimraf": "^5.0.0",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.2.2"
   },
   "dependencies": {
-    "bc-minecraft-bedrock-types": "^1.20.0-0"
+    "bc-minecraft-bedrock-types": "^1.20.32-1"
   }
 }
