@@ -74,4 +74,19 @@ export const fill: CommandInfo[] = [
       { text: "mode", type: ParameterType.fillMode, required: false },
     ],
   },
+  {
+    name: "fill",
+    documentation: "Fills a region with a specific block.",
+    parameters: [
+      { text: "fill", type: ParameterType.keyword, required: true },
+      { text: "from x", type: ParameterType.coordinate, required: true },
+      { text: "from y", type: ParameterType.coordinate, required: true },
+      { text: "from z", type: ParameterType.coordinate, required: true },
+      { text: "to x", type: ParameterType.coordinate, required: true },
+      { text: "to y", type: ParameterType.coordinate, required: true },
+      { text: "to z", type: ParameterType.coordinate, required: true },
+      { text: "tile name", type: ParameterType.block, required: true },
+      { text: "mode", type: ParameterType.fillMode, required: false },
+    ],
+  },
 ];
