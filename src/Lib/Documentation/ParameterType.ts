@@ -5,7 +5,7 @@ import { ParameterType } from '../Types/ParameterType';
 
 export const ParameterTypeDocumentation : Partial<Record<ParameterType, string>> = {
   [ParameterType.animation]: `## Animation
-An animation is a set of key frames or mathematical expressions that can be used to animate a model. or execute commands`,
+An animation is a set of key frames or mathematical expressions that can be used to animate a model. or execute commands in behaviour packs`,
 
   [ParameterType.block]:`## Block
 A block is a single block in the world. It can be placed, removed, and changed.`,
