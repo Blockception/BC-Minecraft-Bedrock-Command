@@ -1,6 +1,6 @@
 import { Modes } from 'bc-minecraft-bedrock-types';
-import { ModeHandler } from 'bc-minecraft-bedrock-types/lib/src/Modes/ModeHandler';
 import { ParameterType } from '../Types/ParameterType';
+import { ModeHandler } from 'bc-minecraft-bedrock-types/lib/src/modes/mode-handler';
 
 
 export const ParameterTypeDocumentation : Partial<Record<ParameterType, string>> = {
