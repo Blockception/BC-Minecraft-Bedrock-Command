@@ -86,6 +86,8 @@ const ptype: Record<ParameterType, string> = {
     [ParameterType.float]: "float",
     [ParameterType.gamemode]: "gamemode",
     [ParameterType.handType]: "handType",
+    [ParameterType.hudElement]: "hudElement",
+    [ParameterType.hudVisibility]: "hudVisibility",
     [ParameterType.integer]: "integer",
     [ParameterType.integer_range]: "integer_range",
     [ParameterType.item]: "item",
