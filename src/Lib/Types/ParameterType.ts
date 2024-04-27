@@ -40,6 +40,10 @@ export enum ParameterType {
   gamemode,
   /** The type of hand: mainhand or offhand */
   handType,
+  /** The type of hud visibility */
+  hudVisibility,
+  /** The type of hud element */
+  hudElement,
   /** Integer numbers */
   integer,
   /** Integer range numbers */

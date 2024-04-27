@@ -105,6 +105,8 @@ const Matches: Partial<Record<ParameterType, (item: string) => boolean>> = {
   [ParameterType.float]: (item) => General.Float.is(item),
   [ParameterType.gamemode]: (item) => Modes.Gamemode.isValue(item),
   [ParameterType.handType]: (item) => Modes.HandType.isValue(item),
+  [ParameterType.hudElement]: (item) => Modes.HudElement.isValue(item),
+  [ParameterType.hudVisibility]: (item) => Modes.HudVisibility.isValue(item),
   [ParameterType.integer]: (item) => General.Integer.is(item),
   [ParameterType.jsonItem]: (item) => General.Json.isObject(item),
   [ParameterType.jsonRawText]: (item) => General.Json.isObject(item),

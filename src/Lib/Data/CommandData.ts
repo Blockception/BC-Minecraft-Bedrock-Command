@@ -23,6 +23,7 @@ import { Function } from "./Vanilla/function";
 import { gamemode } from "./Vanilla/gamemode";
 import { gamerule } from "./Vanilla/gamerule";
 import { give } from "./Vanilla/give";
+import { hud } from "./Vanilla/hud";
 import { immutableworld } from "./Edu/immutableworld";
 import { inputpermission } from './Vanilla/inputpermission';
 import { kick } from "./Vanilla/kick";
@@ -99,6 +100,7 @@ export namespace CommandData {
     gamemode,
     gamerule,
     give,
+    hud,
     inputpermission,
     kick,
     kill,
