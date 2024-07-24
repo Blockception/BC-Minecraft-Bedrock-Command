@@ -1,5 +1,6 @@
 import { ability } from "./Edu/ability";
 import { alwaysday } from "./Vanilla/alwaysday";
+import { camera } from "./Vanilla/camera";
 import { camerashake } from "./Vanilla/camerashake";
 import { classroommode } from "./Edu/classroommode";
 import { clear } from "./Vanilla/clear";
@@ -81,6 +82,7 @@ export namespace CommandData {
   /** The vanilla command data set */
   export const Vanilla: CommandContainer = {
     alwaysday,
+    camera,
     camerashake,
     clear,
     clearspawnpoint,
