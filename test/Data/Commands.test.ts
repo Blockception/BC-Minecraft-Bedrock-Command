@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { CommandContainer } from "../../src/Lib/Data/CommandContainer";
-import { CommandData } from "../../src/Lib/Data/CommandData";
+import { CommandContainer } from "../../src/lib/Data/command-container";
+import { CommandData } from "../../src/lib/Data/command-data";
 
 describe("Data/Commands", () => {
   const { VanillaCommands, EduCommands } = CommandData;

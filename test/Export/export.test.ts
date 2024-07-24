@@ -1,6 +1,6 @@
-import { CommandData } from "../../src/Lib/Data/CommandData";
-import { CommandInfo, ParameterInfo } from "../../src/Lib/Data/CommandInfo";
-import { ParameterType } from '../../src/Lib/Types/ParameterType';
+import { CommandData } from "../../src/lib/Data/command-data";
+import { CommandInfo, ParameterInfo } from "../../src/lib/Data/command-info";
+import { ParameterType } from '../../src/lib/types/parameter-type';
 import { writeFileSync } from 'fs';
 
 interface Parameter {

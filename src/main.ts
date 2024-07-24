@@ -1,3 +1,3 @@
-export * from "./Lib/Types";
-export * from "./Lib/Data";
-export * from "./Lib/Documentation";
+export * from "./lib/types";
+export * from "./lib/data";
+export * from "./lib/documentation";
