@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { Command } from "../../src/main";
+import { Command } from "../src/main";
 
 describe("Command", () => {
   it("parse 1 - simple test", () => {
