@@ -203,7 +203,7 @@ export const executeSubCommands: CommandContainer = {
       documentation: "Executes the command if the specified condition is true.",
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
-        { text: "block", type: ParameterType.keyword, required: true },
+        { text: "blocks", type: ParameterType.keyword, required: true },
         { text: "begin x", type: ParameterType.coordinate, required: true },
         { text: "begin y", type: ParameterType.coordinate, required: true },
         { text: "begin z", type: ParameterType.coordinate, required: true },
