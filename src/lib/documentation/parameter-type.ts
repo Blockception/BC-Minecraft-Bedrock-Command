@@ -1,6 +1,6 @@
 import { Modes } from "bc-minecraft-bedrock-types";
 import { ParameterType } from "../types/parameter-type";
-import { ModeHandler } from "bc-minecraft-bedrock-types/lib/src/modes/mode-handler";
+import { ModeHandler } from 'bc-minecraft-bedrock-types/lib/modes/mode-handler';
 
 export const ParameterTypeDocumentation: Partial<Record<ParameterType, string>> = {
   [ParameterType.animation]: `## Animation
