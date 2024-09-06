@@ -173,12 +173,6 @@ export function getCommandData(
   return out;
 }
 
-export function getCommandSubdata(name: string, type: ParameterType): CommandInfo[] {
-  const out: CommandInfo[] = [];
-
-  return out;
-}
-
 /**Checks if the given commandData is present
  * @param name The command to retrieve
  * @param edu Whether or not to include education commands

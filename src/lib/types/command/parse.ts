@@ -31,7 +31,7 @@ export function GetParameters(text: string, Builder: ParameterBuilder): void {
   let inString = false;
 
   for (let index = 0; index < text.length; index++) {
-    let c = text.charAt(index);
+    const c = text.charAt(index);
 
     //If inString or not
     if (inString) {
