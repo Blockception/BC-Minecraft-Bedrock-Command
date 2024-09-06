@@ -9,7 +9,7 @@ export class Command {
   private _matches: CommandInfo[] | undefined;
 
   /**The parameters of the command.*/
-  public parameters: Parameter[];  
+  public parameters: Parameter[];
   public subType: ParameterType;
 
   /**Creates a new instance of a command*/
@@ -49,7 +49,7 @@ export class Command {
   getSubCommand(edu: boolean = false): Command | undefined {
     const Matches = this.getBestMatch(edu);
 
-    for (var I = 0; I < Matches.length; I++) {
+    for (let I = 0; I < Matches.length; I++) {
       const Item = Matches[I];
       const index = Item.parameters.findIndex((x) => {
         return x.type === ParameterType.command || x.type === ParameterType.executeSubcommand;

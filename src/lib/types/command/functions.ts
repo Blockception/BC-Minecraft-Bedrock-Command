@@ -1,7 +1,7 @@
 import { Command } from "./command";
 import { CommandData, CommandInfo } from "../../data";
-import { General, Minecraft, Modes } from "bc-minecraft-bedrock-types";
 import { ParameterType } from "../parameter-type";
+import { General, Minecraft, Modes } from 'bc-minecraft-bedrock-types';
 
 /**Gets the best matching commandInfo data, if multiple are returned, it unclear or somewhere not fully specified
  * @param command The command to search through
@@ -169,12 +169,6 @@ export function getCommandData(
 
     if (edu) Add(out, CommandData.Edu[name]);
   }
-
-  return out;
-}
-
-export function getCommandSubdata(name: string, type: ParameterType): CommandInfo[] {
-  const out: CommandInfo[] = [];
 
   return out;
 }
