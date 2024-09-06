@@ -5,7 +5,6 @@ name: 📋 Npm Test
 env:
   FORCE_COLOR: true
 
-
 on:
   push:
     branches:
