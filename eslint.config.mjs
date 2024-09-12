@@ -4,7 +4,16 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
   {
     files: ["**/*.ts"],
-    ignores: ["coverage/**/*", "node_modules/**/*"],
+    ignores: [
+      "coverage/",
+      "coverage/*",
+      "coverage/**/*",
+      "lib/",
+      "lib/*",
+      "lib/**/*",
+      "node_modules/",
+      "node_modules/*",
+    ],
     extends: [eslint.configs.recommended, ...tseslint.configs.recommended],
     plugins: {
       jest: {},
