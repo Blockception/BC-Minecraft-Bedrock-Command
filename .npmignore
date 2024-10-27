@@ -6,4 +6,4 @@ test/
 *.test.*
 .vscode
 .gitattributes
-.mocharc.json
+.mocharc.json'
