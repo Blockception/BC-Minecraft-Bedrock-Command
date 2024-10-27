@@ -7,7 +7,6 @@ client/server
 *.vsix
 log.txt
 coverage
-src
 tsconfig.json
 tslint.json
 .prettierrc
