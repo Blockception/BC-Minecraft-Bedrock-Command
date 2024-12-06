@@ -103,6 +103,20 @@ export const schedule: CommandInfo[] = [
       { text: "delay", type: ParameterType.keyword, required: true },
       { text: "add", type: ParameterType.keyword, required: true },
       { text: "function", type: ParameterType.function, required: true },
+      { text: "time", type: ParameterType.timeInTicks, required: true },
+      { text: "append", type: ParameterType.keyword, required: false },
+    ],
+  },
+  {
+    name: "schedule",
+    documentation: "Schedules an action to be executed once an area is loaded, or after a certain amount of time",
+    parameters: [
+      { text: "schedule", type: ParameterType.keyword, required: true },
+      { text: "delay", type: ParameterType.keyword, required: true },
+      { text: "add", type: ParameterType.keyword, required: true },
+      { text: "function", type: ParameterType.function, required: true },
+      { text: "time", type: ParameterType.timeInTicks, required: true },
+      { text: "replace", type: ParameterType.keyword, required: false },
     ],
   },
 ];
