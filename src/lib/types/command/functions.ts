@@ -127,7 +127,8 @@ const Matches: Partial<Record<ParameterType, (item: string) => boolean>> = {
   [ParameterType.structureAnimationMode]: (item) => Modes.StructureAnimation.isValue(item),
   [ParameterType.teleportRules]: (item) => Modes.TeleportRules.isValue(item),
   [ParameterType.time]: (item) => Modes.Time.isValue(item),
-  [ParameterType.xp]: (item) => Minecraft.XP.is(item),
+  [ParameterType.timeInTicks]: (item) => Modes.Time.isValue(item),
+  [ParameterType.xp]: (item) => Minecraft.timeInTicks.is(item),
 };
 
 export function checkRequiredParameterLength(command: Command, data: CommandInfo): boolean {
