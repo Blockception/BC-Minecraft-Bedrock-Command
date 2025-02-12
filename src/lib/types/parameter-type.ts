@@ -116,6 +116,8 @@ export enum ParameterType {
   tickingarea,
   /** Time mode */
   time,
+  /** Time in ticks */
+  timeInTicks,
   /** Unknown */
   unknown,
   /** XP */
