@@ -126,6 +126,9 @@ A raw text is a way to specify the text of a text component.`,
   [ParameterType.lootTable]: `## Loot Table
 The identifier of a loot table.`,
 
+  [ParameterType.jigsaw]: `## Jigsaw
+The path to a jigsaw pool.`,
+
   [ParameterType.locateFeature]: `## Locate Feature
 A value representing the different world features.\
 ${sumMode(Modes.LocateFeature)}`,
@@ -221,7 +224,7 @@ The identifier of a ticking area.`,
   [ParameterType.time]: `## Time
 A value representing the time of the game.`,
 
-  
+
   [ParameterType.timeInTicks]: `## Time in ticks
 A value representing the time of the game (20D, 3S, 15T, 4).`,
 

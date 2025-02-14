@@ -112,6 +112,7 @@ const Matches: Partial<Record<ParameterType, (item: string) => boolean>> = {
   [ParameterType.jsonRawText]: (item) => General.Json.isObject(item),
   [ParameterType.locateFeature]: (item) => Modes.LocateFeature.isValue(item),
   [ParameterType.lootTable]: (item) => General.String.is(item),
+  [ParameterType.jigsaw]: (item) => General.String.is(item),
   [ParameterType.maskMode]: (item) => Modes.Mask.isValue(item),
   [ParameterType.mirror]: (item) => Modes.Mirror.isValue(item),
   [ParameterType.musicRepeatMode]: (item) => Modes.MusicRepeat.isValue(item),
