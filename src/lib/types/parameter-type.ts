@@ -58,6 +58,8 @@ export enum ParameterType {
   keyword,
   /** A loot table */
   lootTable,
+  /** A loot table */
+  jigsaw,
   /** Locates feature mode */
   locateFeature,
   /** Message */
