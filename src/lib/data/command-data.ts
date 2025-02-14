@@ -69,6 +69,7 @@ import { tp } from "./vanilla/tp";
 import { w } from "./vanilla/w";
 import { weather } from "./vanilla/weather";
 import { xp } from "./vanilla/xp";
+import { aimassist } from './vanilla/aimassist';
 
 /** The minecraft command data set */
 export namespace CommandData {
@@ -83,6 +84,7 @@ export namespace CommandData {
 
   /** The vanilla command data set */
   export const Vanilla: CommandContainer = {
+    aimassist,
     alwaysday,
     camera,
     camerashake,
