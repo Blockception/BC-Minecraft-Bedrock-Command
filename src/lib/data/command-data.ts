@@ -70,6 +70,7 @@ import { w } from "./vanilla/w";
 import { weather } from "./vanilla/weather";
 import { xp } from "./vanilla/xp";
 import { aimassist } from './vanilla/aimassist';
+import { place } from './vanilla/place';
 
 /** The minecraft command data set */
 export namespace CommandData {
@@ -117,6 +118,7 @@ export namespace CommandData {
     music,
     op,
     particle,
+    place,
     playanimation,
     playsound,
     recipe,
