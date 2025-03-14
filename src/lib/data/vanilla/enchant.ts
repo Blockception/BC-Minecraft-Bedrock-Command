@@ -30,7 +30,7 @@ export const enchant: CommandInfo[] = [
         options: { playerOnly: true },
       },
       { text: "id", type: ParameterType.string, required: true },
-      { text: "level", type: ParameterType.keyword, required: false },
+      { text: "level", type: ParameterType.integer, required: false },
     ],
   },
 ];
