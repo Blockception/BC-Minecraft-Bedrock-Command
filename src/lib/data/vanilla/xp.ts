@@ -8,13 +8,8 @@ export const xp: CommandInfo[] = [
     documentation: "Adds or removes player experience.",
     parameters: [
       { text: "xp", type: ParameterType.keyword, required: true },
-      { text: "amount", type: ParameterType.xp, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: false,
-        options: { playerOnly: true },
-      },
+      { text: "amount", type: ParameterType.integer, required: true },
+      { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
     ],
   },
   {
@@ -22,13 +17,8 @@ export const xp: CommandInfo[] = [
     documentation: "Adds or removes player experience.",
     parameters: [
       { text: "xp", type: ParameterType.keyword, required: true },
-      { text: "amount", type: ParameterType.integer, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: false,
-        options: { playerOnly: true },
-      },
+      { text: "amount", type: ParameterType.xp, required: true },
+      { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
     ],
   },
 ];
