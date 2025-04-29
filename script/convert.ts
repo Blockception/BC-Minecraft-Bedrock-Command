@@ -3,7 +3,7 @@ import { ParameterType } from "../src/lib/types/parameter-type";
 import { Command, CommandOverload, CommandParameter, MinecraftCommandData } from "./minecraft-data";
 import { mutate } from "./mutate";
 
-const removed = ["transfer", "wsserver", "connect"];
+const removed = ["transfer", "wsserver", "connect", "sendshowstoreoffer"];
 
 export function convert(data: MinecraftCommandData): Record<string, CommandInfo[]> {
   const result: Record<string, CommandInfo[]> = {};
@@ -155,6 +155,8 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
   if (type === "ID") {
     switch (true) {
+      case comm === "allowlist" && name === "name":
+      case comm === "aimassist" && name === "preset id":
       case comm === "dialogue" && name === "sceneName":
         return ParameterType.string;
       case comm === "fog" && name === "fogId":
@@ -163,6 +165,8 @@ function converType(comm: string, name: string, type: string): ParameterType {
         return ParameterType.string;
       case comm === "gametest" && name === "testName":
         return ParameterType.string;
+      case comm === "loot" && name === "loot_table":
+        return ParameterType.lootTable;
       case comm === "music" && name === "trackName":
         return ParameterType.music;
       case comm === "place" && name === "jigsawTarget":
@@ -183,6 +187,7 @@ function converType(comm: string, name: string, type: string): ParameterType {
       case comm === "script" && name === "host":
       case comm === "scriptevent" && name === "name":
       case comm === "scriptevent" && name === "messageId":
+      case comm === "structure" && name === "seed":
         return ParameterType.string;
       case comm === "structure" && name === "name":
         return ParameterType.structure;
@@ -201,6 +206,7 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
   if (type === "JSON_OBJECT") {
     switch (name) {
+      case "titleText":
       case "raw json message":
         return ParameterType.jsonRawText;
       case "components":
@@ -258,8 +264,10 @@ const enumMap: Record<string, ParameterType> = {
   MOBEVENT: ParameterType.event,
   MUSICREPEATMODE: ParameterType.musicRepeatMode,
   OPERATOR: ParameterType.operation,
+  FULLINTEGERRANGE: ParameterType.integer_range,
+  COMPAREOPERATOR: ParameterType.operation,
   PATHCOMMAND: ParameterType.function,
-  PERMISSIONSACTION: ParameterType.permission,
+  PERMISSIONLEVEL: ParameterType.permission,
   postfix_l: ParameterType.xp,
   RAWTEXT: ParameterType.string,
   REPLACEMODE: ParameterType.replaceMode,
@@ -270,6 +278,7 @@ const enumMap: Record<string, ParameterType> = {
   SELECTION: ParameterType.selector,
   STRUCTUREFEATURE: ParameterType.structure,
   STRUCTURESAVEMODE: ParameterType.saveMode,
+  TAGVALUES: ParameterType.tag,
   TITLERAWSET: ParameterType.jsonRawText,
   UNLOCKABLERECIPEVALUES: ParameterType.recipe,
   VAL: ParameterType.float,

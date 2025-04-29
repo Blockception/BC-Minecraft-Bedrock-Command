@@ -217,7 +217,7 @@ const mutateDataP: Array<[(value: CommandParameter) => boolean, Partial<CommandP
         type: { name: "ENTITY" },
       },
     ],
-  ]
+  ],
 ];
 
 interface Deletable {
@@ -225,39 +225,43 @@ interface Deletable {
 }
 
 export function mutate(data: Command) {
-  let result: CommandOverload[] | undefined;
 
-  for (const overload of data.overloads) {
-    for (const [orignal, others] of mutateData) {
-      result = mutateOverloadWith(overload, orignal, others);
-      if (result) {
-        data.overloads.push(...result);
-      }
+  for (const [orignal, others] of mutateData) {
+    const overloads: Array<CommandOverload> = [];
+
+    for (let i = 0; i < data.overloads.length; i++) {
+      const overload = data.overloads[i];
+      const result = mutateOverloadWith(overload, orignal, others);
+      overloads.push(...result);
     }
 
-    for (const [orignal, others] of mutateDataP) {
-      result = mutateOverloadWithP(overload, orignal, others);
-      if (result) {
-        data.overloads.push(...result);
-      }
-    }
+    data.overloads = overloads;
   }
 
-  data.overloads = data.overloads.filter((p: CommandOverload & Deletable) => !p.delete);
+  for (const [predicate, others] of mutateDataP) {
+    const overloads: Array<CommandOverload> = [];
+
+    for (let i = 0; i < data.overloads.length; i++) {
+      const overload = data.overloads[i];
+      const result = mutateOverloadWithP(overload, predicate, others);
+      overloads.push(...result);
+    }
+
+    data.overloads = overloads;
+  }
 }
 
 function mutateOverloadWith(
-  data: CommandOverload & Deletable,
+  data: CommandOverload,
   orignal: string,
   others: string[]
-): CommandOverload[] | undefined {
+): CommandOverload[] {
   const i = data.params.findIndex((p) => p.type.name === orignal);
   if (i === -1) {
-    return undefined;
+    return [data];
   }
 
   const result: CommandOverload[] = [];
-  data.delete = true;
 
   for (const o of others) {
     const newData: CommandOverload = {
@@ -275,10 +279,14 @@ function mutateOverloadWith(
   return result;
 }
 
-function mutateOverloadWithP(data: CommandOverload & Deletable, predicate: (CommandParameter) => boolean, others: Partial<CommandParameter>[]) {
+function mutateOverloadWithP(
+  data: CommandOverload & Deletable,
+  predicate: (CommandParameter) => boolean,
+  others: Partial<CommandParameter>[]
+) {
   const i = data.params.findIndex(predicate);
   if (i === -1) {
-    return undefined;
+    return [data];
   }
 
   const result: CommandOverload[] = [];
