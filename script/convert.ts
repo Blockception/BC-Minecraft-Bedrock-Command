@@ -1,33 +1,35 @@
 import { CommandInfo, ParameterInfo } from "../src/lib/data/command-info";
 import { ParameterType } from "../src/lib/types/parameter-type";
-import { Command, CommandParameter, MinecraftCommandData } from "./minecraft-data";
+import { Command, CommandOverload, CommandParameter, MinecraftCommandData } from "./minecraft-data";
 import { mutate } from "./mutate";
+
+const removed = ["transfer", "wsserver", "connect"];
 
 export function convert(data: MinecraftCommandData): Record<string, CommandInfo[]> {
   const result: Record<string, CommandInfo[]> = {};
 
-  data.commands.forEach((c) => {
-    const r = convertCommand(c);
-    r.forEach((item) => {
-      if (!result[item.name]) {
-        result[item.name] = [];
-      }
-      result[item.name].push(item);
+  data.commands
+    .filter((c) => !removed.includes(c.name))
+    .forEach((c) => {
+      const r = convertCommand(c);
+      r.forEach((item) => {
+        if (!result[item.name]) {
+          result[item.name] = [];
+        }
+        result[item.name].push(item);
+      });
     });
-  });
 
   // Sort
+  console.log("==== Sorting ====");
   for (const [key, value] of Object.entries(result)) {
     result[key] = value.sort((a, b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
+      let i: number = 0;
+      if ((i = a.name.localeCompare(b.name)) != 0) return i;
 
-      if (a.parameters.length < b.parameters.length) return -1;
-      if (a.parameters.length > b.parameters.length) return 1;
-
-      for (let i = 0; i < a.parameters.length; i++) {
-        if (a.parameters[i].text < b.parameters[i].text) return -1;
-        if (a.parameters[i].text > b.parameters[i].text) return 1;
+      const m = Math.min(a.parameters.length, b.parameters.length);
+      for (let j = 0; j < m; j++) {
+        if ((i = a.parameters[j].text.localeCompare(b.parameters[j].text)) != 0) return i;
       }
 
       return 0;
@@ -41,46 +43,52 @@ function convertCommand(data: Command): Array<CommandInfo> {
   mutate(data);
   data.name = data.name === "?" ? "help" : data.name;
 
-  const base: CommandInfo = {
-    name: data.name,
-    documentation: data.description,
-    parameters: [],
-  };
-
-  const temp: Array<CommandInfo> = [];
+  const result: Array<CommandInfo> = [];
 
   data.overloads.forEach((overload) => {
-    const commandInfo: CommandInfo = {
-      ...base,
-      parameters: [
-        {
-          text: data.name,
-          type: ParameterType.keyword,
-          required: true,
-        },
-      ],
+    const base: CommandInfo = {
+      name: data.name,
+      documentation: data.description,
+      parameters: [],
+      permission_level: data.permission_level,
     };
-    overload.params.map((item) => convertParameter(data.name, item, commandInfo.parameters));
-    temp.push(commandInfo);
+
+    result.push(convertC(base, overload));
   });
-
-  if (data.aliases.length === 0) {
-    return temp;
-  }
-
-  const result: Array<CommandInfo> = [];
 
   data.aliases.forEach((alias) => {
     alias.name = alias.name === "?" ? "help" : alias.name;
 
-    temp.forEach((c) => {
-      const commandInfo = { ...c };
-      commandInfo.name = alias.name;
-      result.push(commandInfo);
+    const base: CommandInfo = {
+      name: alias.name,
+      documentation: data.description,
+      parameters: [],
+      permission_level: data.permission_level,
+    };
+    data.overloads.forEach((overload) => {
+      result.push(convertC(base, overload));
     });
   });
 
   return result;
+}
+
+function convertC(base: CommandInfo, overload: CommandOverload): CommandInfo {
+  const commandInfo: CommandInfo = {
+    ...base,
+    parameters: [
+      {
+        text: base.name,
+        type: ParameterType.keyword,
+        required: true,
+      },
+    ],
+  };
+
+  overload.params.map((item) => convertParameter(base.name, item, commandInfo.parameters));
+  console.log("  command ->", commandInfo.parameters.map((i) => i.text).join(" "));
+
+  return commandInfo;
 }
 
 function convertParameter(comm: string, param: CommandParameter, receiver: ParameterInfo[]) {
@@ -147,10 +155,45 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
   if (type === "ID") {
     switch (true) {
+      case comm === "dialogue" && name === "sceneName":
+        return ParameterType.string;
+      case comm === "fog" && name === "fogId":
+        return ParameterType.fog;
+      case comm === "fog" && name === "userProvidedId":
+        return ParameterType.string;
+      case comm === "gametest" && name === "testName":
+        return ParameterType.string;
+      case comm === "music" && name === "trackName":
+        return ParameterType.music;
+      case comm === "place" && name === "jigsawTarget":
+        return ParameterType.jigsaw;
+      case comm === "playanimation" && name === "animation":
+        return ParameterType.animation;
+      case comm === "particle" && name === "effect":
+        return ParameterType.particle;
+      case comm === "playanimation" && name === "stop_expression":
+      case comm === "playanimation" && name === "next_state":
+      case comm === "playanimation" && name === "controller":
+        return ParameterType.string;
+      case comm === "playsound" && name === "sound":
+      case comm === "stopsound" && name === "sound":
+        return ParameterType.sound;
+      case comm === "scoreboard" && name === "displayName":
+        return ParameterType.string;
+      case comm === "script" && name === "host":
+      case comm === "scriptevent" && name === "name":
+      case comm === "scriptevent" && name === "messageId":
+        return ParameterType.string;
+      case comm === "structure" && name === "name":
+        return ParameterType.structure;
+      case comm === "ride" && name === "spawnEvent":
+      case comm === "ride" && name === "nameTag":
+      case comm === "summon" && name === "nameTag":
+      case comm === "transfer" && name === "server":
+        return ParameterType.string;
+      case comm === "schedule" && name === "name":
       case comm === "tickingarea" && name === "name":
         return ParameterType.tickingarea;
-      case comm === "summon" && name === "nameTag":
-        return ParameterType.string;
       case comm === "whitelist" && name === "name":
         return ParameterType.selector;
     }
@@ -158,6 +201,8 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
   if (type === "JSON_OBJECT") {
     switch (name) {
+      case "raw json message":
+        return ParameterType.jsonRawText;
       case "components":
         return ParameterType.jsonItem;
       default:
@@ -178,38 +223,57 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
 const enumMap: Record<string, ParameterType> = {
   AIMASSISTTARGETMODE: ParameterType.keyword,
+  BIOME: ParameterType.biome,
   BLOCK_STATE_ARRAY: ParameterType.blockStates,
   BLOCK: ParameterType.block,
   BOOLEAN: ParameterType.boolean,
   CAMERAPRESETS: ParameterType.cameraPresets,
   CAMERASHAKETYPE: ParameterType.cameraShakeType,
+  CLONEMODE: ParameterType.cloneMode,
+  CODEBUILDERARGS: ParameterType.executeSubcommand,
+  COMMANDNAME: ParameterType.command,
+  DIFFICULTY: ParameterType.difficulty,
+  DIMENSION: ParameterType.dimension,
+  EFFECT: ParameterType.effect,
+  ENCHANT: ParameterType.enchant,
   ENTITYEQUIPMENTSLOT: ParameterType.slotType,
   ENTITYEVENTS: ParameterType.event,
   ENTITYTYPE: ParameterType.entity,
+  EXECUTECHAINEDOPTION_0: ParameterType.executeSubcommand,
   FEATURERULES: ParameterType.locateFeature,
   FEATURES: ParameterType.locateFeature,
+  FILLMODE: ParameterType.fillMode,
   FILLTYPE: ParameterType.fillMode,
   FLOAT: ParameterType.float,
+  GAMEMODE: ParameterType.gamemode,
+  GAMETESTNAME: ParameterType.string,
+  GAMETESTTAG: ParameterType.string,
   INT: ParameterType.integer,
   ITEM: ParameterType.item,
   JIGSAWSTRUCTURE: ParameterType.jigsaw,
   KEYWORD: ParameterType.keyword,
+  MASKMODE: ParameterType.maskMode,
   MESSAGE_ROOT: ParameterType.message,
   MIRROR: ParameterType.mirror,
   MOBEVENT: ParameterType.event,
+  MUSICREPEATMODE: ParameterType.musicRepeatMode,
+  OPERATOR: ParameterType.operation,
   PATHCOMMAND: ParameterType.function,
   PERMISSIONSACTION: ParameterType.permission,
   postfix_l: ParameterType.xp,
-  RAWTEXT: ParameterType.jsonRawText,
+  RAWTEXT: ParameterType.string,
   REPLACEMODE: ParameterType.replaceMode,
   RIDERULES: ParameterType.rideRules,
   RVAL: ParameterType.rotation,
   SAVEMODE: ParameterType.saveMode,
   SCOREBOARDOBJECTIVES: ParameterType.objective,
   SELECTION: ParameterType.selector,
+  STRUCTUREFEATURE: ParameterType.structure,
   STRUCTURESAVEMODE: ParameterType.saveMode,
   TITLERAWSET: ParameterType.jsonRawText,
+  UNLOCKABLERECIPEVALUES: ParameterType.recipe,
   VAL: ParameterType.float,
+  WILDCARDINT: ParameterType.integer,
 };
 
 const keyWordReplace: Record<string, string> = {

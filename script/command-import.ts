@@ -6,7 +6,10 @@ const path = require("node:path");
 const fs = require("fs");
 
 async function main() {
+  console.log("==== Loading ====");
   const data = await command_data.get();
+
+  console.log("==== Converting ====");
   const commands = convert(data);
 
   // data.command_enums
@@ -14,7 +17,14 @@ async function main() {
   //   .forEach((i) => {
   //     console.log(`  ${i.name.toUpperCase()}: "${i.values[0].value}",`);
   //   });
+  // data.command_enums
+  //   .filter((i) => i.values.length > 1)
+  //   .filter((i) => i.values.length < 50)
+  //   .forEach((i) => {
+  //     console.log(`  ["${i.name.toUpperCase()}", ["${i.values.map(i => i.value).join('", "')}"]],`);
+  //   });
 
+  console.log("==== Saving ====");
   for (const [comm, info] of Object.entries(commands)) {
     save(comm, info);
   }

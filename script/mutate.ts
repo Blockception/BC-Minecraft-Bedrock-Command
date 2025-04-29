@@ -1,31 +1,263 @@
-import { Command, CommandOverload } from "./minecraft-data";
+import { Command, CommandOverload, CommandParameter } from "./minecraft-data";
 
-const mutateData: Array<[string, string[]]> = [["ALLOWLISTACTION", ["add", "remove", "list", "reload", "on", "off"]]];
+const mutateData: Array<[string, string[]]> = [
+  ["ACTORLOCATION", ["eyes", "feet"]],
+  ["AIMASSISTTARGETMODE", ["distance", "angle"]],
+  ["ALLOWLISTACTION", ["add", "remove", "list", "reload", "on", "off"]],
+  ["BLOCKSSCANMODE", ["masked", "all"]],
+  [
+    "BOOLGAMERULE",
+    [
+      "commandblockoutput",
+      "dodaylightcycle",
+      "doentitydrops",
+      "dofiretick",
+      "recipesunlock",
+      "dolimitedcrafting",
+      "domobloot",
+      "domobspawning",
+      "dotiledrops",
+      "doweathercycle",
+      "drowningdamage",
+      "falldamage",
+      "firedamage",
+      "keepinventory",
+      "mobgriefing",
+      "pvp",
+      "showcoordinates",
+      "showdaysplayed",
+      "naturalregeneration",
+      "tntexplodes",
+      "sendcommandfeedback",
+      "doinsomnia",
+      "commandblocksenabled",
+      "doimmediaterespawn",
+      "showdeathmessages",
+      "showtags",
+      "freezedamage",
+      "respawnblocksexplode",
+      "showbordereffect",
+      "showrecipemessages",
+      "projectilescanbreakblocks",
+      "tntexplosiondropdecay",
+    ],
+  ],
+  [
+    "DAMAGECAUSE",
+    [
+      "piston",
+      "lava",
+      "campfire",
+      "fire",
+      "anvil",
+      "magma",
+      "soul_campfire",
+      "wither",
+      "falling_block",
+      "fireworks",
+      "thorns",
+      "none",
+      "sonic_boom",
+      "contact",
+      "override",
+      "entity_attack",
+      "projectile",
+      "suffocation",
+      "mace_smash",
+      "fall",
+      "starve",
+      "ram_attack",
+      "fire_tick",
+      "stalactite",
+      "drowning",
+      "block_explosion",
+      "entity_explosion",
+      "void",
+      "self_destruct",
+      "magic",
+      "charging",
+      "stalagmite",
+      "fly_into_wall",
+      "lightning",
+      "freezing",
+      "temperature",
+    ],
+  ],
+  ["DELAYMODE", ["replace", "append"]],
+  ["DELETE", ["pop", "remove"]],
+  [
+    "EASING",
+    [
+      "linear",
+      "spring",
+      "in_quad",
+      "out_quad",
+      "in_out_quad",
+      "in_cubic",
+      "out_cubic",
+      "in_out_cubic",
+      "in_quart",
+      "out_quart",
+      "in_out_quart",
+      "in_quint",
+      "out_quint",
+      "in_out_quint",
+      "in_sine",
+      "out_sine",
+      "in_out_sine",
+      "in_expo",
+      "out_expo",
+      "in_out_expo",
+      "in_circ",
+      "out_circ",
+      "in_out_circ",
+      "in_bounce",
+      "out_bounce",
+      "in_out_bounce",
+      "in_back",
+      "out_back",
+      "in_out_back",
+      "in_elastic",
+      "out_elastic",
+      "in_out_elastic",
+    ],
+  ],
+  ["EXPORTTYPES", ["project", "template", "world"]],
+  ["FILLTYPE", ["until_full", "if_group_fits"]],
+  [
+    "HUDELEMENT",
+    [
+      "hunger",
+      "all",
+      "paperdoll",
+      "armor",
+      "tooltips",
+      "touch_controls",
+      "crosshair",
+      "hotbar",
+      "health",
+      "progress_bar",
+      "air_bubbles",
+      "horse_health",
+      "status_effects",
+      "item_text",
+    ],
+  ],
+  ["HUDVISIBILITY", ["hide", "reset"]],
+  [
+    "INTGAMERULE",
+    ["maxcommandchainlength", "randomtickspeed", "functioncommandlimit", "spawnradius", "playerssleepingpercentage"],
+  ],
+  ["MIRROR", ["x", "z", "none", "xz"]],
+  ["OPTION_IF_UNLESS", ["if", "unless"]],
+  ["PERMISSIONSACTION", ["list", "reload"]],
+  ["REDIRECTLOCATION", ["marketplace", "character"]],
+  ["RIDERULES", ["no_ride_change", "reassign_rides", "skip_riders"]],
+  ["SCOREBOARDDISPLAYSLOTSORTABLE", ["list", "sidebar"]],
+  ["SCOREBOARDPLAYERSNUMACTION", ["set", "add", "remove"]],
+  ["SCOREBOARDSORTORDER", ["ascending", "descending"]],
+  ["SETBLOCKMODE", ["replace", "destroy", "keep"]],
+  ["STATE", ["enabled", "disabled"]],
+  ["STRUCTUREANIMATIONMODE", ["block_by_block", "layer_by_layer"]],
+  ["STRUCTURESAVEMODE", ["disk", "memory"]],
+  ["TAGCHANGEACTION", ["add", "remove"]],
+  ["TELEPORTRULES", ["teleport_rider", "teleport_ride"]],
+  ["TESTFORBLOCKSMODE", ["masked", "all"]],
+  ["TIMEQUERY", ["daytime", "gametime", "day"]],
+  ["TIMESPEC", ["day", "sunrise", "noon", "sunset", "night", "midnight"]],
+  ["TITLERAWSET", ["title", "subtitle", "actionbar"]],
+  ["TITLESET", ["title", "subtitle", "actionbar"]],
+  ["WEATHERTYPE", ["clear", "rain", "thunder"]],
+];
 
-export function mutate(data: Command) {
-  data.overloads = mutateOverload(data.overloads);
+const mutateDataP: Array<[(value: CommandParameter) => boolean, Partial<CommandParameter>[]]> = [
+  [
+    (item) => item.type.name === "TOOL",
+    [
+      {
+        name: "mainhand",
+        type: { name: "KEYWORD" },
+      },
+      {
+        name: "offhand",
+        type: { name: "KEYWORD" },
+      },
+      {
+        name: "tool",
+        type: { name: "ITEM" },
+      },
+    ],
+  ],
+  [
+    (item) => item.name === "axes" && item.type.name === "ID",
+    [
+      {
+        name: "x",
+        type: { name: "KEYWORD" },
+      },
+      {
+        name: "y",
+        type: { name: "KEYWORD" },
+      },
+      {
+        name: "z",
+        type: { name: "KEYWORD" },
+      },
+    ],
+  ],
+  [
+    (item) => item.type.name === "ENTITY",
+    [
+      {
+        name: "target",
+        type: { name: "KEYWORD" },
+      },
+      {
+        name: "target",
+        type: { name: "ENTITY" },
+      },
+    ],
+  ]
+];
+
+interface Deletable {
+  delete?: true;
 }
 
-function mutateOverload(data: CommandOverload[]): CommandOverload[] {
-  const result: CommandOverload[] = [];
+export function mutate(data: Command) {
+  let result: CommandOverload[] | undefined;
 
-  for (const overload of data) {
-    for (const [original, others] of mutateData) {
-      const newOverloads = mutateOverloadWith(overload, original, others);
-      result.push(...newOverloads);
+  for (const overload of data.overloads) {
+    for (const [orignal, others] of mutateData) {
+      result = mutateOverloadWith(overload, orignal, others);
+      if (result) {
+        data.overloads.push(...result);
+      }
+    }
+
+    for (const [orignal, others] of mutateDataP) {
+      result = mutateOverloadWithP(overload, orignal, others);
+      if (result) {
+        data.overloads.push(...result);
+      }
     }
   }
 
-  return result;
+  data.overloads = data.overloads.filter((p: CommandOverload & Deletable) => !p.delete);
 }
 
-function mutateOverloadWith(data: CommandOverload, orignal: string, others: string[]): CommandOverload[] {
+function mutateOverloadWith(
+  data: CommandOverload & Deletable,
+  orignal: string,
+  others: string[]
+): CommandOverload[] | undefined {
   const i = data.params.findIndex((p) => p.type.name === orignal);
   if (i === -1) {
-    return [data];
+    return undefined;
   }
 
   const result: CommandOverload[] = [];
+  data.delete = true;
 
   for (const o of others) {
     const newData: CommandOverload = {
@@ -36,6 +268,30 @@ function mutateOverloadWith(data: CommandOverload, orignal: string, others: stri
       name: o,
       type: { name: "KEYWORD" },
       is_optional: data.params[i].is_optional,
+    };
+    result.push(newData);
+  }
+
+  return result;
+}
+
+function mutateOverloadWithP(data: CommandOverload & Deletable, predicate: (CommandParameter) => boolean, others: Partial<CommandParameter>[]) {
+  const i = data.params.findIndex(predicate);
+  if (i === -1) {
+    return undefined;
+  }
+
+  const result: CommandOverload[] = [];
+  data.delete = true;
+
+  for (const o of others) {
+    const newData: CommandOverload = {
+      ...data,
+      params: [...data.params],
+    };
+    newData.params[i] = {
+      ...data.params[i],
+      ...o,
     };
     result.push(newData);
   }
