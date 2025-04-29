@@ -3,7 +3,19 @@ import { ParameterType } from "../src/lib/types/parameter-type";
 import { Command, CommandOverload, CommandParameter, MinecraftCommandData } from "./minecraft-data";
 import { mutate } from "./mutate";
 
-const removed = ["transfer", "wsserver", "connect", "sendshowstoreoffer", "stop", "ops", "project", "list"];
+const removed = [
+  "connect",
+  "list",
+  "ops",
+  "project",
+  "reload",
+  "reloadconfig",
+  "sendshowstoreoffer",
+  "sendshowstoreoffer",
+  "stop",
+  "transfer",
+  "wsserver",
+];
 
 export function convert(data: MinecraftCommandData): Record<string, CommandInfo[]> {
   const result: Record<string, CommandInfo[]> = {};
@@ -187,6 +199,7 @@ function converType(comm: string, name: string, type: string): ParameterType {
       case comm === "script" && name === "host":
       case comm === "scriptevent" && name === "name":
       case comm === "scriptevent" && name === "messageId":
+      case comm === "scriptevent" && name === "message":
       case comm === "structure" && name === "seed":
         return ParameterType.string;
       case comm === "structure" && name === "name":
@@ -279,6 +292,7 @@ const enumMap: Record<string, ParameterType> = {
   SAVEMODE: ParameterType.saveMode,
   SCOREBOARDOBJECTIVES: ParameterType.objective,
   SELECTION: ParameterType.selector,
+  STRUCTUREANIMATIONMODE: ParameterType.structureAnimationMode,
   STRUCTUREFEATURE: ParameterType.structure,
   STRUCTURESAVEMODE: ParameterType.saveMode,
   TAGVALUES: ParameterType.tag,

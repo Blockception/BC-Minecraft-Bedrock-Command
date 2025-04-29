@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const say: CommandInfo[] = [
   {
     name: "say",
-    documentation: "Displays a message to multiple players.",
+    documentation: "Sends a message in the chat to other players.",
+    permission_level: 1,
     parameters: [
       { text: "say", type: ParameterType.keyword, required: true },
       { text: "message", type: ParameterType.message, required: true },

@@ -5,31 +5,23 @@ import { CommandInfo } from "../command-info";
 export const enchant: CommandInfo[] = [
   {
     name: "enchant",
-    documentation: "Enchants a player item.",
+    documentation: "Adds an enchantment to a player's selected item.",
+    permission_level: 1,
     parameters: [
       { text: "enchant", type: ParameterType.keyword, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: true,
-        options: { playerOnly: true },
-      },
-      { text: "id", type: ParameterType.integer, required: true },
+      { text: "player", type: ParameterType.selector, required: true },
+      { text: "enchantmentId", type: ParameterType.integer, required: true },
       { text: "level", type: ParameterType.integer, required: false },
     ],
   },
   {
     name: "enchant",
-    documentation: "Enchants a player item.",
+    documentation: "Adds an enchantment to a player's selected item.",
+    permission_level: 1,
     parameters: [
       { text: "enchant", type: ParameterType.keyword, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: true,
-        options: { playerOnly: true },
-      },
-      { text: "id", type: ParameterType.string, required: true },
+      { text: "player", type: ParameterType.selector, required: true },
+      { text: "enchantmentName", type: ParameterType.enchant, required: true },
       { text: "level", type: ParameterType.integer, required: false },
     ],
   },

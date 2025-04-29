@@ -5,7 +5,7 @@ import { CommandInfo } from "../command-info";
 export const effect: CommandInfo[] = [
   {
     name: "effect",
-    documentation: "Adds status effects on players and other entities.",
+    documentation: "Add or remove status effects.",
     permission_level: 1,
     parameters: [
       { text: "effect", type: ParameterType.keyword, required: true },
@@ -16,7 +16,7 @@ export const effect: CommandInfo[] = [
   },
   {
     name: "effect",
-    documentation: "Adds status effects on players and other entities.",
+    documentation: "Add or remove status effects.",
     permission_level: 1,
     parameters: [
       { text: "effect", type: ParameterType.keyword, required: true },
@@ -29,7 +29,7 @@ export const effect: CommandInfo[] = [
   },
   {
     name: "effect",
-    documentation: "Removes all status effects on players and other entities.",
+    documentation: "Add or remove status effects.",
     permission_level: 1,
     parameters: [
       { text: "effect", type: ParameterType.keyword, required: true },

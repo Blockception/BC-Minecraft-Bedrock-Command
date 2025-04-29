@@ -5,22 +5,24 @@ import { CommandInfo } from "../command-info";
 export const recipe: CommandInfo[] = [
   {
     name: "recipe",
-    documentation: "Gives the player the given recipe id",
+    documentation: "Unlocks recipe in the recipe book for a player.",
+    permission_level: 1,
     parameters: [
       { text: "recipe", type: ParameterType.keyword, required: true },
       { text: "give", type: ParameterType.keyword, required: true },
-      { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-      { text: "recipe", type: ParameterType.recipe, required: true, options: { playerOnly: true } },
-    ]
+      { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+      { text: "recipe", type: ParameterType.recipe, required: true },
+    ],
   },
   {
     name: "recipe",
-    documentation: "Takes recipe from the given player",
+    documentation: "Unlocks recipe in the recipe book for a player.",
+    permission_level: 1,
     parameters: [
       { text: "recipe", type: ParameterType.keyword, required: true },
       { text: "take", type: ParameterType.keyword, required: true },
-      { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-      { text: "recipe", type: ParameterType.recipe, required: true, options: { playerOnly: true } },
-    ]
-  }
-]
+      { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+      { text: "recipe", type: ParameterType.recipe, required: true },
+    ],
+  },
+];
