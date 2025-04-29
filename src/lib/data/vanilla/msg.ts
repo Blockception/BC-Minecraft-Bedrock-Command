@@ -5,10 +5,11 @@ import { CommandInfo } from "../command-info";
 export const msg: CommandInfo[] = [
   {
     name: "msg",
-    documentation: "An alias of `/tell` and `/w`. Displays a private message to other players.",
+    documentation: "Sends a private message to one or more players.",
+    permission_level: 0,
     parameters: [
       { text: "msg", type: ParameterType.keyword, required: true },
-      { text: "selector", type: ParameterType.selector, required: true },
+      { text: "target", type: ParameterType.selector, required: true },
       { text: "message", type: ParameterType.message, required: true },
     ],
   },

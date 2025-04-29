@@ -5,11 +5,12 @@ import { CommandInfo } from "../command-info";
 export const w: CommandInfo[] = [
   {
     name: "w",
-    documentation: "Sends a message to the receiver.",
+    documentation: "Sends a private message to one or more players.",
+    permission_level: 0,
     parameters: [
       { text: "w", type: ParameterType.keyword, required: true },
-      { text: "selector", type: ParameterType.selector, required: true },
-      { text: "message", type: ParameterType.keyword, required: true },
+      { text: "target", type: ParameterType.selector, required: true },
+      { text: "message", type: ParameterType.message, required: true },
     ],
   },
 ];

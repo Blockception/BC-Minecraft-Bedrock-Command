@@ -5,14 +5,15 @@ import { CommandInfo } from "../command-info";
 export const testforblock: CommandInfo[] = [
   {
     name: "testforblock",
-    documentation: "tests whether a certain block is a specific location.",
+    documentation: "Tests whether a certain block is in a specific location.",
+    permission_level: 1,
     parameters: [
       { text: "testforblock", type: ParameterType.keyword, required: true },
       { text: "position x", type: ParameterType.coordinate, required: true },
       { text: "position y", type: ParameterType.coordinate, required: true },
       { text: "position z", type: ParameterType.coordinate, required: true },
-      { text: "tile name", type: ParameterType.block, required: true },
-      { text: "data value", type: ParameterType.integer, required: false },
+      { text: "tileName", type: ParameterType.block, required: true },
+      { text: "blockStates", type: ParameterType.blockStates, required: false },
     ],
-  }
+  },
 ];

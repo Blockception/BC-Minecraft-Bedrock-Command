@@ -3,7 +3,7 @@ import { ParameterType } from "../src/lib/types/parameter-type";
 import { Command, CommandOverload, CommandParameter, MinecraftCommandData } from "./minecraft-data";
 import { mutate } from "./mutate";
 
-const removed = ["transfer", "wsserver", "connect", "sendshowstoreoffer"];
+const removed = ["transfer", "wsserver", "connect", "sendshowstoreoffer", "stop", "ops", "project", "list"];
 
 export function convert(data: MinecraftCommandData): Record<string, CommandInfo[]> {
   const result: Record<string, CommandInfo[]> = {};
@@ -206,6 +206,7 @@ function converType(comm: string, name: string, type: string): ParameterType {
 
   if (type === "JSON_OBJECT") {
     switch (name) {
+      case "raw json titleText":
       case "titleText":
       case "raw json message":
         return ParameterType.jsonRawText;
@@ -238,6 +239,8 @@ const enumMap: Record<string, ParameterType> = {
   CLONEMODE: ParameterType.cloneMode,
   CODEBUILDERARGS: ParameterType.executeSubcommand,
   COMMANDNAME: ParameterType.command,
+  COMPAREOPERATOR: ParameterType.operation,
+  DAMAGECAUSE: ParameterType.causeType,
   DIFFICULTY: ParameterType.difficulty,
   DIMENSION: ParameterType.dimension,
   EFFECT: ParameterType.effect,
@@ -251,6 +254,7 @@ const enumMap: Record<string, ParameterType> = {
   FILLMODE: ParameterType.fillMode,
   FILLTYPE: ParameterType.fillMode,
   FLOAT: ParameterType.float,
+  FULLINTEGERRANGE: ParameterType.integer_range,
   GAMEMODE: ParameterType.gamemode,
   GAMETESTNAME: ParameterType.string,
   GAMETESTTAG: ParameterType.string,
@@ -264,9 +268,8 @@ const enumMap: Record<string, ParameterType> = {
   MOBEVENT: ParameterType.event,
   MUSICREPEATMODE: ParameterType.musicRepeatMode,
   OPERATOR: ParameterType.operation,
-  FULLINTEGERRANGE: ParameterType.integer_range,
-  COMPAREOPERATOR: ParameterType.operation,
   PATHCOMMAND: ParameterType.function,
+  PERMISSION: ParameterType.permission,
   PERMISSIONLEVEL: ParameterType.permission,
   postfix_l: ParameterType.xp,
   RAWTEXT: ParameterType.string,

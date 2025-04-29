@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const particle: CommandInfo[] = [
   {
     name: "particle",
-    documentation: "Creates particles.",
+    documentation: "Creates a particle emitter",
+    permission_level: 1,
     parameters: [
       { text: "particle", type: ParameterType.keyword, required: true },
       { text: "effect", type: ParameterType.particle, required: true },
