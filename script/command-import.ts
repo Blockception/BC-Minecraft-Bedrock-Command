@@ -50,6 +50,7 @@ export const ${comm}: CommandInfo[] = [`;
   {
     name: "${d.name}",
     documentation: "${d.documentation}",
+    permission_level: ${d.permission_level},
     parameters: [`;
     d.parameters.forEach((p) => {
       content += `
