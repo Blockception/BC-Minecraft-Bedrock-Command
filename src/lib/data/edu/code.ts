@@ -6,6 +6,7 @@ export const code: CommandInfo[] = [
   {
     name: "code",
     documentation: "??",
+    permission_level: 1,
     parameters: [{ text: "code", type: ParameterType.keyword, required: true }],
   },
 ];

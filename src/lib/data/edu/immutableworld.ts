@@ -6,6 +6,7 @@ export const immutableworld: CommandInfo[] = [
   {
     name: "immutableworld",
     documentation: "Sets the immutable state of the world",
+    permission_level: 1,
     parameters: [
       { text: "immutableworld", type: ParameterType.keyword, required: true },
       { text: "immutableworld", type: ParameterType.boolean, required: false },
