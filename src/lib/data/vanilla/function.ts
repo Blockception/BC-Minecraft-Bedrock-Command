@@ -5,10 +5,11 @@ import { CommandInfo } from "../command-info";
 export const Function: CommandInfo[] = [
   {
     name: "function",
-    documentation: "Runs a function.",
+    documentation: "Runs commands found in the corresponding function file.",
+    permission_level: 1,
     parameters: [
       { text: "function", type: ParameterType.keyword, required: true },
-      { text: "function path", type: ParameterType.function, required: true },
+      { text: "name", type: ParameterType.function, required: true },
     ],
   },
 ];

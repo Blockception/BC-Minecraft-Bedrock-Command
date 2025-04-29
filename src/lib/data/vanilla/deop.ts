@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const deop: CommandInfo[] = [
   {
     name: "deop",
-    documentation: "Removes operator status from a player",
+    documentation: "Revokes operator status from a player.",
+    permission_level: 2,
     parameters: [
       { text: "deop", type: ParameterType.keyword, required: true },
       {

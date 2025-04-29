@@ -6,6 +6,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "align",
       documentation: "Aligns the origin to the specified axis.",
+      permission_level: 1,
       parameters: [
         { text: "align", type: ParameterType.keyword, required: true },
         //TODO: Add the axis parameter type
@@ -24,6 +25,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "anchored",
       documentation: "Sets the anchor point for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "anchored", type: ParameterType.keyword, required: true },
         { text: "eyes", type: ParameterType.keyword, required: true },
@@ -33,6 +35,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "anchored",
       documentation: "Sets the anchor point for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "anchored", type: ParameterType.keyword, required: true },
         { text: "feet", type: ParameterType.keyword, required: true },
@@ -44,6 +47,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "as",
       documentation: "Executes as the specified entity.",
+      permission_level: 1,
       parameters: [
         { text: "as", type: ParameterType.keyword, required: true },
         { text: "origin", type: ParameterType.selector, required: true },
@@ -55,6 +59,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "at",
       documentation: "Sets the origin to the specified entity.",
+      permission_level: 1,
       parameters: [
         { text: "at", type: ParameterType.keyword, required: true },
         { text: "origin", type: ParameterType.selector, required: true },
@@ -67,6 +72,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "facing",
       documentation: "Sets the facing direction for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "x", type: ParameterType.coordinate, required: true },
@@ -78,6 +84,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "facing",
       documentation: "Sets the facing direction for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.keyword, required: true },
@@ -89,6 +96,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "facing",
       documentation: "Sets the facing direction for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "facing", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.keyword, required: true },
@@ -103,6 +111,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "in",
       documentation: "Sets the dimension for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "in", type: ParameterType.keyword, required: true },
         { text: "dimension", type: ParameterType.dimension, required: true },
@@ -115,6 +124,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "positioned",
       documentation: "Sets the position for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "positioned", type: ParameterType.keyword, required: true },
         { text: "x", type: ParameterType.coordinate, required: true },
@@ -126,6 +136,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "positioned",
       documentation: "Sets the position for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "positioned", type: ParameterType.keyword, required: true },
         { text: "as", type: ParameterType.keyword, required: true },
@@ -139,6 +150,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "rotated",
       documentation: "Sets the rotation for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "rotated", type: ParameterType.keyword, required: true },
         { text: "yaw", type: ParameterType.coordinate, required: true },
@@ -149,6 +161,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "rotated",
       documentation: "Sets the rotation for the origin.",
+      permission_level: 1,
       parameters: [
         { text: "rotated", type: ParameterType.keyword, required: true },
         { text: "as", type: ParameterType.keyword, required: true },
@@ -161,6 +174,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "run",
       documentation: "Executes the specified command.",
+      permission_level: 1,
       parameters: [
         { text: "run", type: ParameterType.keyword, required: true },
         { text: "command", type: ParameterType.command, required: true },
@@ -172,6 +186,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "block", type: ParameterType.keyword, required: true },
@@ -187,6 +202,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "block", type: ParameterType.keyword, required: true },
@@ -201,6 +217,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "blocks", type: ParameterType.keyword, required: true },
@@ -221,6 +238,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.keyword, required: true },
@@ -232,6 +250,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "score", type: ParameterType.keyword, required: true },
@@ -254,6 +273,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "if",
       documentation: "Executes the command if the specified condition is true.",
+      permission_level: 1,
       parameters: [
         { text: "if", type: ParameterType.keyword, required: true },
         { text: "score", type: ParameterType.keyword, required: true },
@@ -271,6 +291,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "block", type: ParameterType.keyword, required: true },
@@ -286,6 +307,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "block", type: ParameterType.keyword, required: true },
@@ -300,6 +322,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "block", type: ParameterType.keyword, required: true },
@@ -320,6 +343,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "entity", type: ParameterType.keyword, required: true },
@@ -331,6 +355,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "score", type: ParameterType.keyword, required: true },
@@ -346,6 +371,7 @@ export const executeSubCommands: CommandContainer = {
     {
       name: "unless",
       documentation: "Executes the command unless the specified condition is false.",
+      permission_level: 1,
       parameters: [
         { text: "unless", type: ParameterType.keyword, required: true },
         { text: "score", type: ParameterType.keyword, required: true },

@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const damage: CommandInfo[] = [
   {
     name: "damage",
-    documentation: "Apply damage to the specified entity.",
+    documentation: "Apply damage to the specified entities.",
+    permission_level: 1,
     parameters: [
       { text: "damage", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true },
@@ -15,7 +16,8 @@ export const damage: CommandInfo[] = [
   },
   {
     name: "damage",
-    documentation: "Apply damage to the specified entity.",
+    documentation: "Apply damage to the specified entities.",
+    permission_level: 1,
     parameters: [
       { text: "damage", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true },

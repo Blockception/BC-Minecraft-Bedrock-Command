@@ -6,6 +6,7 @@ export const execute: CommandInfo[] = [
   {
     name: "execute",
     documentation: "Executes another command.",
+    permission_level: 1,
     parameters: [
       { text: "execute", type: ParameterType.keyword, required: true },
       { text: "next", type: ParameterType.executeSubcommand, required: true },
@@ -14,6 +15,7 @@ export const execute: CommandInfo[] = [
   {
     name: "execute",
     documentation: "Executes another command.",
+    permission_level: 1,
     obsolete: {
       code: "minecraft.commands.execute.deprecated",
       message: "This version of the execute command has been deprecated, use the new version instead.",
@@ -31,6 +33,7 @@ export const execute: CommandInfo[] = [
   {
     name: "execute",
     documentation: "Executes another command.",
+    permission_level: 1,
     obsolete: {
       code: "minecraft.commands.execute.deprecated",
       message: "This version of the execute command has been deprecated, use the new version instead.",

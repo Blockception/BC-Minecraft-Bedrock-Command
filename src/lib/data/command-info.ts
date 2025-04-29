@@ -20,6 +20,8 @@ export interface CommandInfo {
   parameters: ParameterInfo[];
   /**Marks */
   obsolete?: boolean | ObsoleteInfo;
+  /**The permission level required to use this command*/
+  permission_level: number;
 }
 
 /**The information of a single parameter.*/

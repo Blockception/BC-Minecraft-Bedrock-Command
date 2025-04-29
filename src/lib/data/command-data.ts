@@ -1,13 +1,19 @@
+import { CommandContainer } from "./command-container";
+
 import { ability } from "./edu/ability";
+import { classroommode } from "./edu/classroommode";
+import { code } from "./edu/code";
+import { immutableworld } from "./edu/immutableworld";
+
+import { aimassist } from "./vanilla/aimassist";
+import { allowlist } from "./vanilla/allowlist";
 import { alwaysday } from "./vanilla/alwaysday";
 import { camera } from "./vanilla/camera";
 import { camerashake } from "./vanilla/camerashake";
-import { classroommode } from "./edu/classroommode";
+import { changesetting } from "./vanilla/changesetting";
 import { clear } from "./vanilla/clear";
 import { clearspawnpoint } from "./vanilla/clearspawnpoint";
 import { clone } from "./vanilla/clone";
-import { code } from "./edu/code";
-import { CommandContainer } from "./command-container";
 import { damage } from "./vanilla/damage";
 import { daylock } from "./vanilla/daylock";
 import { deop } from "./vanilla/deop";
@@ -17,25 +23,28 @@ import { effect } from "./vanilla/effect";
 import { enchant } from "./vanilla/enchant";
 import { event } from "./vanilla/event";
 import { execute } from "./vanilla/execute";
-import { executeSubCommands } from './vanilla/execute/subcommands';
 import { fill } from "./vanilla/fill";
 import { fog } from "./vanilla/fog";
 import { Function } from "./vanilla/function";
 import { gamemode } from "./vanilla/gamemode";
 import { gamerule } from "./vanilla/gamerule";
+import { gametest } from "./vanilla/gametest";
 import { give } from "./vanilla/give";
+import { help } from "./vanilla/help";
 import { hud } from "./vanilla/hud";
-import { immutableworld } from "./edu/immutableworld";
-import { inputpermission } from './vanilla/inputpermission';
+import { inputpermission } from "./vanilla/inputpermission";
 import { kick } from "./vanilla/kick";
 import { kill } from "./vanilla/kill";
 import { locate } from "./vanilla/locate";
 import { loot } from "./vanilla/loot";
 import { me } from "./vanilla/me";
+import { mobevent } from "./vanilla/mobevent";
 import { msg } from "./vanilla/msg";
 import { music } from "./vanilla/music";
 import { op } from "./vanilla/op";
 import { particle } from "./vanilla/particle";
+import { permission } from "./vanilla/permission";
+import { place } from "./vanilla/place";
 import { playanimation } from "./vanilla/playanimation";
 import { playsound } from "./vanilla/playsound";
 import { recipe } from "./vanilla/recipe";
@@ -44,6 +53,7 @@ import { ride } from "./vanilla/ride";
 import { say } from "./vanilla/say";
 import { schedule } from "./vanilla/schedule";
 import { scoreboard } from "./vanilla/scoreboard";
+import { script } from "./vanilla/script";
 import { scriptevent } from "./vanilla/scriptevent";
 import { setblock } from "./vanilla/setblock";
 import { setmaxplayers } from "./vanilla/setmaxplayers";
@@ -59,7 +69,7 @@ import { tell } from "./vanilla/tell";
 import { tellraw } from "./vanilla/tellraw";
 import { testfor } from "./vanilla/testfor";
 import { testforblock } from "./vanilla/testforblock";
-import { testforblocks } from './vanilla/testforblocks';
+import { testforblocks } from "./vanilla/testforblocks";
 import { tickingarea } from "./vanilla/tickingarea";
 import { time } from "./vanilla/time";
 import { title } from "./vanilla/title";
@@ -68,9 +78,10 @@ import { toggledownfall } from "./vanilla/toggledownfall";
 import { tp } from "./vanilla/tp";
 import { w } from "./vanilla/w";
 import { weather } from "./vanilla/weather";
+import { whitelist } from "./vanilla/whitelist";
 import { xp } from "./vanilla/xp";
-import { aimassist } from './vanilla/aimassist';
-import { place } from './vanilla/place';
+
+import { executeSubCommands } from "./vanilla/execute/subcommands";
 
 /** The minecraft command data set */
 export namespace CommandData {
@@ -86,9 +97,11 @@ export namespace CommandData {
   /** The vanilla command data set */
   export const Vanilla: CommandContainer = {
     aimassist,
+    allowlist,
     alwaysday,
     camera,
     camerashake,
+    changesetting,
     clear,
     clearspawnpoint,
     clone,
@@ -103,10 +116,12 @@ export namespace CommandData {
     execute,
     fill,
     fog,
-    function: Function,
+    Function,
     gamemode,
     gamerule,
+    gametest,
     give,
+    help,
     hud,
     inputpermission,
     kick,
@@ -114,10 +129,12 @@ export namespace CommandData {
     locate,
     loot,
     me,
+    mobevent,
     msg,
     music,
     op,
     particle,
+    permission,
     place,
     playanimation,
     playsound,
@@ -127,6 +144,7 @@ export namespace CommandData {
     say,
     schedule,
     scoreboard,
+    script,
     scriptevent,
     setblock,
     setmaxplayers,
@@ -151,6 +169,7 @@ export namespace CommandData {
     tp,
     w,
     weather,
+    whitelist,
     xp,
   };
 

@@ -5,20 +5,12 @@ import { CommandInfo } from "../command-info";
 export const tellraw: CommandInfo[] = [
   {
     name: "tellraw",
-    documentation: "Sends a json messsage to players.",
+    documentation: "Sends a JSON message to players.",
+    permission_level: 1,
     parameters: [
       { text: "tellraw", type: ParameterType.keyword, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: true,
-        options: { playerOnly: true },
-      },
-      {
-        text: "json raw text",
-        type: ParameterType.jsonRawText,
-        required: true,
-      },
+      { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+      { text: "raw json message", type: ParameterType.jsonRawText, required: true },
     ],
   },
 ];

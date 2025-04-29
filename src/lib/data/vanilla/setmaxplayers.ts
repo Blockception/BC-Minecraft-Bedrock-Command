@@ -5,15 +5,11 @@ import { CommandInfo } from "../command-info";
 export const setmaxplayers: CommandInfo[] = [
   {
     name: "setmaxplayers",
-    documentation: "Sets the maximum number of players for this game session",
+    documentation: "Sets the maximum number of players for this game session.",
+    permission_level: 3,
     parameters: [
       { text: "setmaxplayers", type: ParameterType.keyword, required: true },
-      {
-        text: "maximum players",
-        type: ParameterType.integer,
-        required: true,
-        options: { minimum: 1 },
-      },
+      { text: "maxPlayers", type: ParameterType.integer, required: true, options: { minimum: 1 } },
     ],
   },
 ];

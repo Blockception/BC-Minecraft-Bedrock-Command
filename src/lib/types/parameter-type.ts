@@ -4,6 +4,8 @@ export enum ParameterType {
   animation,
   /** Block identifiers */
   block,
+  /** Biome identifiers */
+  biome,
   /** Block states */
   blockStates,
   /** Booleans */
@@ -12,12 +14,16 @@ export enum ParameterType {
   causeType,
   /** Camera Shake mode */
   cameraShakeType,
+  /** Camera preset */
+  cameraPresets,
   /** Clone mode */
   cloneMode,
   /** Command start */
   command,
   /** Coordinate */
   coordinate,
+  /** Damage cause */
+  damageCause,
   /** Difficulty mode */
   difficulty,
   /** Dimension */
@@ -26,6 +32,8 @@ export enum ParameterType {
   effect,
   /** Entity identifiers */
   entity,
+  /** Enchant type */
+  enchant,
   /**  */
   executeSubcommand,
   /** Event in behaviors */
@@ -36,6 +44,8 @@ export enum ParameterType {
   function,
   /** Float numbers */
   float,
+  /** Fog identifiers */
+  fog,
   /** Game mode */
   gamemode,
   /** The type of hand: mainhand or offhand */
@@ -70,6 +80,8 @@ export enum ParameterType {
   mirror,
   /** Music repeat mode */
   musicRepeatMode,
+  /** Music */
+  music,
   /** Objective identifiers */
   objective,
   /** Old Block mode */

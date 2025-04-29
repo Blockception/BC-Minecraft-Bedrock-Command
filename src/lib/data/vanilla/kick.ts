@@ -5,15 +5,12 @@ import { CommandInfo } from "../command-info";
 export const kick: CommandInfo[] = [
   {
     name: "kick",
-    documentation: "Kicks the specified players.",
+    documentation: "Kicks a player from the server.",
+    permission_level: 1,
     parameters: [
       { text: "kick", type: ParameterType.keyword, required: true },
-      {
-        text: "selector",
-        type: ParameterType.selector,
-        required: false,
-        options: { playerOnly: true },
-      },
+      { text: "name", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+      { text: "reason", type: ParameterType.message, required: true },
     ],
   },
 ];

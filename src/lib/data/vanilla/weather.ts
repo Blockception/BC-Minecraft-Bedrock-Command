@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const weather: CommandInfo[] = [
   {
     name: "weather",
-    documentation: "Sets the weather.",
+    documentation: "Clears the weather.",
+    permission_level: 1,
     parameters: [
       { text: "weather", type: ParameterType.keyword, required: true },
       { text: "clear", type: ParameterType.keyword, required: true },
@@ -15,6 +16,16 @@ export const weather: CommandInfo[] = [
   {
     name: "weather",
     documentation: "Sets the weather.",
+    permission_level: 1,
+    parameters: [
+      { text: "weather", type: ParameterType.keyword, required: true },
+      { text: "query", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "weather",
+    documentation: "Sets the weather.",
+    permission_level: 1,
     parameters: [
       { text: "weather", type: ParameterType.keyword, required: true },
       { text: "rain", type: ParameterType.keyword, required: true },
@@ -24,6 +35,7 @@ export const weather: CommandInfo[] = [
   {
     name: "weather",
     documentation: "Sets the weather.",
+    permission_level: 1,
     parameters: [
       { text: "weather", type: ParameterType.keyword, required: true },
       { text: "thunder", type: ParameterType.keyword, required: true },

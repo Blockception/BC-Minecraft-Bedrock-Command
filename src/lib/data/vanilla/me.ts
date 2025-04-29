@@ -5,7 +5,8 @@ import { CommandInfo } from "../command-info";
 export const me: CommandInfo[] = [
   {
     name: "me",
-    documentation: "Displays a message about the sender.",
+    documentation: "Displays a message about yourself.",
+    permission_level: 0,
     parameters: [
       { text: "me", type: ParameterType.keyword, required: true },
       { text: "message", type: ParameterType.message, required: true },

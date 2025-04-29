@@ -5,18 +5,14 @@ import { CommandInfo } from "../command-info";
 export const spawnpoint: CommandInfo[] = [
   {
     name: "spawnpoint",
-    documentation: "Sets the spawnpoint of the given entities.",
+    documentation: "Sets the spawn point for a player.",
+    permission_level: 1,
     parameters: [
       { text: "spawnpoint", type: ParameterType.keyword, required: true },
-      {
-        text: "player",
-        type: ParameterType.selector,
-        required: false,
-        options: { playerOnly: true },
-      },
-      { text: "spawn x", type: ParameterType.coordinate, required: false },
-      { text: "spawn y", type: ParameterType.coordinate, required: false },
-      { text: "spawn z", type: ParameterType.coordinate, required: false },
+      { text: "player", type: ParameterType.selector, required: false, options: { playerOnly: true } },
+      { text: "spawnPos x", type: ParameterType.coordinate, required: false },
+      { text: "spawnPos y", type: ParameterType.coordinate, required: false },
+      { text: "spawnPos z", type: ParameterType.coordinate, required: false },
     ],
   },
 ];

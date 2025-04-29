@@ -6,6 +6,7 @@ export const time: CommandInfo[] = [
   {
     name: "time",
     documentation: "Add to the world's game time.",
+    permission_level: 1,
     parameters: [
       { text: "time", type: ParameterType.keyword, required: true },
       { text: "add", type: ParameterType.keyword, required: true },
@@ -15,6 +16,17 @@ export const time: CommandInfo[] = [
   {
     name: "time",
     documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "query", type: ParameterType.keyword, required: true },
+      { text: "day", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Queries the world's game time.",
+    permission_level: 1,
     parameters: [
       { text: "time", type: ParameterType.keyword, required: true },
       { text: "query", type: ParameterType.keyword, required: true },
@@ -24,24 +36,17 @@ export const time: CommandInfo[] = [
   {
     name: "time",
     documentation: "Queries the world's game time.",
+    permission_level: 1,
     parameters: [
       { text: "time", type: ParameterType.keyword, required: true },
       { text: "query", type: ParameterType.keyword, required: true },
-      { text: "gametime", type: ParameterType.integer, required: true },
+      { text: "gametime", type: ParameterType.keyword, required: true },
     ],
   },
   {
     name: "time",
     documentation: "Changes or queries the world's game time.",
-    parameters: [
-      { text: "time", type: ParameterType.keyword, required: true },
-      { text: "query", type: ParameterType.keyword, required: true },
-      { text: "day", type: ParameterType.keyword, required: true },
-    ],
-  },
-  {
-    name: "time",
-    documentation: "Sets the world's game time.",
+    permission_level: 1,
     parameters: [
       { text: "time", type: ParameterType.keyword, required: true },
       { text: "set", type: ParameterType.keyword, required: true },
@@ -50,11 +55,62 @@ export const time: CommandInfo[] = [
   },
   {
     name: "time",
-    documentation: "Sets the world's game time.",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
     parameters: [
       { text: "time", type: ParameterType.keyword, required: true },
       { text: "set", type: ParameterType.keyword, required: true },
-      { text: "amount", type: ParameterType.time, required: true },
+      { text: "day", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "set", type: ParameterType.keyword, required: true },
+      { text: "midnight", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "set", type: ParameterType.keyword, required: true },
+      { text: "night", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "set", type: ParameterType.keyword, required: true },
+      { text: "noon", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "set", type: ParameterType.keyword, required: true },
+      { text: "sunrise", type: ParameterType.keyword, required: true },
+    ],
+  },
+  {
+    name: "time",
+    documentation: "Changes or queries the world's game time.",
+    permission_level: 1,
+    parameters: [
+      { text: "time", type: ParameterType.keyword, required: true },
+      { text: "set", type: ParameterType.keyword, required: true },
+      { text: "sunset", type: ParameterType.keyword, required: true },
     ],
   },
 ];
