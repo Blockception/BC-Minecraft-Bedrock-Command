@@ -262,6 +262,7 @@ const enumMap: Record<string, ParameterType> = {
   ENTITYEVENTS: ParameterType.event,
   ENTITYTYPE: ParameterType.entity,
   EXECUTECHAINEDOPTION_0: ParameterType.executeSubcommand,
+  EASING: ParameterType.easing,
   FEATURERULES: ParameterType.locateFeature,
   FEATURES: ParameterType.locateFeature,
   FILLMODE: ParameterType.fillMode,

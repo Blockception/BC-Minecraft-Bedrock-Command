@@ -28,6 +28,8 @@ export enum ParameterType {
   difficulty,
   /** Dimension */
   dimension,
+  /** The camera easing effect */
+  easing,
   /** Effect identifiers */
   effect,
   /** Entity identifiers */
