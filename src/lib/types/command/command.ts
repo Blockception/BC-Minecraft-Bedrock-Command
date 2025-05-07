@@ -47,17 +47,17 @@ export class Command {
    * @param edu Whether or not to include education data
    * @returns A sub command or undefined if there is no subcommand*/
   getSubCommand(edu: boolean = false): Command | undefined {
-    const Matches = this.getBestMatch(edu);
+    const matches = this.getBestMatch(edu);
 
-    for (let I = 0; I < Matches.length; I++) {
-      const Item = Matches[I];
-      const index = Item.parameters.findIndex((x) => {
+    for (let I = 0; I < matches.length; I++) {
+      const item = matches[I];
+      const index = item.parameters.findIndex((x) => {
         return x.type === ParameterType.command || x.type === ParameterType.executeSubcommand;
       });
 
       if (index > -1 && index < this.parameters.length) {
         const out = this.slice(index);
-        out.subType = Item.parameters[index].type;
+        out.subType = item.parameters[index].type;
 
         return out;
       }

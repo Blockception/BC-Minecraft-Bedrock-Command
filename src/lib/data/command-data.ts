@@ -116,7 +116,7 @@ export namespace CommandData {
     execute,
     fill,
     fog,
-    Function,
+    function: Function,
     gamemode,
     gamerule,
     gametest,
