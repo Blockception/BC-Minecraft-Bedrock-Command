@@ -44,6 +44,7 @@ export const place: CommandInfo[] = [
       { text: "pos z", type: ParameterType.coordinate, required: false },
       { text: "keepJigsaws", type: ParameterType.boolean, required: false },
       { text: "includeEntities", type: ParameterType.boolean, required: false },
+      { text: "liquidSettings", type: ParameterType.unknown, required: false },
     ],
   },
   {
@@ -60,6 +61,7 @@ export const place: CommandInfo[] = [
       { text: "ignoreStartHeight", type: ParameterType.boolean, required: false },
       { text: "keepJigsaws", type: ParameterType.boolean, required: false },
       { text: "includeEntities", type: ParameterType.boolean, required: false },
+      { text: "liquidSettings", type: ParameterType.unknown, required: false },
     ],
   },
 ];

@@ -32,9 +32,9 @@ export const dialogue: CommandInfo[] = [
     parameters: [
       { text: "dialogue", type: ParameterType.keyword, required: true },
       { text: "open", type: ParameterType.keyword, required: true },
-      {
-        text: "npc",
-        type: ParameterType.selector,
+      { 
+        text: "npc", 
+        type: ParameterType.selector, 
         required: true,
         options: { allowFakePlayers: false, playerOnly: false },
       },
