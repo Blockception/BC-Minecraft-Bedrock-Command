@@ -24,7 +24,7 @@ export const effect: CommandInfo[] = [
       { text: "effect", type: ParameterType.effect, required: true },
       { text: "infinite", type: ParameterType.keyword, required: true },
       { text: "amplifier", type: ParameterType.integer, required: false },
-      { text: "hideParticles", type: ParameterType.boolean, required: false },
+      { text: "hide particles", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -37,7 +37,7 @@ export const effect: CommandInfo[] = [
       { text: "effect", type: ParameterType.effect, required: true },
       { text: "seconds", type: ParameterType.integer, required: false },
       { text: "amplifier", type: ParameterType.integer, required: false },
-      { text: "hideParticles", type: ParameterType.boolean, required: false },
+      { text: "hide particles", type: ParameterType.boolean, required: false },
     ],
   },
 ];

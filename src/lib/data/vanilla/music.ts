@@ -10,10 +10,10 @@ export const music: CommandInfo[] = [
     parameters: [
       { text: "music", type: ParameterType.keyword, required: true },
       { text: "play", type: ParameterType.keyword, required: true },
-      { text: "trackName", type: ParameterType.music, required: true },
+      { text: "track name", type: ParameterType.music, required: true },
       { text: "volume", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
-      { text: "fadeSeconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
-      { text: "repeatMode", type: ParameterType.musicRepeatMode, required: false },
+      { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
+      { text: "repeat mode", type: ParameterType.musicRepeatMode, required: false },
     ],
   },
   {
@@ -23,10 +23,10 @@ export const music: CommandInfo[] = [
     parameters: [
       { text: "music", type: ParameterType.keyword, required: true },
       { text: "queue", type: ParameterType.keyword, required: true },
-      { text: "trackName", type: ParameterType.music, required: true },
+      { text: "track name", type: ParameterType.music, required: true },
       { text: "volume", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
-      { text: "fadeSeconds", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
-      { text: "repeatMode", type: ParameterType.musicRepeatMode, required: false },
+      { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0.01, maximum: 1 } },
+      { text: "repeat mode", type: ParameterType.musicRepeatMode, required: false },
     ],
   },
   {
@@ -36,7 +36,7 @@ export const music: CommandInfo[] = [
     parameters: [
       { text: "music", type: ParameterType.keyword, required: true },
       { text: "stop", type: ParameterType.keyword, required: true },
-      { text: "fadeSeconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
+      { text: "fade seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
     ],
   },
   {

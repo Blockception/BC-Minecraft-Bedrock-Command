@@ -11,10 +11,10 @@ export const spreadplayers: CommandInfo[] = [
       { text: "spreadplayers", type: ParameterType.keyword, required: true },
       { text: "x", type: ParameterType.coordinate, required: true },
       { text: "z", type: ParameterType.coordinate, required: true },
-      { text: "spreadDistance", type: ParameterType.float, required: true },
-      { text: "maxRange", type: ParameterType.float, required: true },
+      { text: "spread distance", type: ParameterType.float, required: true },
+      { text: "max range", type: ParameterType.float, required: true },
       { text: "victim", type: ParameterType.selector, required: true },
-      { text: "maxHeight", type: ParameterType.rotation, required: false },
+      { text: "max height", type: ParameterType.rotation, required: false },
     ],
   },
 ];

@@ -13,7 +13,7 @@ export const camerashake: CommandInfo[] = [
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "intensity", type: ParameterType.float, required: false, options: { minimum: 0, maximum: 4 } },
       { text: "seconds", type: ParameterType.float, required: false, options: { minimum: 0 } },
-      { text: "shakeType", type: ParameterType.cameraShakeType, required: false },
+      { text: "shake type", type: ParameterType.cameraShakeType, required: false },
     ],
   },
   {

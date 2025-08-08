@@ -9,7 +9,7 @@ export const gamemode: CommandInfo[] = [
     permission_level: 1,
     parameters: [
       { text: "gamemode", type: ParameterType.keyword, required: true },
-      { text: "gameMode", type: ParameterType.gamemode, required: true },
+      { text: "game mode", type: ParameterType.gamemode, required: true },
       { text: "player", type: ParameterType.selector, required: false },
     ],
   },
@@ -19,7 +19,7 @@ export const gamemode: CommandInfo[] = [
     permission_level: 1,
     parameters: [
       { text: "gamemode", type: ParameterType.keyword, required: true },
-      { text: "gameMode", type: ParameterType.integer, required: true },
+      { text: "game mode", type: ParameterType.integer, required: true },
       { text: "player", type: ParameterType.selector, required: false },
     ],
   },

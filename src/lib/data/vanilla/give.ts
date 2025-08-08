@@ -10,7 +10,7 @@ export const give: CommandInfo[] = [
     parameters: [
       { text: "give", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
-      { text: "itemName", type: ParameterType.item, required: true },
+      { text: "item name", type: ParameterType.item, required: true },
       { text: "amount", type: ParameterType.integer, required: false },
       { text: "data", type: ParameterType.integer, required: false },
       { text: "components", type: ParameterType.jsonItem, required: false },

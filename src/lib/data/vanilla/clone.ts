@@ -19,9 +19,9 @@ export const clone: CommandInfo[] = [
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
       { text: "filtered", type: ParameterType.keyword, required: true },
-      { text: "cloneMode", type: ParameterType.cloneMode, required: true },
-      { text: "tileName", type: ParameterType.block, required: true },
-      { text: "blockStates", type: ParameterType.blockStates, required: false },
+      { text: "clone mode", type: ParameterType.cloneMode, required: true },
+      { text: "tile name", type: ParameterType.block, required: true },
+      { text: "block states", type: ParameterType.blockStates, required: false },
     ],
   },
   {
@@ -39,8 +39,8 @@ export const clone: CommandInfo[] = [
       { text: "destination x", type: ParameterType.coordinate, required: true },
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
-      { text: "maskMode", type: ParameterType.maskMode, required: false },
-      { text: "cloneMode", type: ParameterType.cloneMode, required: false },
+      { text: "mask mode", type: ParameterType.maskMode, required: false },
+      { text: "clone mode", type: ParameterType.cloneMode, required: false },
     ],
   },
 ];

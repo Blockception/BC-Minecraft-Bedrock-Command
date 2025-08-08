@@ -21,7 +21,7 @@ export const tp: CommandInfo[] = [
       { text: "destination x", type: ParameterType.coordinate, required: true },
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -34,8 +34,8 @@ export const tp: CommandInfo[] = [
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
       { text: "facing", type: ParameterType.keyword, required: true },
-      { text: "lookAtEntity", type: ParameterType.selector, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "look at entity", type: ParameterType.selector, required: true },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -51,7 +51,7 @@ export const tp: CommandInfo[] = [
       { text: "lookAtPosition x", type: ParameterType.coordinate, required: true },
       { text: "lookAtPosition y", type: ParameterType.coordinate, required: true },
       { text: "lookAtPosition z", type: ParameterType.coordinate, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -63,9 +63,9 @@ export const tp: CommandInfo[] = [
       { text: "destination x", type: ParameterType.coordinate, required: true },
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
-      { text: "yRot", type: ParameterType.rotation, required: false },
-      { text: "xRot", type: ParameterType.rotation, required: false },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "y rot", type: ParameterType.rotation, required: false },
+      { text: "x rot", type: ParameterType.rotation, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -76,7 +76,7 @@ export const tp: CommandInfo[] = [
       { text: "tp", type: ParameterType.keyword, required: true },
       { text: "victim", type: ParameterType.selector, required: true },
       { text: "destination", type: ParameterType.selector, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -89,7 +89,7 @@ export const tp: CommandInfo[] = [
       { text: "destination x", type: ParameterType.coordinate, required: true },
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -103,8 +103,8 @@ export const tp: CommandInfo[] = [
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
       { text: "facing", type: ParameterType.keyword, required: true },
-      { text: "lookAtEntity", type: ParameterType.selector, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "look at entity", type: ParameterType.selector, required: true },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -121,7 +121,7 @@ export const tp: CommandInfo[] = [
       { text: "lookAtPosition x", type: ParameterType.coordinate, required: true },
       { text: "lookAtPosition y", type: ParameterType.coordinate, required: true },
       { text: "lookAtPosition z", type: ParameterType.coordinate, required: true },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
   {
@@ -134,9 +134,9 @@ export const tp: CommandInfo[] = [
       { text: "destination x", type: ParameterType.coordinate, required: true },
       { text: "destination y", type: ParameterType.coordinate, required: true },
       { text: "destination z", type: ParameterType.coordinate, required: true },
-      { text: "yRot", type: ParameterType.rotation, required: false },
-      { text: "xRot", type: ParameterType.rotation, required: false },
-      { text: "checkForBlocks", type: ParameterType.boolean, required: false },
+      { text: "y rot", type: ParameterType.rotation, required: false },
+      { text: "x rot", type: ParameterType.rotation, required: false },
+      { text: "check for blocks", type: ParameterType.boolean, required: false },
     ],
   },
 ];

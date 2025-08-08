@@ -165,6 +165,7 @@ function fixName(name: string): string {
   for (let c of n.split("")) {
     name = name.replaceAll(c, " " + c.toLowerCase());
   }
+  name = name.replaceAll("_", " ");
 
   return name;
 }
