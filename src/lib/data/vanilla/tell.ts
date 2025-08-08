@@ -9,7 +9,7 @@ export const tell: CommandInfo[] = [
     permission_level: 0,
     parameters: [
       { text: "tell", type: ParameterType.keyword, required: true },
-      { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
+      { text: "target", type: ParameterType.selector, required: true },
       { text: "message", type: ParameterType.message, required: true },
     ],
   },

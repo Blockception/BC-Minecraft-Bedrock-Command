@@ -16,7 +16,7 @@ export const dialogue: CommandInfo[] = [
         required: true,
         options: { allowFakePlayers: false, playerOnly: false },
       },
-      { text: "sceneName", type: ParameterType.string, required: true },
+      { text: "scene name", type: ParameterType.string, required: true },
       {
         text: "players",
         type: ParameterType.selector,
@@ -32,9 +32,9 @@ export const dialogue: CommandInfo[] = [
     parameters: [
       { text: "dialogue", type: ParameterType.keyword, required: true },
       { text: "open", type: ParameterType.keyword, required: true },
-      {
-        text: "npc",
-        type: ParameterType.selector,
+      { 
+        text: "npc", 
+        type: ParameterType.selector, 
         required: true,
         options: { allowFakePlayers: false, playerOnly: false },
       },
@@ -44,7 +44,7 @@ export const dialogue: CommandInfo[] = [
         required: true,
         options: { playerOnly: true, allowFakePlayers: false },
       },
-      { text: "sceneName", type: ParameterType.string, required: false },
+      { text: "scene name", type: ParameterType.string, required: false },
     ],
   },
 ];

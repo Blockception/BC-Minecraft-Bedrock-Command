@@ -12,8 +12,8 @@ export const testforblock: CommandInfo[] = [
       { text: "position x", type: ParameterType.coordinate, required: true },
       { text: "position y", type: ParameterType.coordinate, required: true },
       { text: "position z", type: ParameterType.coordinate, required: true },
-      { text: "tileName", type: ParameterType.block, required: true },
-      { text: "blockStates", type: ParameterType.blockStates, required: false },
+      { text: "tile name", type: ParameterType.block, required: true },
+      { text: "block states", type: ParameterType.blockStates, required: false },
     ],
   },
 ];

@@ -10,7 +10,7 @@ export const enchant: CommandInfo[] = [
     parameters: [
       { text: "enchant", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true },
-      { text: "enchantmentId", type: ParameterType.integer, required: true },
+      { text: "enchantment id", type: ParameterType.integer, required: true },
       { text: "level", type: ParameterType.integer, required: false },
     ],
   },
@@ -21,7 +21,7 @@ export const enchant: CommandInfo[] = [
     parameters: [
       { text: "enchant", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true },
-      { text: "enchantmentName", type: ParameterType.enchant, required: true },
+      { text: "enchantment name", type: ParameterType.enchant, required: true },
       { text: "level", type: ParameterType.integer, required: false },
     ],
   },

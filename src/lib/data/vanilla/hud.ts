@@ -11,7 +11,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "air_bubbles", type: ParameterType.keyword, required: false },
+      { text: "air bubbles", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "horse_health", type: ParameterType.keyword, required: false },
+      { text: "horse health", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -99,7 +99,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "item_text", type: ParameterType.keyword, required: false },
+      { text: "item text", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -121,7 +121,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "progress_bar", type: ParameterType.keyword, required: false },
+      { text: "progress bar", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -132,7 +132,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "status_effects", type: ParameterType.keyword, required: false },
+      { text: "status effects", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -154,7 +154,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "hide", type: ParameterType.keyword, required: true },
-      { text: "touch_controls", type: ParameterType.keyword, required: false },
+      { text: "touch controls", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -165,7 +165,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "air_bubbles", type: ParameterType.keyword, required: false },
+      { text: "air bubbles", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -220,7 +220,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "horse_health", type: ParameterType.keyword, required: false },
+      { text: "horse health", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -253,7 +253,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "item_text", type: ParameterType.keyword, required: false },
+      { text: "item text", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -275,7 +275,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "progress_bar", type: ParameterType.keyword, required: false },
+      { text: "progress bar", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -286,7 +286,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "status_effects", type: ParameterType.keyword, required: false },
+      { text: "status effects", type: ParameterType.keyword, required: false },
     ],
   },
   {
@@ -308,7 +308,7 @@ export const hud: CommandInfo[] = [
       { text: "hud", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "reset", type: ParameterType.keyword, required: true },
-      { text: "touch_controls", type: ParameterType.keyword, required: false },
+      { text: "touch controls", type: ParameterType.keyword, required: false },
     ],
   },
 ];

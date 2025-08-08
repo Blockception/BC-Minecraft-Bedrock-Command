@@ -16,7 +16,7 @@ export const playsound: CommandInfo[] = [
       { text: "position z", type: ParameterType.coordinate, required: false },
       { text: "volume", type: ParameterType.float, required: false },
       { text: "pitch", type: ParameterType.float, required: false },
-      { text: "minimumVolume", type: ParameterType.float, required: false },
+      { text: "minimum volume", type: ParameterType.float, required: false },
     ],
   },
 ];

@@ -21,7 +21,7 @@ export const locate: CommandInfo[] = [
       { text: "locate", type: ParameterType.keyword, required: true },
       { text: "structure", type: ParameterType.keyword, required: true },
       { text: "structure", type: ParameterType.structure, required: true },
-      { text: "useNewChunksOnly", type: ParameterType.boolean, required: false },
+      { text: "use new chunks only", type: ParameterType.boolean, required: false },
     ],
   },
 ];

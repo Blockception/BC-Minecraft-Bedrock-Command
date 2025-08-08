@@ -11,7 +11,7 @@ export const titleraw: CommandInfo[] = [
       { text: "titleraw", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "actionbar", type: ParameterType.keyword, required: true },
-      { text: "raw json titleText", type: ParameterType.jsonRawText, required: true },
+      { text: "raw json title text", type: ParameterType.jsonRawText, required: true },
     ],
   },
   {
@@ -42,7 +42,7 @@ export const titleraw: CommandInfo[] = [
       { text: "titleraw", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "subtitle", type: ParameterType.keyword, required: true },
-      { text: "raw json titleText", type: ParameterType.jsonRawText, required: true },
+      { text: "raw json title text", type: ParameterType.jsonRawText, required: true },
     ],
   },
   {
@@ -53,9 +53,9 @@ export const titleraw: CommandInfo[] = [
       { text: "titleraw", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "times", type: ParameterType.keyword, required: true },
-      { text: "fadeIn", type: ParameterType.integer, required: true },
+      { text: "fade in", type: ParameterType.integer, required: true },
       { text: "stay", type: ParameterType.integer, required: true },
-      { text: "fadeOut", type: ParameterType.integer, required: true },
+      { text: "fade out", type: ParameterType.integer, required: true },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const titleraw: CommandInfo[] = [
       { text: "titleraw", type: ParameterType.keyword, required: true },
       { text: "player", type: ParameterType.selector, required: true, options: { playerOnly: true } },
       { text: "title", type: ParameterType.keyword, required: true },
-      { text: "raw json titleText", type: ParameterType.jsonRawText, required: true },
+      { text: "raw json title text", type: ParameterType.jsonRawText, required: true },
     ],
   },
 ];

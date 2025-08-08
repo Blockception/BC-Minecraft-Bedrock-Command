@@ -19,7 +19,7 @@ export const gametest: CommandInfo[] = [
     parameters: [
       { text: "gametest", type: ParameterType.keyword, required: true },
       { text: "create", type: ParameterType.keyword, required: true },
-      { text: "testName", type: ParameterType.string, required: true },
+      { text: "test name", type: ParameterType.string, required: true },
       { text: "width", type: ParameterType.integer, required: false },
       { text: "height", type: ParameterType.integer, required: false },
       { text: "depth", type: ParameterType.integer, required: false },
@@ -41,8 +41,8 @@ export const gametest: CommandInfo[] = [
     parameters: [
       { text: "gametest", type: ParameterType.keyword, required: true },
       { text: "run", type: ParameterType.keyword, required: true },
-      { text: "testName", type: ParameterType.string, required: true },
-      { text: "rotationSteps", type: ParameterType.integer, required: false },
+      { text: "test name", type: ParameterType.string, required: true },
+      { text: "rotation steps", type: ParameterType.integer, required: false },
     ],
   },
   {
@@ -52,10 +52,10 @@ export const gametest: CommandInfo[] = [
     parameters: [
       { text: "gametest", type: ParameterType.keyword, required: true },
       { text: "run", type: ParameterType.keyword, required: true },
-      { text: "testName", type: ParameterType.string, required: true },
-      { text: "stopOnFailure", type: ParameterType.boolean, required: true },
-      { text: "repeatCount", type: ParameterType.integer, required: true },
-      { text: "rotationSteps", type: ParameterType.integer, required: false },
+      { text: "test name", type: ParameterType.string, required: true },
+      { text: "stop on failure", type: ParameterType.boolean, required: true },
+      { text: "repeat count", type: ParameterType.integer, required: true },
+      { text: "rotation steps", type: ParameterType.integer, required: false },
     ],
   },
   {
@@ -66,7 +66,7 @@ export const gametest: CommandInfo[] = [
       { text: "gametest", type: ParameterType.keyword, required: true },
       { text: "runset", type: ParameterType.keyword, required: true },
       { text: "tag", type: ParameterType.string, required: false },
-      { text: "rotationSteps", type: ParameterType.integer, required: false },
+      { text: "rotation steps", type: ParameterType.integer, required: false },
     ],
   },
   {
@@ -77,7 +77,7 @@ export const gametest: CommandInfo[] = [
       { text: "gametest", type: ParameterType.keyword, required: true },
       { text: "runsetuntilfail", type: ParameterType.keyword, required: true },
       { text: "tag", type: ParameterType.string, required: false },
-      { text: "rotationSteps", type: ParameterType.integer, required: false },
+      { text: "rotation steps", type: ParameterType.integer, required: false },
     ],
   },
   {

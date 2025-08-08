@@ -9,8 +9,8 @@ export const scriptevent: CommandInfo[] = [
     permission_level: 1,
     parameters: [
       { text: "scriptevent", type: ParameterType.keyword, required: true },
-      { text: "messageId", type: ParameterType.string, required: true },
-      { text: "message", type: ParameterType.string, required: true },
+      { text: "message id", type: ParameterType.string, required: true },
+      { text: "message", type: ParameterType.message, required: true },
     ],
   },
 ];

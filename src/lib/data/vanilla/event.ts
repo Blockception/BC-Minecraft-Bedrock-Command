@@ -11,7 +11,7 @@ export const event: CommandInfo[] = [
       { text: "event", type: ParameterType.keyword, required: true },
       { text: "entity", type: ParameterType.keyword, required: true },
       { text: "target", type: ParameterType.selector, required: true },
-      { text: "eventName", type: ParameterType.event, required: true },
+      { text: "event name", type: ParameterType.event, required: true },
     ],
   },
 ];

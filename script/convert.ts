@@ -145,7 +145,7 @@ function convertParameter(comm: string, param: CommandParameter, receiver: Param
       break;
     default:
       const b = {
-        text: name,
+        text: fixName(name),
         type: ParameterType.unknown,
         required: required,
       };
@@ -158,6 +158,16 @@ function convertParameter(comm: string, param: CommandParameter, receiver: Param
 
       receiver.push(b);
   }
+}
+
+function fixName(name: string): string {
+  const n = "ABCDEFGHIJKLMNOPQRSTUVWYX";
+  for (let c of n.split("")) {
+    name = name.replaceAll(c, " " + c.toLowerCase());
+  }
+  name = name.replaceAll("_", " ");
+
+  return name;
 }
 
 function converType(comm: string, name: string, type: string): ParameterType {
