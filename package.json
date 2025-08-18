@@ -56,6 +56,6 @@
     "typescript-eslint": "^8.39.1"
   },
   "dependencies": {
-    "bc-minecraft-bedrock-types": "^1.22.1-12"
+    "bc-minecraft-bedrock-types": "^1.22.1-13"
   }
 }
