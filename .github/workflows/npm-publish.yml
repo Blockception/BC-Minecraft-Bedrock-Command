@@ -59,4 +59,4 @@ jobs:
         run: npm ci
 
       - name: 🚚 Npm Publish
-        run: npm publish
+        run: npm publish --tag latest
